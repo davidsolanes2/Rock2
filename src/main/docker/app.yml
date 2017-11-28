@@ -1,0 +1,14 @@
+version: '2'
+services:
+    rockbible3-app:
+        image: rockbible3
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://rockbible3-mysql:3306/rockbible3?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    rockbible3-mysql:
+        extends:
+            file: mysql.yml
+            service: rockbible3-mysql
