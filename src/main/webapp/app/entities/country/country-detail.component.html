@@ -1,0 +1,37 @@
+
+<div *ngIf="country">
+    <h2><span jhiTranslate="rockbible3App.country.detail.title">Country</span> {{country.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.country.name">Name</span></dt>
+        <dd>
+            <span>{{country.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.country.locationGoogleMaps">Location Google Maps</span></dt>
+        <dd>
+            <span>{{country.locationGoogleMaps}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.country.latitude">Latitude</span></dt>
+        <dd>
+            <span>{{country.latitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.country.logitude">Logitude</span></dt>
+        <dd>
+            <span>{{country.logitude}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'country/'+ country.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

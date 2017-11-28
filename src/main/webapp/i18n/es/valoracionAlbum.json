@@ -1,0 +1,25 @@
+{
+    "rockbible3App": {
+        "valoracionAlbum" : {
+            "home": {
+                "title": "Valoracion Albums",
+                "createLabel": "Crear nuevo Valoracion Album",
+                "createOrEditLabel": "Crear o editar Valoracion Album"
+            },
+            "created": "Un nuevo Valoracion Album ha sido creado con el identificador {{ param }}",
+            "updated": "Un Valoracion Album ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Valoracion Album ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Valoracion Album {{ id }}?"
+            },
+            "detail": {
+                "title": "Valoracion Album"
+            },
+            "puntuacion": "Puntuacion",
+            "like": "Like",
+            "timestamp": "Timestamp",
+            "album": "Album",
+            "user": "User"
+        }
+    }
+}

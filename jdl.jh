@@ -1,0 +1,134 @@
+
+entity Country {
+	name String,
+    locationGoogleMaps String,
+    latitude Double,
+    logitude Double
+}
+
+entity Genre {
+	name String
+}
+
+enum Sex {
+	HOMBRE, MUJER, OTROS
+}
+
+enum Status {
+	ACTIVO, DESCANSO, RETIRADO
+}
+
+entity Album {
+	name String,
+    numSongs Integer,
+    releaseDate LocalDate
+}
+
+entity Song {
+	name String,
+	description String
+}
+
+entity Artist {
+	name String,
+    sexo Sex,
+    born LocalDate,
+    deathDate LocalDate,
+    status Status
+}
+
+entity Band{
+	name String,
+    locationGoogleMaps String,
+    latitude Double,
+    logitude Double,
+    status Status
+}
+
+
+
+entity Social {
+	name String
+}
+
+entity Instrument {
+	name String
+}
+
+entity Label {
+	name String,
+	foundationdate LocalDate
+}
+
+entity UserExt {
+	image ImageBlob,
+    latitude Double,
+    logitude Double,
+    locationGoogleMaps String
+}
+
+entity ValoracionAlbum{
+	puntuacion Integer,
+    like Boolean,
+    timestamp ZonedDateTime
+}
+
+entity ValoracionSong{
+	puntuacion Integer,
+    like Boolean,
+    timestamp ZonedDateTime
+}
+
+entity ValoracionArtist{
+	puntuacion Integer,
+    like Boolean,
+    timestamp ZonedDateTime
+}
+
+entity ValoracionBand{
+	puntuacion Integer,
+    like Boolean,
+    timestamp ZonedDateTime
+}
+
+/*Many To One*/
+relationship ManyToOne {
+    Album{band(name)} to Band{album},
+    Song{album(name)} to Album{song},
+    Artist{band(name)} to Band{artist},
+    Band{country(name)} to Country{band},
+    Artist{country(name)} to Country{artist},
+    Band{label(name)} to Label{band},
+    Artist{label(name)} to Label{artist},
+    ValoracionAlbum{album(name)} to Album{valoracion},
+    ValoracionAlbum{user(login)} to User,
+    ValoracionSong{song(name)} to Song{valoracion},
+    ValoracionSong{user(login)} to User,
+    ValoracionArtist{artist(name)} to Artist{valoracion},
+    ValoracionArtist{user(login)} to User,
+    ValoracionBand{band(name)} to Band{valoracion},
+    ValoracionBand{user(login)} to User
+
+}
+
+
+/*One To One*/
+relationship OneToOne {
+	UserExt{user(login)} to User
+
+}
+
+/*Many To Many*/
+relationship ManyToMany {
+	Band{genre(name)} to Genre{band},
+    Artist{instrument(name)} to Instrument{artist},
+    UserExt{album(name)} to Album{user}
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+{
+    "rockbible3App": {
+        "Status" : {
+            "null": "",
+            "ACTIVO": "ACTIVO",
+            "DESCANSO": "DESCANSO",
+            "RETIRADO": "RETIRADO"
+        }
+    }
+}

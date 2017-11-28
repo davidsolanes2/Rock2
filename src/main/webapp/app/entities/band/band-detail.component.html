@@ -1,0 +1,59 @@
+
+<div *ngIf="band">
+    <h2><span jhiTranslate="rockbible3App.band.detail.title">Band</span> {{band.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.band.name">Name</span></dt>
+        <dd>
+            <span>{{band.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.band.locationGoogleMaps">Location Google Maps</span></dt>
+        <dd>
+            <span>{{band.locationGoogleMaps}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.band.latitude">Latitude</span></dt>
+        <dd>
+            <span>{{band.latitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.band.logitude">Logitude</span></dt>
+        <dd>
+            <span>{{band.logitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.band.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'rockbible3App.Status.' + band.status}}">{{band.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.band.country">Country</span></dt>
+        <dd>
+            <div *ngIf="band.country">
+                <a [routerLink]="['/country', band.country?.id]">{{band.country?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.band.label">Label</span></dt>
+        <dd>
+            <div *ngIf="band.label">
+                <a [routerLink]="['/label', band.label?.id]">{{band.label?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.band.genre">Genre</span></dt>
+        <dd>
+            <span *ngFor="let genre of band.genres; let last = last">
+                <a [routerLink]="['/genre', genre?.id ]">{{genre.name}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'band/'+ band.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

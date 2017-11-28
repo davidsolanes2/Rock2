@@ -1,0 +1,10 @@
+{
+    "rockbible3App": {
+        "Sex" : {
+            "null": "",
+            "HOMBRE": "HOMBRE",
+            "MUJER": "MUJER",
+            "OTROS": "OTROS"
+        }
+    }
+}

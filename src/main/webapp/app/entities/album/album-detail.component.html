@@ -1,0 +1,39 @@
+
+<div *ngIf="album">
+    <h2><span jhiTranslate="rockbible3App.album.detail.title">Album</span> {{album.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.album.name">Name</span></dt>
+        <dd>
+            <span>{{album.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.album.numSongs">Num Songs</span></dt>
+        <dd>
+            <span>{{album.numSongs}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.album.releaseDate">Release Date</span></dt>
+        <dd>
+            <span>{{album.releaseDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.album.band">Band</span></dt>
+        <dd>
+            <div *ngIf="album.band">
+                <a [routerLink]="['/band', album.band?.id]">{{album.band?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'album/'+ album.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

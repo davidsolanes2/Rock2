@@ -1,0 +1,56 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myValoracionAlbumLabel" jhiTranslate="rockbible3App.valoracionAlbum.home.createOrEditLabel">Create or edit a Valoracion Album</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!valoracionAlbum.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="valoracionAlbum.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.valoracionAlbum.puntuacion" for="field_puntuacion">Puntuacion</label>
+            <input type="number" class="form-control" name="puntuacion" id="field_puntuacion"
+                [(ngModel)]="valoracionAlbum.puntuacion"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.valoracionAlbum.like" for="field_like">Like</label>
+            <input type="checkbox" class="form-control" name="like" id="field_like"
+                [(ngModel)]="valoracionAlbum.like"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.valoracionAlbum.timestamp" for="field_timestamp">Timestamp</label>
+            <div class="d-flex">
+                <input id="field_timestamp" type="datetime-local" class="form-control" name="timestamp" [(ngModel)]="valoracionAlbum.timestamp"
+                  />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.valoracionAlbum.album" for="field_album">Album</label>
+            <select class="form-control" id="field_album" name="album" [(ngModel)]="valoracionAlbum.album" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="albumOption.id === valoracionAlbum.album?.id ? valoracionAlbum.album : albumOption" *ngFor="let albumOption of albums; trackBy: trackAlbumById">{{albumOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.valoracionAlbum.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="valoracionAlbum.user" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userOption.id === valoracionAlbum.user?.id ? valoracionAlbum.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

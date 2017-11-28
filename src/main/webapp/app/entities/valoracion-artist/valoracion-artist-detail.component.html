@@ -1,0 +1,43 @@
+
+<div *ngIf="valoracionArtist">
+    <h2><span jhiTranslate="rockbible3App.valoracionArtist.detail.title">Valoracion Artist</span> {{valoracionArtist.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.valoracionArtist.puntuacion">Puntuacion</span></dt>
+        <dd>
+            <span>{{valoracionArtist.puntuacion}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionArtist.like">Like</span></dt>
+        <dd>
+            <span>{{valoracionArtist.like}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionArtist.timestamp">Timestamp</span></dt>
+        <dd>
+            <span>{{valoracionArtist.timestamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionArtist.artist">Artist</span></dt>
+        <dd>
+            <div *ngIf="valoracionArtist.artist">
+                <a [routerLink]="['/artist', valoracionArtist.artist?.id]">{{valoracionArtist.artist?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionArtist.user">User</span></dt>
+        <dd>
+            {{valoracionArtist.user?.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'valoracion-artist/'+ valoracionArtist.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

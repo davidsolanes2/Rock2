@@ -1,0 +1,52 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAlbumLabel" jhiTranslate="rockbible3App.album.home.createOrEditLabel">Create or edit a Album</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!album.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="album.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.album.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="album.name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.album.numSongs" for="field_numSongs">Num Songs</label>
+            <input type="number" class="form-control" name="numSongs" id="field_numSongs"
+                [(ngModel)]="album.numSongs"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.album.releaseDate" for="field_releaseDate">Release Date</label>
+            <div class="input-group">
+                <input id="field_releaseDate" type="text" class="form-control" name="releaseDate" ngbDatepicker  #releaseDateDp="ngbDatepicker" [(ngModel)]="album.releaseDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="releaseDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.album.band" for="field_band">Band</label>
+            <select class="form-control" id="field_band" name="band" [(ngModel)]="album.band" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="bandOption.id === album.band?.id ? album.band : bandOption" *ngFor="let bandOption of bands; trackBy: trackBandById">{{bandOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+
+<div *ngIf="valoracionBand">
+    <h2><span jhiTranslate="rockbible3App.valoracionBand.detail.title">Valoracion Band</span> {{valoracionBand.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.valoracionBand.puntuacion">Puntuacion</span></dt>
+        <dd>
+            <span>{{valoracionBand.puntuacion}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionBand.like">Like</span></dt>
+        <dd>
+            <span>{{valoracionBand.like}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionBand.timestamp">Timestamp</span></dt>
+        <dd>
+            <span>{{valoracionBand.timestamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionBand.band">Band</span></dt>
+        <dd>
+            <div *ngIf="valoracionBand.band">
+                <a [routerLink]="['/band', valoracionBand.band?.id]">{{valoracionBand.band?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionBand.user">User</span></dt>
+        <dd>
+            {{valoracionBand.user?.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'valoracion-band/'+ valoracionBand.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

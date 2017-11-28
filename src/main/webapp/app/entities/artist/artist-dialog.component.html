@@ -1,0 +1,93 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myArtistLabel" jhiTranslate="rockbible3App.artist.home.createOrEditLabel">Create or edit a Artist</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!artist.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="artist.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="artist.name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.sexo" for="field_sexo">Sexo</label>
+            <select class="form-control" name="sexo" [(ngModel)]="artist.sexo" id="field_sexo" >
+                <option value="HOMBRE">{{'rockbible3App.Sex.HOMBRE' | translate}}</option>
+                <option value="MUJER">{{'rockbible3App.Sex.MUJER' | translate}}</option>
+                <option value="OTROS">{{'rockbible3App.Sex.OTROS' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.born" for="field_born">Born</label>
+            <div class="input-group">
+                <input id="field_born" type="text" class="form-control" name="born" ngbDatepicker  #bornDp="ngbDatepicker" [(ngModel)]="artist.born"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="bornDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.deathDate" for="field_deathDate">Death Date</label>
+            <div class="input-group">
+                <input id="field_deathDate" type="text" class="form-control" name="deathDate" ngbDatepicker  #deathDateDp="ngbDatepicker" [(ngModel)]="artist.deathDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="deathDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="artist.status" id="field_status" >
+                <option value="ACTIVO">{{'rockbible3App.Status.ACTIVO' | translate}}</option>
+                <option value="DESCANSO">{{'rockbible3App.Status.DESCANSO' | translate}}</option>
+                <option value="RETIRADO">{{'rockbible3App.Status.RETIRADO' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.band" for="field_band">Band</label>
+            <select class="form-control" id="field_band" name="band" [(ngModel)]="artist.band" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="bandOption.id === artist.band?.id ? artist.band : bandOption" *ngFor="let bandOption of bands; trackBy: trackBandById">{{bandOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.country" for="field_country">Country</label>
+            <select class="form-control" id="field_country" name="country" [(ngModel)]="artist.country" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="countryOption.id === artist.country?.id ? artist.country : countryOption" *ngFor="let countryOption of countries; trackBy: trackCountryById">{{countryOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.artist.label" for="field_label">Label</label>
+            <select class="form-control" id="field_label" name="label" [(ngModel)]="artist.label" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="labelOption.id === artist.label?.id ? artist.label : labelOption" *ngFor="let labelOption of labels; trackBy: trackLabelById">{{labelOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="rockbible3App.artist.instrument" for="field_instrument">Instrument</label>
+            <select class="form-control" id="field_instrument" multiple name="instrument" [(ngModel)]="artist.instruments">
+                <option [ngValue]="getSelected(artist.instruments, instrumentOption)" *ngFor="let instrumentOption of instruments; trackBy: trackInstrumentById">{{instrumentOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

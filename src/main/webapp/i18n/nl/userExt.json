@@ -1,0 +1,26 @@
+{
+    "rockbible3App": {
+        "userExt" : {
+            "home": {
+                "title": "User Exts",
+                "createLabel": "Maak een nieuwe User Ext",
+                "createOrEditLabel": "Maak of wijzig een User Ext"
+            },
+            "created": "A new User Ext is created with identifier {{ param }}",
+            "updated": "A User Ext is updated with identifier {{ param }}",
+            "deleted": "A User Ext is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u User Ext {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "User Ext"
+            },
+            "image": "Image",
+            "latitude": "Latitude",
+            "logitude": "Logitude",
+            "locationGoogleMaps": "Location Google Maps",
+            "user": "User",
+            "album": "Album"
+        }
+    }
+}

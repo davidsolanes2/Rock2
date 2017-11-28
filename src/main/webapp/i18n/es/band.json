@@ -1,0 +1,31 @@
+{
+    "rockbible3App": {
+        "band" : {
+            "home": {
+                "title": "Bands",
+                "createLabel": "Crear nuevo Band",
+                "createOrEditLabel": "Crear o editar Band"
+            },
+            "created": "Un nuevo Band ha sido creado con el identificador {{ param }}",
+            "updated": "Un Band ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Band ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Band {{ id }}?"
+            },
+            "detail": {
+                "title": "Band"
+            },
+            "name": "Name",
+            "locationGoogleMaps": "Location Google Maps",
+            "latitude": "Latitude",
+            "logitude": "Logitude",
+            "status": "Status",
+            "country": "Country",
+            "label": "Label",
+            "genre": "Genre",
+            "album": "Album",
+            "artist": "Artist",
+            "valoracion": "Valoracion"
+        }
+    }
+}

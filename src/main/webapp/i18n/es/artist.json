@@ -1,0 +1,30 @@
+{
+    "rockbible3App": {
+        "artist" : {
+            "home": {
+                "title": "Artists",
+                "createLabel": "Crear nuevo Artist",
+                "createOrEditLabel": "Crear o editar Artist"
+            },
+            "created": "Un nuevo Artist ha sido creado con el identificador {{ param }}",
+            "updated": "Un Artist ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Artist ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Artist {{ id }}?"
+            },
+            "detail": {
+                "title": "Artist"
+            },
+            "name": "Name",
+            "sexo": "Sexo",
+            "born": "Born",
+            "deathDate": "Death Date",
+            "status": "Status",
+            "band": "Band",
+            "country": "Country",
+            "label": "Label",
+            "instrument": "Instrument",
+            "valoracion": "Valoracion"
+        }
+    }
+}

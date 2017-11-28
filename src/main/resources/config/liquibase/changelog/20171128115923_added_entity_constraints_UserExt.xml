@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity UserExt.
+    -->
+    <changeSet id="20171128115923-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="user_ext"
+                                 constraintName="fk_user_ext_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_exts_id"
+                                 baseTableName="user_ext_album"
+                                 constraintName="fk_user_ext_album_user_exts_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_ext"/>
+        <addForeignKeyConstraint baseColumnNames="albums_id"
+                                 baseTableName="user_ext_album"
+                                 constraintName="fk_user_ext_album_albums_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="album"/>
+        
+    </changeSet>
+</databaseChangeLog>

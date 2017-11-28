@@ -1,0 +1,22 @@
+{
+    "rockbible3App": {
+        "genre" : {
+            "home": {
+                "title": "Genres",
+                "createLabel": "Maak een nieuwe Genre",
+                "createOrEditLabel": "Maak of wijzig een Genre"
+            },
+            "created": "A new Genre is created with identifier {{ param }}",
+            "updated": "A Genre is updated with identifier {{ param }}",
+            "deleted": "A Genre is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Genre {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Genre"
+            },
+            "name": "Name",
+            "band": "Band"
+        }
+    }
+}

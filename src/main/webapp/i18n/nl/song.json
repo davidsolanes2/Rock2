@@ -1,0 +1,24 @@
+{
+    "rockbible3App": {
+        "song" : {
+            "home": {
+                "title": "Songs",
+                "createLabel": "Maak een nieuwe Song",
+                "createOrEditLabel": "Maak of wijzig een Song"
+            },
+            "created": "A new Song is created with identifier {{ param }}",
+            "updated": "A Song is updated with identifier {{ param }}",
+            "deleted": "A Song is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Song {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Song"
+            },
+            "name": "Name",
+            "description": "Description",
+            "album": "Album",
+            "valoracion": "Valoracion"
+        }
+    }
+}

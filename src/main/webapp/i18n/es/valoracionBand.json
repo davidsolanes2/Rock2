@@ -1,0 +1,25 @@
+{
+    "rockbible3App": {
+        "valoracionBand" : {
+            "home": {
+                "title": "Valoracion Bands",
+                "createLabel": "Crear nuevo Valoracion Band",
+                "createOrEditLabel": "Crear o editar Valoracion Band"
+            },
+            "created": "Un nuevo Valoracion Band ha sido creado con el identificador {{ param }}",
+            "updated": "Un Valoracion Band ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Valoracion Band ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Valoracion Band {{ id }}?"
+            },
+            "detail": {
+                "title": "Valoracion Band"
+            },
+            "puntuacion": "Puntuacion",
+            "like": "Like",
+            "timestamp": "Timestamp",
+            "band": "Band",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="rockbible3App.valoracionBand.home.title">Valoracion Bands</span>
+        <button class="btn btn-primary float-right jh-create-entity create-valoracion-band" [routerLink]="['/', { outlets: { popup: ['valoracion-band-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rockbible3App.valoracionBand.home.createLabel">
+            Create new Valoracion Band
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="valoracionBands">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionBand.puntuacion">Puntuacion</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionBand.like">Like</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionBand.timestamp">Timestamp</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionBand.band">Band</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionBand.user">User</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let valoracionBand of valoracionBands ;trackBy: trackId">
+                <td><a [routerLink]="['../valoracion-band', valoracionBand.id ]">{{valoracionBand.id}}</a></td>
+                <td>{{valoracionBand.puntuacion}}</td>
+                <td>{{valoracionBand.like}}</td>
+                <td>{{valoracionBand.timestamp | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="valoracionBand.band">
+                        <a [routerLink]="['../band', valoracionBand.band?.id ]" >{{valoracionBand.band?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    {{valoracionBand.user?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../valoracion-band', valoracionBand.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'valoracion-band/'+ valoracionBand.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'valoracion-band/'+ valoracionBand.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

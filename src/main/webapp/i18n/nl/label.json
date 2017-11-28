@@ -1,0 +1,24 @@
+{
+    "rockbible3App": {
+        "label" : {
+            "home": {
+                "title": "Labels",
+                "createLabel": "Maak een nieuwe Label",
+                "createOrEditLabel": "Maak of wijzig een Label"
+            },
+            "created": "A new Label is created with identifier {{ param }}",
+            "updated": "A Label is updated with identifier {{ param }}",
+            "deleted": "A Label is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Label {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Label"
+            },
+            "name": "Name",
+            "foundationdate": "Foundationdate",
+            "band": "Band",
+            "artist": "Artist"
+        }
+    }
+}

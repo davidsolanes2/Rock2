@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="rockbible3App.valoracionAlbum.home.title">Valoracion Albums</span>
+        <button class="btn btn-primary float-right jh-create-entity create-valoracion-album" [routerLink]="['/', { outlets: { popup: ['valoracion-album-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rockbible3App.valoracionAlbum.home.createLabel">
+            Create new Valoracion Album
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="valoracionAlbums">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionAlbum.puntuacion">Puntuacion</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionAlbum.like">Like</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionAlbum.timestamp">Timestamp</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionAlbum.album">Album</span></th>
+            <th><span jhiTranslate="rockbible3App.valoracionAlbum.user">User</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let valoracionAlbum of valoracionAlbums ;trackBy: trackId">
+                <td><a [routerLink]="['../valoracion-album', valoracionAlbum.id ]">{{valoracionAlbum.id}}</a></td>
+                <td>{{valoracionAlbum.puntuacion}}</td>
+                <td>{{valoracionAlbum.like}}</td>
+                <td>{{valoracionAlbum.timestamp | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="valoracionAlbum.album">
+                        <a [routerLink]="['../album', valoracionAlbum.album?.id ]" >{{valoracionAlbum.album?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    {{valoracionAlbum.user?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../valoracion-album', valoracionAlbum.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'valoracion-album/'+ valoracionAlbum.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'valoracion-album/'+ valoracionAlbum.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

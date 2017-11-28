@@ -1,0 +1,25 @@
+{
+    "rockbible3App": {
+        "valoracionArtist" : {
+            "home": {
+                "title": "Valoracion Artists",
+                "createLabel": "Crear nuevo Valoracion Artist",
+                "createOrEditLabel": "Crear o editar Valoracion Artist"
+            },
+            "created": "Un nuevo Valoracion Artist ha sido creado con el identificador {{ param }}",
+            "updated": "Un Valoracion Artist ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Valoracion Artist ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Valoracion Artist {{ id }}?"
+            },
+            "detail": {
+                "title": "Valoracion Artist"
+            },
+            "puntuacion": "Puntuacion",
+            "like": "Like",
+            "timestamp": "Timestamp",
+            "artist": "Artist",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "band",
+            "otherEntityName": "band",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "song",
+            "otherEntityName": "song",
+            "otherEntityRelationshipName": "album"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "valoracion",
+            "otherEntityName": "valoracionAlbum",
+            "otherEntityRelationshipName": "album"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "user",
+            "otherEntityName": "userExt",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "album"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numSongs",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "releaseDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20171128115916",
+    "entityTableName": "album",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

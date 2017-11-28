@@ -1,0 +1,27 @@
+{
+    "rockbible3App": {
+        "album" : {
+            "home": {
+                "title": "Albums",
+                "createLabel": "Maak een nieuwe Album",
+                "createOrEditLabel": "Maak of wijzig een Album"
+            },
+            "created": "A new Album is created with identifier {{ param }}",
+            "updated": "A Album is updated with identifier {{ param }}",
+            "deleted": "A Album is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Album {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Album"
+            },
+            "name": "Name",
+            "numSongs": "Num Songs",
+            "releaseDate": "Release Date",
+            "band": "Band",
+            "song": "Song",
+            "valoracion": "Valoracion",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,65 @@
+
+<div *ngIf="artist">
+    <h2><span jhiTranslate="rockbible3App.artist.detail.title">Artist</span> {{artist.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.artist.name">Name</span></dt>
+        <dd>
+            <span>{{artist.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.sexo">Sexo</span></dt>
+        <dd>
+            <span jhiTranslate="{{'rockbible3App.Sex.' + artist.sexo}}">{{artist.sexo}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.born">Born</span></dt>
+        <dd>
+            <span>{{artist.born | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.deathDate">Death Date</span></dt>
+        <dd>
+            <span>{{artist.deathDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'rockbible3App.Status.' + artist.status}}">{{artist.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.band">Band</span></dt>
+        <dd>
+            <div *ngIf="artist.band">
+                <a [routerLink]="['/band', artist.band?.id]">{{artist.band?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.country">Country</span></dt>
+        <dd>
+            <div *ngIf="artist.country">
+                <a [routerLink]="['/country', artist.country?.id]">{{artist.country?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.label">Label</span></dt>
+        <dd>
+            <div *ngIf="artist.label">
+                <a [routerLink]="['/label', artist.label?.id]">{{artist.label?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.artist.instrument">Instrument</span></dt>
+        <dd>
+            <span *ngFor="let instrument of artist.instruments; let last = last">
+                <a [routerLink]="['/instrument', instrument?.id ]">{{instrument.name}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'artist/'+ artist.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

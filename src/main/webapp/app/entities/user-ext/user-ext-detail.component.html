@@ -1,0 +1,52 @@
+
+<div *ngIf="userExt">
+    <h2><span jhiTranslate="rockbible3App.userExt.detail.title">User Ext</span> {{userExt.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.userExt.image">Image</span></dt>
+        <dd>
+            <div *ngIf="userExt.image">
+                <a (click)="openFile(userExt.imageContentType, userExt.image)">
+                    <img [src]="'data:' + userExt.imageContentType + ';base64,' + userExt.image" style="max-width: 100%;" alt="userExt image"/>
+                </a>
+                {{userExt.imageContentType}}, {{byteSize(userExt.image)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.userExt.latitude">Latitude</span></dt>
+        <dd>
+            <span>{{userExt.latitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.userExt.logitude">Logitude</span></dt>
+        <dd>
+            <span>{{userExt.logitude}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.userExt.locationGoogleMaps">Location Google Maps</span></dt>
+        <dd>
+            <span>{{userExt.locationGoogleMaps}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.userExt.user">User</span></dt>
+        <dd>
+            {{userExt.user?.login}}
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.userExt.album">Album</span></dt>
+        <dd>
+            <span *ngFor="let album of userExt.albums; let last = last">
+                <a [routerLink]="['/album', album?.id ]">{{album.name}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'user-ext/'+ userExt.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

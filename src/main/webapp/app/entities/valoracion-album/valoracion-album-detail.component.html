@@ -1,0 +1,43 @@
+
+<div *ngIf="valoracionAlbum">
+    <h2><span jhiTranslate="rockbible3App.valoracionAlbum.detail.title">Valoracion Album</span> {{valoracionAlbum.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="rockbible3App.valoracionAlbum.puntuacion">Puntuacion</span></dt>
+        <dd>
+            <span>{{valoracionAlbum.puntuacion}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionAlbum.like">Like</span></dt>
+        <dd>
+            <span>{{valoracionAlbum.like}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionAlbum.timestamp">Timestamp</span></dt>
+        <dd>
+            <span>{{valoracionAlbum.timestamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionAlbum.album">Album</span></dt>
+        <dd>
+            <div *ngIf="valoracionAlbum.album">
+                <a [routerLink]="['/album', valoracionAlbum.album?.id]">{{valoracionAlbum.album?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionAlbum.user">User</span></dt>
+        <dd>
+            {{valoracionAlbum.user?.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'valoracion-album/'+ valoracionAlbum.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

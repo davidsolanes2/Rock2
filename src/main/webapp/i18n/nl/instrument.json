@@ -1,0 +1,22 @@
+{
+    "rockbible3App": {
+        "instrument" : {
+            "home": {
+                "title": "Instruments",
+                "createLabel": "Maak een nieuwe Instrument",
+                "createOrEditLabel": "Maak of wijzig een Instrument"
+            },
+            "created": "A new Instrument is created with identifier {{ param }}",
+            "updated": "A Instrument is updated with identifier {{ param }}",
+            "deleted": "A Instrument is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Instrument {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Instrument"
+            },
+            "name": "Name",
+            "artist": "Artist"
+        }
+    }
+}

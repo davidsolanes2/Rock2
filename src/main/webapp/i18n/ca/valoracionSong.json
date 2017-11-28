@@ -1,0 +1,25 @@
+{
+    "rockbible3App": {
+        "valoracionSong" : {
+            "home": {
+                "title": "Valoracion Songs",
+                "createLabel": "Create a new Valoracion Song",
+                "createOrEditLabel": "Create or edit a Valoracion Song"
+            },
+            "created": "A new Valoracion Song is created with identifier {{ param }}",
+            "updated": "A Valoracion Song is updated with identifier {{ param }}",
+            "deleted": "A Valoracion Song is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Valoracion Song {{ id }}?"
+            },
+            "detail": {
+                "title": "Valoracion Song"
+            },
+            "puntuacion": "Puntuacion",
+            "like": "Like",
+            "timestamp": "Timestamp",
+            "song": "Song",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,82 @@
+<div>
+    <h2>
+        <span jhiTranslate="rockbible3App.band.home.title">Bands</span>
+        <button class="btn btn-primary float-right jh-create-entity create-band" [routerLink]="['/', { outlets: { popup: ['band-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rockbible3App.band.home.createLabel">
+            Create new Band
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="bands">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="rockbible3App.band.name">Name</span></th>
+            <th><span jhiTranslate="rockbible3App.band.locationGoogleMaps">Location Google Maps</span></th>
+            <th><span jhiTranslate="rockbible3App.band.latitude">Latitude</span></th>
+            <th><span jhiTranslate="rockbible3App.band.logitude">Logitude</span></th>
+            <th><span jhiTranslate="rockbible3App.band.status">Status</span></th>
+            <th><span jhiTranslate="rockbible3App.band.country">Country</span></th>
+            <th><span jhiTranslate="rockbible3App.band.label">Label</span></th>
+            <th><span jhiTranslate="rockbible3App.band.genre">Genre</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let band of bands ;trackBy: trackId">
+                <td><a [routerLink]="['../band', band.id ]">{{band.id}}</a></td>
+                <td>{{band.name}}</td>
+                <td>{{band.locationGoogleMaps}}</td>
+                <td>{{band.latitude}}</td>
+                <td>{{band.logitude}}</td>
+                <td jhiTranslate="{{'rockbible3App.Status.' + band.status}}">{{band.status}}</td>
+                <td>
+                    <div *ngIf="band.country">
+                        <a [routerLink]="['../country', band.country?.id ]" >{{band.country?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="band.label">
+                        <a [routerLink]="['../label', band.label?.id ]" >{{band.label?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <span *ngFor="let genre of band.genres; let last = last">
+                            <a class="form-control-static" [routerLink]="['../genre', genre?.id ]">{{genre.name}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../band', band.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'band/'+ band.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'band/'+ band.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div>
+    <h2>
+        <span jhiTranslate="rockbible3App.artist.home.title">Artists</span>
+        <button class="btn btn-primary float-right jh-create-entity create-artist" [routerLink]="['/', { outlets: { popup: ['artist-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="rockbible3App.artist.home.createLabel">
+            Create new Artist
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="artists">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.name">Name</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.sexo">Sexo</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.born">Born</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.deathDate">Death Date</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.status">Status</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.band">Band</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.country">Country</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.label">Label</span></th>
+            <th><span jhiTranslate="rockbible3App.artist.instrument">Instrument</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let artist of artists ;trackBy: trackId">
+                <td><a [routerLink]="['../artist', artist.id ]">{{artist.id}}</a></td>
+                <td>{{artist.name}}</td>
+                <td jhiTranslate="{{'rockbible3App.Sex.' + artist.sexo}}">{{artist.sexo}}</td>
+                <td>{{artist.born | date:'mediumDate'}}</td>
+                <td>{{artist.deathDate | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'rockbible3App.Status.' + artist.status}}">{{artist.status}}</td>
+                <td>
+                    <div *ngIf="artist.band">
+                        <a [routerLink]="['../band', artist.band?.id ]" >{{artist.band?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="artist.country">
+                        <a [routerLink]="['../country', artist.country?.id ]" >{{artist.country?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="artist.label">
+                        <a [routerLink]="['../label', artist.label?.id ]" >{{artist.label?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <span *ngFor="let instrument of artist.instruments; let last = last">
+                            <a class="form-control-static" [routerLink]="['../instrument', instrument?.id ]">{{instrument.name}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../artist', artist.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'artist/'+ artist.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'artist/'+ artist.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

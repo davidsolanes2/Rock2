@@ -42,6 +42,37 @@ public class CacheConfiguration {
             cm.createCache(com.rockbible3.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.rockbible3.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.rockbible3.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Country.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Country.class.getName() + ".bands", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Country.class.getName() + ".artists", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Genre.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Genre.class.getName() + ".bands", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Album.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Album.class.getName() + ".songs", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Album.class.getName() + ".valoracions", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Album.class.getName() + ".users", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Song.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Song.class.getName() + ".valoracions", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Artist.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Artist.class.getName() + ".instruments", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Artist.class.getName() + ".valoracions", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Band.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Band.class.getName() + ".genres", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Band.class.getName() + ".albums", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Band.class.getName() + ".artists", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Band.class.getName() + ".valoracions", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Social.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Instrument.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Instrument.class.getName() + ".artists", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Label.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Label.class.getName() + ".bands", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Label.class.getName() + ".artists", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.UserExt.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.UserExt.class.getName() + ".albums", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.ValoracionAlbum.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.ValoracionSong.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.ValoracionArtist.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.ValoracionBand.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

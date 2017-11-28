@@ -1,0 +1,67 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "band",
+            "otherEntityName": "band",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "label",
+            "otherEntityName": "label",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "artist",
+            "relationshipName": "instrument",
+            "otherEntityName": "instrument",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "valoracion",
+            "otherEntityName": "valoracionArtist",
+            "otherEntityRelationshipName": "artist"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sexo",
+            "fieldType": "Sex",
+            "fieldValues": "HOMBRE,MUJER,OTROS"
+        },
+        {
+            "fieldName": "born",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "deathDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "ACTIVO,DESCANSO,RETIRADO"
+        }
+    ],
+    "changelogDate": "20171128115918",
+    "entityTableName": "artist",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}
