@@ -54,10 +54,10 @@ local.properties
 .idea/
 *.iml
 *.iws
-*.ipr
-*.ids
-*.orig
+-*.orig
 classes/
+src/main/resources/config/application-dev.yml
+src/main/resources/config/application-prod.yml
 
 ######################
 # Visual Studio Code
