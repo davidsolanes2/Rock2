@@ -4,6 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.rockbible3.domain.ValoracionAlbum;
 
 import com.rockbible3.repository.ValoracionAlbumRepository;
+import com.rockbible3.service.dto.ValoracionAlbumStats;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -101,6 +102,19 @@ public class ValoracionAlbumResource {
         log.debug("REST request to get ValoracionAlbum : {}", id);
         ValoracionAlbum valoracionAlbum = valoracionAlbumRepository.findOne(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(valoracionAlbum));
+    }
+
+    @GetMapping("/album-rating-stats/{id}")
+    @Timed
+    public ResponseEntity<ValoracionAlbumStats> getStatsAlbum(@PathVariable Long id) {
+
+        ValoracionAlbumStats stats = valoracionAlbumRepository.findAlbumsStats(id);
+
+        if (stats.getAlbum() == null) {
+            stats = null;
+
+        }
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stats));
     }
 
     /**
