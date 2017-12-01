@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
 
+import java.util.List;
+
 
 /**
  * Spring Data JPA repository for the Album entity.
@@ -12,5 +14,11 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Long> {
+
+    //List<Album> findByBand_NameBand(String bandaNombre);
+    List<Album> findByBand_Name(String nombreBanda);
+
+    //List<Album> findByBand_NameBandContaining(String bandaNombre);
+    List<Album> findByBand_NameContaining(String bandaNombre);
 
 }
