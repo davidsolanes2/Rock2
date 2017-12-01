@@ -117,6 +117,9 @@ public class BandResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
+    /**
+     * Buscar Banda por Nombre
+     */
     @GetMapping("/band-by-name/{nombreBanda}")
     @Timed
     public ResponseEntity<List<Band>> getBandByName(@PathVariable String nombreBanda){
@@ -128,8 +131,27 @@ public class BandResource {
     @GetMapping("/band-by-nameContaining/{nombreBanda}")
     @Timed
     public ResponseEntity<List<Band>> getBansByNameContaining(@PathVariable String nombreBanda){
-                log.debug("Rest request to get artist by Name containing", nombreBanda);
+                log.debug("Rest request to get Band by Name Containing", nombreBanda);
                 List<Band> bands = bandRepository.findBandByNameContaining(nombreBanda);
                 return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
             }
+
+    /**
+     * Buscar Banda por Nombre del Artista
+     */
+    @GetMapping("/band-by-artists/{nombreArtista}")
+    @Timed
+    public ResponseEntity<List<Band>> getBandByArtists(@PathVariable String nombreArtista){
+        log.debug("Rest request to get Band by ArtistsName", nombreArtista);
+        List<Band> bands = bandRepository.findBandByArtistsName(nombreArtista);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
+    }
+
+    @GetMapping("/band-by-artistContaining/{nombreArtista}")
+    @Timed
+    public ResponseEntity<List<Band>> getBansByArtistContaining(@PathVariable String nombreArtista){
+        log.debug("Rest request to get Band by ArtistsName Containing", nombreArtista);
+        List<Band> bands = bandRepository.findBandByArtistsNameContaining(nombreArtista);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
+    }
 }
