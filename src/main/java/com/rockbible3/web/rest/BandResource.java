@@ -116,4 +116,20 @@ public class BandResource {
         bandRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
+
+    @GetMapping("/band-by-name/{nombreBanda}")
+    @Timed
+    public ResponseEntity<List<Band>> getBandByName(@PathVariable String nombreBanda){
+                log.debug("Rest request to get Band by Name", nombreBanda);
+                List<Band> bands = bandRepository.findBandByName(nombreBanda);
+                return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
+            }
+
+    @GetMapping("/band-by-nameContaining/{nombreBanda}")
+    @Timed
+    public ResponseEntity<List<Band>> getBansByNameContaining(@PathVariable String nombreBanda){
+                log.debug("Rest request to get artist by Name containing", nombreBanda);
+                List<Band> bands = bandRepository.findBandByNameContaining(nombreBanda);
+                return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
+            }
 }

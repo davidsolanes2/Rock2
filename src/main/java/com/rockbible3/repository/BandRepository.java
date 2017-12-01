@@ -19,4 +19,6 @@ public interface BandRepository extends JpaRepository<Band, Long> {
     @Query("select band from Band band left join fetch band.genres where band.id =:id")
     Band findOneWithEagerRelationships(@Param("id") Long id);
 
+    List<Band> findBandByName(String nombreBanda);
+    List<Band> findBandByNameContaining(String nombreBanda);
 }
