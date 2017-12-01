@@ -103,6 +103,22 @@ public class SongResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(song));
     }
 
+    @GetMapping("/song-by-name/{songNombre}")
+    @Timed
+    public ResponseEntity<List<Song>> getArtistsByName(@PathVariable String songNombre){
+        log.debug("Rest request to get song by Name", songNombre );
+        List<Song> songs = songRepository.findByName(songNombre);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(songs));
+    }
+
+    @GetMapping("/song-by-nameContaining/{songNombre}")
+    @Timed
+    public ResponseEntity<List<Song>> getArtistByNameContaining(@PathVariable String songNombre){
+        log.debug("Rest request to get song by Name containing", songNombre);
+        List<Song> songs = songRepository.findByNameContaining(songNombre);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(songs));
+    }
+
     /**
      * DELETE  /songs/:id : delete the "id" song.
      *

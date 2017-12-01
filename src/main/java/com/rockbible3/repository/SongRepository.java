@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
 
+import java.util.List;
+
 
 /**
  * Spring Data JPA repository for the Song entity.
@@ -12,5 +14,8 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface SongRepository extends JpaRepository<Song, Long> {
+
+    List<Song> findByName(String songNombre);
+    List<Song> findByNameContaining(String songNombre);
 
 }
