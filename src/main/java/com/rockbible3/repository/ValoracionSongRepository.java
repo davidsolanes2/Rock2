@@ -1,6 +1,8 @@
 package com.rockbible3.repository;
 
 import com.rockbible3.domain.ValoracionSong;
+import com.rockbible3.service.dto.ValoracionSongStats;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
@@ -15,5 +17,10 @@ public interface ValoracionSongRepository extends JpaRepository<ValoracionSong, 
 
     @Query("select valoracion_song from ValoracionSong valoracion_song where valoracion_song.user.login = ?#{principal.username}")
     List<ValoracionSong> findByUserIsCurrentUser();
+
+    @Query("select new com.rockbible3.service.dto.ValoracionSongStats(valoracionSong.song , " +
+        "avg(valoracionSong.puntuacion), max(valoracionSong.puntuacion), min(valoracionSong.puntuacion)) " +
+        "from ValoracionSong valoracionSong where valoracionSong.song.id = :songId")
+    ValoracionSongStats findSongsStats(@Param("songId") Long Id);
 
 }

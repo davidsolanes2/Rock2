@@ -103,6 +103,22 @@ public class AlbumResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(album));
     }
 
+    @GetMapping("/albums-by-band/{bandaNombre}")
+    @Timed
+     public ResponseEntity<List<Album>> getAlbumsbyBandName(@PathVariable String bandaNombre){
+        log.debug("REST request to get Artist : {}", bandaNombre);
+        List<Album> albums = albumRepository.findByBand_Name(bandaNombre);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(albums));
+    }
+
+    @GetMapping("/albums-by-band-containing/{bandaNombre}")
+    @Timed
+    public ResponseEntity<List<Album>> getAlbumsbyBandNameContaining(@PathVariable String bandaNombre){
+        log.debug("REST request to get Artist : {}", bandaNombre);
+        List<Album> albums = albumRepository.findByBand_NameContaining(bandaNombre);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(albums));
+    }
+
     /**
      * DELETE  /albums/:id : delete the "id" album.
      *
