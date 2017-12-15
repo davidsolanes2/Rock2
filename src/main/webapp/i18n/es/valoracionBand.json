@@ -18,8 +18,7 @@
             "puntuacion": "Puntuacion",
             "like": "Like",
             "timestamp": "Timestamp",
-            "band": "Band",
-            "user": "User"
+            "band": "Band"
         }
     }
 }

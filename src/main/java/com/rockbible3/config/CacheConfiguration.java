@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
+import org.springframework.stereotype.Repository;
 
 @Configuration
 @EnableCaching
@@ -22,8 +23,10 @@ import org.springframework.context.annotation.*;
 public class CacheConfiguration {
 
     private final javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration;
+    private JHipsterProperties jHipsterProperties;
 
     public CacheConfiguration(JHipsterProperties jHipsterProperties) {
+        this.jHipsterProperties = jHipsterProperties;
         JHipsterProperties.Cache.Ehcache ehcache =
             jHipsterProperties.getCache().getEhcache();
 
@@ -73,6 +76,8 @@ public class CacheConfiguration {
             cm.createCache(com.rockbible3.domain.ValoracionSong.class.getName(), jcacheConfiguration);
             cm.createCache(com.rockbible3.domain.ValoracionArtist.class.getName(), jcacheConfiguration);
             cm.createCache(com.rockbible3.domain.ValoracionBand.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Genre.class.getName() + ".songs", jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.Song.class.getName() + ".genres", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

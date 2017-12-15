@@ -19,6 +19,7 @@
             <th><span jhiTranslate="global.field.id">ID</span></th>
             <th><span jhiTranslate="rockbible3App.song.name">Name</span></th>
             <th><span jhiTranslate="rockbible3App.song.description">Description</span></th>
+            <th><span jhiTranslate="rockbible3App.song.genre">Genre</span></th>
             <th><span jhiTranslate="rockbible3App.song.album">Album</span></th>
             <th></th>
             </tr>
@@ -28,6 +29,11 @@
                 <td><a [routerLink]="['../song', song.id ]">{{song.id}}</a></td>
                 <td>{{song.name}}</td>
                 <td>{{song.description}}</td>
+                <td>
+                    <div *ngIf="song.genre">
+                        <a [routerLink]="['../genre', song.genre?.id ]" >{{song.genre?.name}}</a>
+                    </div>
+                </td>
                 <td>
                     <div *ngIf="song.album">
                         <a [routerLink]="['../album', song.album?.id ]" >{{song.album?.name}}</a>

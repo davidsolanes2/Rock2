@@ -10,7 +10,6 @@ import { ValoracionBand } from './valoracion-band.model';
 import { ValoracionBandPopupService } from './valoracion-band-popup.service';
 import { ValoracionBandService } from './valoracion-band.service';
 import { Band, BandService } from '../band';
-import { User, UserService } from '../../shared';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
@@ -24,14 +23,11 @@ export class ValoracionBandDialogComponent implements OnInit {
 
     bands: Band[];
 
-    users: User[];
-
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
         private valoracionBandService: ValoracionBandService,
         private bandService: BandService,
-        private userService: UserService,
         private eventManager: JhiEventManager
     ) {
     }
@@ -40,8 +36,6 @@ export class ValoracionBandDialogComponent implements OnInit {
         this.isSaving = false;
         this.bandService.query()
             .subscribe((res: ResponseWrapper) => { this.bands = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
-        this.userService.query()
-            .subscribe((res: ResponseWrapper) => { this.users = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -79,10 +73,6 @@ export class ValoracionBandDialogComponent implements OnInit {
     }
 
     trackBandById(index: number, item: Band) {
-        return item.id;
-    }
-
-    trackUserById(index: number, item: User) {
         return item.id;
     }
 }

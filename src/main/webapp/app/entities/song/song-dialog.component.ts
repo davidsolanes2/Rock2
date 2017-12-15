@@ -9,6 +9,7 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { Song } from './song.model';
 import { SongPopupService } from './song-popup.service';
 import { SongService } from './song.service';
+import { Genre, GenreService } from '../genre';
 import { Album, AlbumService } from '../album';
 import { ResponseWrapper } from '../../shared';
 
@@ -21,12 +22,15 @@ export class SongDialogComponent implements OnInit {
     song: Song;
     isSaving: boolean;
 
+    genres: Genre[];
+
     albums: Album[];
 
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
         private songService: SongService,
+        private genreService: GenreService,
         private albumService: AlbumService,
         private eventManager: JhiEventManager
     ) {
@@ -34,6 +38,8 @@ export class SongDialogComponent implements OnInit {
 
     ngOnInit() {
         this.isSaving = false;
+        this.genreService.query()
+            .subscribe((res: ResponseWrapper) => { this.genres = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
         this.albumService.query()
             .subscribe((res: ResponseWrapper) => { this.albums = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
@@ -70,6 +76,10 @@ export class SongDialogComponent implements OnInit {
 
     private onError(error: any) {
         this.jhiAlertService.error(error.message, null, null);
+    }
+
+    trackGenreById(index: number, item: Genre) {
+        return item.id;
     }
 
     trackAlbumById(index: number, item: Album) {
