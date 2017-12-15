@@ -27,6 +27,11 @@ public class Genre implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @OneToMany(mappedBy = "genre")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Song> songs = new HashSet<>();
+
     @ManyToMany(mappedBy = "genres")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -52,6 +57,31 @@ public class Genre implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Song> getSongs() {
+        return songs;
+    }
+
+    public Genre songs(Set<Song> songs) {
+        this.songs = songs;
+        return this;
+    }
+
+    public Genre addSong(Song song) {
+        this.songs.add(song);
+        song.setGenre(this);
+        return this;
+    }
+
+    public Genre removeSong(Song song) {
+        this.songs.remove(song);
+        song.setGenre(null);
+        return this;
+    }
+
+    public void setSongs(Set<Song> songs) {
+        this.songs = songs;
     }
 
     public Set<Band> getBands() {

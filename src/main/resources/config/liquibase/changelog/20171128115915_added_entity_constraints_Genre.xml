@@ -4,15 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <!--
-        Added the constraints for entity ValoracionBand.
+        Added the constraints for entity Genre.
     -->
-    <changeSet id="20171128115927-2" author="jhipster">
+    <changeSet id="20171128115915-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="band_id"
-                                 baseTableName="valoracion_band"
-                                 constraintName="fk_valoracion_band_band_id"
+        <addForeignKeyConstraint baseColumnNames="song_id"
+                                 baseTableName="genre"
+                                 constraintName="fk_genre_song_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="band"/>
+                                 referencedTableName="song"/>
 
     </changeSet>
 </databaseChangeLog>

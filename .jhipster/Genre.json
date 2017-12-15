@@ -2,6 +2,12 @@
     "fluentMethods": true,
     "relationships": [
         {
+            "relationshipType": "one-to-many",
+            "relationshipName": "song",
+            "otherEntityName": "song",
+            "otherEntityRelationshipName": "genre"
+        },
+        {
             "relationshipType": "many-to-many",
             "relationshipName": "band",
             "otherEntityName": "band",

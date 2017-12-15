@@ -31,6 +31,9 @@ public class Song implements Serializable {
     private String description;
 
     @ManyToOne
+    private Genre genre;
+
+    @ManyToOne
     private Album album;
 
     @OneToMany(mappedBy = "song")
@@ -71,6 +74,19 @@ public class Song implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public Song genre(Genre genre) {
+        this.genre = genre;
+        return this;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
     public Album getAlbum() {

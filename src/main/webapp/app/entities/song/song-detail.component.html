@@ -12,6 +12,12 @@
         <dd>
             <span>{{song.description}}</span>
         </dd>
+        <dt><span jhiTranslate="rockbible3App.song.genre">Genre</span></dt>
+        <dd>
+            <div *ngIf="song.genre">
+                <a [routerLink]="['/genre', song.genre?.id]">{{song.genre?.name}}</a>
+            </div>
+        </dd>
         <dt><span jhiTranslate="rockbible3App.song.album">Album</span></dt>
         <dd>
             <div *ngIf="song.album">

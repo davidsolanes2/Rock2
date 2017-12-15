@@ -94,6 +94,7 @@ entity ValoracionBand{
 /*Many To One*/
 relationship ManyToOne {
     Album{band(name)} to Band{album},
+    Song{genre(name)} to Genre{song},
     Song{album(name)} to Album{song},
     Artist{band(name)} to Band{artist},
     Band{country(name)} to Country{band},
@@ -106,8 +107,7 @@ relationship ManyToOne {
     ValoracionSong{user(login)} to User,
     ValoracionArtist{artist(name)} to Artist{valoracion},
     ValoracionArtist{user(login)} to User,
-    ValoracionBand{band(name)} to Band{valoracion},
-    ValoracionBand{user(login)} to User
+    ValoracionBand{band(name)} to Band{valoracion}
 
 }
 
