@@ -1,6 +1,7 @@
 package com.rockbible3.repository;
 
 import com.rockbible3.domain.Band;
+import com.rockbible3.domain.Genre;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
@@ -30,4 +31,11 @@ public interface BandRepository extends JpaRepository<Band, Long> {
      */
     List<Band> findBandByArtistsName(String nombreArtista);
     List<Band> findBandByArtistsNameContaining(String nombreArtista);
+
+    /*
+    * Buscar Banda por Genero
+    * */
+    @Query("SELECT band FROM Band band where :genre member of band.genres")
+    List<Band> findBandByGenres(@Param("genre") Genre genre);
+
 }

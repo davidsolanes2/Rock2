@@ -4,11 +4,13 @@ import com.codahale.metrics.annotation.Timed;
 import com.rockbible3.domain.Band;
 
 import com.rockbible3.repository.BandRepository;
+import com.rockbible3.repository.GenreRepository;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +32,9 @@ public class BandResource {
     private static final String ENTITY_NAME = "band";
 
     private final BandRepository bandRepository;
+
+    @Autowired
+    private GenreRepository genreRepository;
 
     public BandResource(BandRepository bandRepository) {
         this.bandRepository = bandRepository;
@@ -152,6 +157,19 @@ public class BandResource {
     public ResponseEntity<List<Band>> getBansByArtistContaining(@PathVariable String nombreArtista){
         log.debug("Rest request to get Band by ArtistsName Containing", nombreArtista);
         List<Band> bands = bandRepository.findBandByArtistsNameContaining(nombreArtista);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
+    }
+
+    /*
+     *Buscar Banda por Genero al que pertenece
+     */
+    @GetMapping("/band-by-genre/{name}")
+    @Timed
+    public ResponseEntity<List<Band>> getBandByGenre(@PathVariable String name) {
+        log.debug("Rest quest to get Band by Genre", name);
+
+        List<Band> bands = bandRepository.findBandByGenres(genreRepository.findByName(name));
+
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
     }
 }

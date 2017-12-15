@@ -2,7 +2,6 @@ package com.rockbible3.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.rockbible3.domain.ValoracionAlbum;
-
 import com.rockbible3.repository.ValoracionAlbumRepository;
 import com.rockbible3.service.dto.ValoracionAlbumStats;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -117,6 +116,14 @@ public class ValoracionAlbumResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stats));
     }
 
+    @GetMapping("/album-rating-timestamp/{timestamp}")
+    @Timed
+    public ZonedDateTime getValoracionAlbumTime(@PathVariable ZonedDateTime timestamp) {
+
+        return valoracionAlbumRepository.findByTimestampBefore(timestamp);
+
+    }
+
     /**
      * DELETE  /valoracion-albums/:id : delete the "id" valoracionAlbum.
      *
@@ -130,4 +137,6 @@ public class ValoracionAlbumResource {
         valoracionAlbumRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
+
+
 }
