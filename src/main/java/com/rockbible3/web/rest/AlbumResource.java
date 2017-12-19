@@ -147,13 +147,13 @@ public class AlbumResource {
     public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("title") String title) {
 
         log.debug("REST request to handleFileUpload");
-        File theDir = new File("./src/main/webapp/uploads/albums");
+        File theDir = new File("./src/main/webapp/uploads/album");
         byte[] bytes;
         String albumTitle = "";
         try {
             if (!theDir.exists()) {
 
-                System.out.println("creating directory: /uploads/albums");
+                System.out.println("creating directory: /uploads/album");
                 boolean result = false;
                 try {
 
@@ -185,7 +185,7 @@ public class AlbumResource {
 
             BufferedOutputStream stream =
 
-                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/albums/" + albumTitle + ".jpg")));
+                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/album/" + albumTitle + ".jpg")));
 
             stream.write(file.getBytes());
 
