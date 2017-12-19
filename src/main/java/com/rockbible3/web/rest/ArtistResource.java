@@ -144,13 +144,13 @@ public class ArtistResource {
     public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
 
         log.debug("REST request to handleFileUpload");
-        File theDir = new File("./src/main/webapp/uploads/artist");
+        File theDir = new File("./src/main/webapp/uploads/artists");
         byte[] bytes;
         String artistPic = "";
         try {
             if (!theDir.exists()) {
 
-                System.out.println("creating directory: /uploads/artist");
+                System.out.println("creating directory: /uploads/artists");
                 boolean result = false;
                 try {
 
@@ -182,7 +182,7 @@ public class ArtistResource {
 
             BufferedOutputStream stream =
 
-                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/artist/" + artistPic + ".jpg")));
+                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/artists/" + artistPic + ".jpg")));
 
             stream.write(file.getBytes());
 
