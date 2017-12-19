@@ -168,13 +168,13 @@ public class BandResource {
     public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
 
         log.debug("REST request to handleFileUpload");
-        File theDir = new File("./src/main/webapp/uploads/bandpic");
+        File theDir = new File("./src/main/webapp/uploads/band");
         byte[] bytes;
         String nameBand = "";
         try {
             if (!theDir.exists()) {
 
-                System.out.println("creating directory: /uploads/bandpic");
+                System.out.println("creating directory: /uploads/band");
                 boolean result = false;
                 try {
 
@@ -206,7 +206,7 @@ public class BandResource {
 
             BufferedOutputStream stream =
 
-                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/bandpic/" + nameBand + ".jpg")));
+                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/band/" + nameBand + ".jpg")));
 
             stream.write(file.getBytes());
 
