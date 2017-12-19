@@ -196,4 +196,66 @@ public class UserResource {
         return ResponseEntity.ok().headers(HeaderUtil.createAlert( "userManagement.deleted", login)).build();
     }
 
+    //subir imagenes de user
+
+    //subir imagénes de artista
+    @RequestMapping(value = "/uploaduserpic",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+
+    public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
+
+        log.debug("REST request to handleFileUpload");
+        File theDir = new File("./src/main/webapp/uploads/user");
+        byte[] bytes;
+        String userPic = "";
+        try {
+            if (!theDir.exists()) {
+
+                System.out.println("creating directory: /uploads/user");
+                boolean result = false;
+                try {
+
+                    theDir.mkdir();
+
+                    result = true;
+
+                } catch (SecurityException se) {
+
+                    //handle it
+
+                }
+
+                if (result) {
+
+                    System.out.println("DIR created");
+
+                }
+
+            }
+
+            file.getContentType();
+
+            //Get name of file
+
+            userPic = name;
+
+            //Create new file in path
+
+            BufferedOutputStream stream =
+
+                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/user/" + userPic + ".jpg")));
+
+            stream.write(file.getBytes());
+
+            stream.close();
+
+            log.debug("You successfully uploaded " + file.getName() + "!");
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+
 }
