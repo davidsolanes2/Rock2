@@ -9,8 +9,12 @@ import lombok.Data;
 
         private Album album;
 
+
+
         public ValoracionAlbumStats(Album album, Double avg, Integer max, Integer min) {
             super(avg, max, min);
             this.album = album;
         }
+
+
     }

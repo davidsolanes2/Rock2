@@ -11,6 +11,7 @@ import lombok.Data;
 
 public class ValoracionStats {
 
+
     private Double avg;
     private Integer max;
     private Integer min;

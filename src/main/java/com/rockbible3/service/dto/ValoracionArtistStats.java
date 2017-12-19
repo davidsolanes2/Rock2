@@ -12,6 +12,7 @@ public class ValoracionArtistStats extends ValoracionStats{
     private Artist artist;
 
 
+
         public ValoracionArtistStats(Artist artist, Double avg, Integer max, Integer min) {
             super(avg, max, min);
             this.artist = artist;

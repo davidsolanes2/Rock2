@@ -10,6 +10,7 @@ public class ValoracionBandStats extends ValoracionStats {
     private Band band;
 
 
+
     public ValoracionBandStats(Band band, Double avg, Integer max, Integer min) {
         super(avg, max, min);
         this.band = band;
