@@ -12,9 +12,15 @@ import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -130,5 +136,51 @@ public class SongResource {
 
     }
 
+    //upload image de una cancion
 
+    @RequestMapping(value = "/upload",
+        method = RequestMethod.POST,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
+        log.debug("REST request to handleFileUpload");
+
+        File theDir = new File("./src/main/webapp/uploads");
+
+        byte[] bytes;
+
+        String nameSong = "";
+
+        try {
+
+            if (!theDir.exists()) {
+                System.out.println("creating directory: /uploads");
+                boolean result = false;
+
+                try {
+                    theDir.mkdir();
+                    result = true;
+                } catch (SecurityException se) {
+                    //handle it
+                }
+                if (result) {
+                    System.out.println("DIR created");
+                }
+            }
+
+            //Get name of file
+            nameSong = name;
+
+            //Create new file in path
+            BufferedOutputStream stream =
+                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/" + nameSong)));
+
+            stream.write(file.getBytes());
+            stream.close();
+            log.debug("You successfully uploaded " + file.getName() + "!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }
