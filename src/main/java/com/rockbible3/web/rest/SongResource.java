@@ -1,6 +1,7 @@
 package com.rockbible3.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.rockbible3.domain.Band;
 import com.rockbible3.domain.Song;
 
 import com.rockbible3.repository.SongRepository;
@@ -14,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import retrofit2.http.GET;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -130,5 +132,24 @@ public class SongResource {
 
     }
 
+    /**
+     * Buscar Canciones por Género
+     **/
+
+    @GetMapping("/song-by-genreName/{nombreGenero}")
+    @Timed
+    public ResponseEntity<List<Song>> getSongByGenreName(@PathVariable String nombreGenero){
+        log.debug("Buscando Canciones por nombre Género : ", nombreGenero);
+        List<Song> songs = songRepository.findSongByGenre_Name(nombreGenero);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(songs));
+    }
+
+    @GetMapping("/song-by-genreNameContaining/{nombreGenero}")
+    @Timed
+    public ResponseEntity<List<Song>> getSongByGenreNameContaining(@PathVariable String nombreGenero){
+        log.debug("Buscando Canciones por nombre parcial de Género : ", nombreGenero);
+        List<Song> songs = songRepository.findSongByGenre_NameContaining(nombreGenero);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(songs));
+    }
 
 }

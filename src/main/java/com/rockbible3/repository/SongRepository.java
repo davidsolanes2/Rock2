@@ -1,9 +1,12 @@
 package com.rockbible3.repository;
 
+
 import com.rockbible3.domain.Song;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
+
+import java.util.List;
 
 
 /**
@@ -13,4 +16,9 @@ import org.springframework.data.jpa.repository.*;
 @Repository
 public interface SongRepository extends JpaRepository<Song, Long> {
 
+    /**
+     * Buscar Song por Genre
+     */
+    List<Song> findSongByGenre_Name(String nombreGenero);
+    List<Song> findSongByGenre_NameContaining(String nombreGenero);
 }

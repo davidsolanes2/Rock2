@@ -132,7 +132,7 @@ public class BandResource {
                 log.debug("Rest request to get Band by Name", nombreBanda);
                 List<Band> bands = bandRepository.findBandByName(nombreBanda);
                 return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
-            }
+    }
 
     @GetMapping("/band-by-nameContaining/{nombreBanda}")
     @Timed
@@ -140,7 +140,7 @@ public class BandResource {
                 log.debug("Rest request to get Band by Name Containing", nombreBanda);
                 List<Band> bands = bandRepository.findBandByNameContaining(nombreBanda);
                 return ResponseUtil.wrapOrNotFound(Optional.ofNullable(bands));
-            }
+    }
 
     /**
      * Buscar Banda por Nombre del Artista

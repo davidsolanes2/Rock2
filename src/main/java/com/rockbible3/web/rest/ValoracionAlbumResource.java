@@ -116,13 +116,6 @@ public class ValoracionAlbumResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stats));
     }
 
-    @GetMapping("/album-rating-timestamp/{timestamp}")
-    @Timed
-    public ZonedDateTime getValoracionAlbumTime(@PathVariable ZonedDateTime timestamp) {
-
-        return valoracionAlbumRepository.findByTimestampBefore(timestamp);
-
-    }
 
     /**
      * DELETE  /valoracion-albums/:id : delete the "id" valoracionAlbum.
