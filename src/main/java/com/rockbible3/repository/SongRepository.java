@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.*;
 
 import java.util.List;
 
-
 /**
  * Spring Data JPA repository for the Song entity.
  */
@@ -17,7 +16,7 @@ import java.util.List;
 public interface SongRepository extends JpaRepository<Song, Long> {
 
     /**
-     * Buscar Song por Genre
+     * Buscar Song por GenreName
      */
     List<Song> findSongByGenre_Name(String nombreGenero);
     List<Song> findSongByGenre_NameContaining(String nombreGenero);
