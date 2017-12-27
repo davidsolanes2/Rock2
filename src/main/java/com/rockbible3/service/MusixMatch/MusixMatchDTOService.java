@@ -28,4 +28,31 @@ public class MusixMatchDTOService {
     }
 
 
+    public static MusixMatch getTrack(){
+        MusixMatch track = null;
+        Call<MusixMatch> callTracks = apiService.getTrack(1, "Justin Bieber", 5,"DESC", apiKey);
+        System.out.println(callTracks);
+        try {
+            track = callTracks.execute().body();
+            System.out.println(track);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return track;
+    }
+
+    public static MusixMatch getArtist(){
+        MusixMatch artist = null;
+        Call<MusixMatch> callArtists = apiService.getArtist(1,"Prodigy",5 ,apiKey);
+        System.out.println(callArtists);
+        try {
+            artist = callArtists.execute().body();
+            System.out.println(artist);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return artist;
+    }
+
+
 }

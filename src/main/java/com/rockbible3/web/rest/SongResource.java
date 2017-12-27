@@ -132,6 +132,12 @@ public class SongResource {
 
     }
 
+    @GetMapping("/getTrack/testInicial")
+    @Timed
+    public MusixMatch getTestInicialTrack() {
+        return MusixMatchDTOService.getTrack();
+
+    }
     /**
      * Buscar Canciones por Género
      **/

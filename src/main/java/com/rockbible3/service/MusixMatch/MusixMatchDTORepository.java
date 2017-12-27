@@ -18,6 +18,12 @@ import java.util.Map;
 public interface MusixMatchDTORepository {
 
 
+    public static String url = "http://api.musixmatch.com/ws/1.1/";
+    public static final Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl(url)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build();
+
     @GET("chart.tracks.get")
     Call<MusixMatch> getTopSongs(@Query("page") int page
         , @retrofit2.http.Query("page_size") int page_size
@@ -29,10 +35,22 @@ public interface MusixMatchDTORepository {
 
 
 
+  //  http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc
 
-    public static String url = "http://api.musixmatch.com/ws/1.1/";
-    public static final Retrofit retrofit = new Retrofit.Builder()
-        .baseUrl(url)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build();
+    @GET("track.search")
+    Call<MusixMatch> getTrack(@Query("page") int page
+        , @retrofit2.http.Query("q_artist") String q_artist
+        , @Query("page_size") int page_size
+        , @Query("track_rating") String track_rating
+        , @Query("apikey") String apiKey);
+
+
+
+    @GET("artist.search")
+    Call<MusixMatch> getArtist(@Query("page") int page
+        , @retrofit2.http.Query("q_artist") String q_artist
+        , @Query("page_size") int page_size
+        , @Query("apikey") String apiKey);
+
+
 }
