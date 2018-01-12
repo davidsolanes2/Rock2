@@ -4,6 +4,10 @@ import com.codahale.metrics.annotation.Timed;
 import com.rockbible3.domain.Artist;
 
 import com.rockbible3.repository.ArtistRepository;
+import com.rockbible3.service.MusixMatch.MusixMatchDTOService;
+import com.rockbible3.service.Ticketmaster.TicketmasterDTOService;
+import com.rockbible3.service.dto.MusixMatch.MusixMatch;
+import com.rockbible3.service.dto.Ticketmaster.Ticketmaster;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -195,6 +199,13 @@ public class ArtistResource {
             e.printStackTrace();
 
         }
+
+    }
+
+    @GetMapping("/getConcertsByArtist/testInicial")
+    @Timed
+    public Ticketmaster getTestInicial() {
+        return TicketmasterDTOService.getStageByArtist();
 
     }
 
