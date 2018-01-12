@@ -1,6 +1,8 @@
 package com.rockbible3.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.rockbible3.domain.Album;
+import com.rockbible3.domain.User;
 import com.rockbible3.domain.ValoracionAlbum;
 import com.rockbible3.repository.ValoracionAlbumRepository;
 import com.rockbible3.service.dto.ValoracionAlbumStats;
@@ -10,6 +12,7 @@ import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -49,6 +52,9 @@ public class ValoracionAlbumResource {
         if (valoracionAlbum.getId() != null) {
             throw new BadRequestAlertException("A new valoracionAlbum cannot already have an ID", ENTITY_NAME, "idexists");
         }
+
+        valoracionAlbum.setTimestamp(ZonedDateTime.now());
+
         ValoracionAlbum result = valoracionAlbumRepository.save(valoracionAlbum);
         return ResponseEntity.created(new URI("/api/valoracion-albums/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -130,6 +136,5 @@ public class ValoracionAlbumResource {
         valoracionAlbumRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-
 
 }

@@ -23,6 +23,9 @@ public interface ValoracionAlbumRepository extends JpaRepository<ValoracionAlbum
         "from ValoracionAlbum valoracionAlbum where valoracionAlbum.album.id = :albumId")
     ValoracionAlbumStats findAlbumsStats(@Param("albumId") Long Id);
 
-
+    /*
+    @Query("insert into valoracion_album(puntuacion,jhi_like,jhi_timestamp,album_id,user_id)"+
+        " values (:puntuacion,:jhi_like,Date.LocalDate)")
+    */
 
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,6 +51,9 @@ public class ValoracionArtistResource {
         if (valoracionArtist.getId() != null) {
             throw new BadRequestAlertException("A new valoracionArtist cannot already have an ID", ENTITY_NAME, "idexists");
         }
+
+        valoracionArtist.setTimestamp(ZonedDateTime.now());
+
         ValoracionArtist result = valoracionArtistRepository.save(valoracionArtist);
         return ResponseEntity.created(new URI("/api/valoracion-artists/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))

@@ -17,7 +17,7 @@
             },
             "puntuacion": "Puntuacion",
             "like": "Like",
-            "timestamp": "Timestamp",
+            "timestamp": "TimeStamp",
             "album": "Album",
             "user": "User"
         }
