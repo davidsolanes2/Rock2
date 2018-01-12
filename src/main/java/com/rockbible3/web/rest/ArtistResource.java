@@ -138,4 +138,65 @@ public class ArtistResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
+    //subir imagénes de artista
+    @RequestMapping(value = "/uploadartistpic",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+
+    public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
+
+        log.debug("REST request to handleFileUpload");
+        File theDir = new File("./src/main/webapp/uploads/artists");
+        byte[] bytes;
+        String artistPic = "";
+        try {
+            if (!theDir.exists()) {
+
+                System.out.println("creating directory: /uploads/artists");
+                boolean result = false;
+                try {
+
+                    theDir.mkdir();
+
+                    result = true;
+
+                } catch (SecurityException se) {
+
+                    //handle it
+
+                }
+
+                if (result) {
+
+                    System.out.println("DIR created");
+
+                }
+
+            }
+
+            file.getContentType();
+
+            //Get name of file
+
+            artistPic = name;
+
+            //Create new file in path
+
+            BufferedOutputStream stream =
+
+                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/artists/" + artistPic + ".jpg")));
+
+            stream.write(file.getBytes());
+
+            stream.close();
+
+            log.debug("You successfully uploaded " + file.getName() + "!");
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+
+
 }

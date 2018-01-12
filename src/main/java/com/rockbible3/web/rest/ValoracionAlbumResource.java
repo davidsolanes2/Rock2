@@ -122,7 +122,6 @@ public class ValoracionAlbumResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(stats));
     }
 
-
     /**
      * DELETE  /valoracion-albums/:id : delete the "id" valoracionAlbum.
      *
