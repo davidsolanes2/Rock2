@@ -4,6 +4,10 @@ import com.codahale.metrics.annotation.Timed;
 import com.rockbible3.domain.Artist;
 
 import com.rockbible3.repository.ArtistRepository;
+import com.rockbible3.service.MusixMatch.MusixMatchDTOService;
+import com.rockbible3.service.Ticketmaster.TicketmasterDTOService;
+import com.rockbible3.service.dto.MusixMatch.MusixMatch;
+import com.rockbible3.service.dto.Ticketmaster.Ticketmaster;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -137,5 +141,73 @@ public class ArtistResource {
         artistRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
+
+    //subir imagénes de artista
+    @RequestMapping(value = "/uploadartistpic",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+
+    public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
+
+        log.debug("REST request to handleFileUpload");
+        File theDir = new File("./src/main/webapp/uploads/artists");
+        byte[] bytes;
+        String artistPic = "";
+        try {
+            if (!theDir.exists()) {
+
+                System.out.println("creating directory: /uploads/artists");
+                boolean result = false;
+                try {
+
+                    theDir.mkdir();
+
+                    result = true;
+
+                } catch (SecurityException se) {
+
+                    //handle it
+
+                }
+
+                if (result) {
+
+                    System.out.println("DIR created");
+
+                }
+
+            }
+
+            file.getContentType();
+
+            //Get name of file
+
+            artistPic = name;
+
+            //Create new file in path
+
+            BufferedOutputStream stream =
+
+                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/artists/" + artistPic + ".jpg")));
+
+            stream.write(file.getBytes());
+
+            stream.close();
+
+            log.debug("You successfully uploaded " + file.getName() + "!");
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+
+    @GetMapping("/getConcertsByArtist/testInicial")
+    @Timed
+    public Ticketmaster getTestInicial() {
+        return TicketmasterDTOService.getStageByArtist();
+
+    }
+
 
 }
