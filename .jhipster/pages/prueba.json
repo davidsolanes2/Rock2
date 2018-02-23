@@ -1,0 +1,21 @@
+{
+    "pages": [
+        {
+            "pageName": "fromulario",
+            "pageType": "form",
+            "pageGlyphIcon": "music",
+            "fields": [
+                {
+                    "fieldName": "prueba",
+                    "fieldType": "String",
+                    "fieldValidateRules": [
+                        "pattern"
+                    ],
+                    "fieldValidateRulesPattern": "[a-d]"
+                }
+            ]
+        }
+    ],
+    "pageSetGlyphIcon": "glyphicon glyphicon-music",
+    "changelogDate": "20180208120445"
+}
