@@ -22,6 +22,7 @@
                 "valoracionSong": "Valoracion Song",
                 "valoracionArtist": "Valoracion Artist",
                 "valoracionBand": "Valoracion Band",
+                "collections": "Collections",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

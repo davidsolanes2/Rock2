@@ -22,6 +22,10 @@
                 <a [routerLink]="['/band', valoracionBand.band?.id]">{{valoracionBand.band?.name}}</a>
             </div>
         </dd>
+        <dt><span jhiTranslate="rockbible3App.valoracionBand.user">User</span></dt>
+        <dd>
+            {{valoracionBand.user?.login}}
+        </dd>
     </dl>
 
     <button type="submit"

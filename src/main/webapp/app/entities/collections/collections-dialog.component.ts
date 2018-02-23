@@ -6,31 +6,27 @@ import { Observable } from 'rxjs/Rx';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
-import { ValoracionBand } from './valoracion-band.model';
-import { ValoracionBandPopupService } from './valoracion-band-popup.service';
-import { ValoracionBandService } from './valoracion-band.service';
-import { Band, BandService } from '../band';
+import { Collections } from './collections.model';
+import { CollectionsPopupService } from './collections-popup.service';
+import { CollectionsService } from './collections.service';
 import { User, UserService } from '../../shared';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
-    selector: 'jhi-valoracion-band-dialog',
-    templateUrl: './valoracion-band-dialog.component.html'
+    selector: 'jhi-collections-dialog',
+    templateUrl: './collections-dialog.component.html'
 })
-export class ValoracionBandDialogComponent implements OnInit {
+export class CollectionsDialogComponent implements OnInit {
 
-    valoracionBand: ValoracionBand;
+    collections: Collections;
     isSaving: boolean;
-
-    bands: Band[];
 
     users: User[];
 
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
-        private valoracionBandService: ValoracionBandService,
-        private bandService: BandService,
+        private collectionsService: CollectionsService,
         private userService: UserService,
         private eventManager: JhiEventManager
     ) {
@@ -38,8 +34,6 @@ export class ValoracionBandDialogComponent implements OnInit {
 
     ngOnInit() {
         this.isSaving = false;
-        this.bandService.query()
-            .subscribe((res: ResponseWrapper) => { this.bands = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
         this.userService.query()
             .subscribe((res: ResponseWrapper) => { this.users = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
@@ -50,22 +44,22 @@ export class ValoracionBandDialogComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        if (this.valoracionBand.id !== undefined) {
+        if (this.collections.id !== undefined) {
             this.subscribeToSaveResponse(
-                this.valoracionBandService.update(this.valoracionBand));
+                this.collectionsService.update(this.collections));
         } else {
             this.subscribeToSaveResponse(
-                this.valoracionBandService.create(this.valoracionBand));
+                this.collectionsService.create(this.collections));
         }
     }
 
-    private subscribeToSaveResponse(result: Observable<ValoracionBand>) {
-        result.subscribe((res: ValoracionBand) =>
+    private subscribeToSaveResponse(result: Observable<Collections>) {
+        result.subscribe((res: Collections) =>
             this.onSaveSuccess(res), (res: Response) => this.onSaveError());
     }
 
-    private onSaveSuccess(result: ValoracionBand) {
-        this.eventManager.broadcast({ name: 'valoracionBandListModification', content: 'OK'});
+    private onSaveSuccess(result: Collections) {
+        this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
         this.isSaving = false;
         this.activeModal.dismiss(result);
     }
@@ -78,36 +72,32 @@ export class ValoracionBandDialogComponent implements OnInit {
         this.jhiAlertService.error(error.message, null, null);
     }
 
-    trackBandById(index: number, item: Band) {
-        return item.id;
-    }
-
     trackUserById(index: number, item: User) {
         return item.id;
     }
 }
 
 @Component({
-    selector: 'jhi-valoracion-band-popup',
+    selector: 'jhi-collections-popup',
     template: ''
 })
-export class ValoracionBandPopupComponent implements OnInit, OnDestroy {
+export class CollectionsPopupComponent implements OnInit, OnDestroy {
 
     routeSub: any;
 
     constructor(
         private route: ActivatedRoute,
-        private valoracionBandPopupService: ValoracionBandPopupService
+        private collectionsPopupService: CollectionsPopupService
     ) {}
 
     ngOnInit() {
         this.routeSub = this.route.params.subscribe((params) => {
             if ( params['id'] ) {
-                this.valoracionBandPopupService
-                    .open(ValoracionBandDialogComponent as Component, params['id']);
+                this.collectionsPopupService
+                    .open(CollectionsDialogComponent as Component, params['id']);
             } else {
-                this.valoracionBandPopupService
-                    .open(ValoracionBandDialogComponent as Component);
+                this.collectionsPopupService
+                    .open(CollectionsDialogComponent as Component);
             }
         });
     }

@@ -1,4 +1,4 @@
-import { BaseEntity } from './../../shared';
+import { BaseEntity, User } from './../../shared';
 
 export class ValoracionBand implements BaseEntity {
     constructor(
@@ -7,6 +7,7 @@ export class ValoracionBand implements BaseEntity {
         public like?: boolean,
         public timestamp?: any,
         public band?: BaseEntity,
+        public user?: User,
     ) {
         this.like = false;
     }

@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="band"/>
 
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="valoracion_band"
+                                 constraintName="fk_valoracion_band_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
     </changeSet>
 </databaseChangeLog>

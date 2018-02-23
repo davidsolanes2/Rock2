@@ -91,6 +91,14 @@ entity ValoracionBand{
     timestamp ZonedDateTime
 }
 
+entity Collections {
+    trackId String,
+    concertId String,
+    artistId String,
+    type String
+}
+
+
 /*Many To One*/
 relationship ManyToOne {
     Album{band(name)} to Band{album},
@@ -107,8 +115,9 @@ relationship ManyToOne {
     ValoracionSong{user(login)} to User,
     ValoracionArtist{artist(name)} to Artist{valoracion},
     ValoracionArtist{user(login)} to User,
-    ValoracionBand{band(name)} to Band{valoracion}
-
+    ValoracionBand{band(name)} to Band{valoracion},
+    ValoracionBand{user(login)} to User,
+    Collections {user(login)} to User
 }
 
 
@@ -125,10 +134,3 @@ relationship ManyToMany {
     UserExt{album(name)} to Album{user}
 
 }
-
-
-
-
-
-
-

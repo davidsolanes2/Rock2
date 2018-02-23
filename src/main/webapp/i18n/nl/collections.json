@@ -1,0 +1,25 @@
+{
+    "rockbible3App": {
+        "collections" : {
+            "home": {
+                "title": "Collections",
+                "createLabel": "Maak een nieuwe Collections",
+                "createOrEditLabel": "Maak of wijzig een Collections"
+            },
+            "created": "A new Collections is created with identifier {{ param }}",
+            "updated": "A Collections is updated with identifier {{ param }}",
+            "deleted": "A Collections is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Collections {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Collections"
+            },
+            "trackId": "Track Id",
+            "concertId": "Concert Id",
+            "artistId": "Artist Id",
+            "type": "Type",
+            "user": "User"
+        }
+    }
+}

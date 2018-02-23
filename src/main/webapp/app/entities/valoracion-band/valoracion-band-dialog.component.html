@@ -22,7 +22,6 @@
             <input type="checkbox" class="form-control" name="like" id="field_like"
                 [(ngModel)]="valoracionBand.like"  />
         </div>
-        <!--
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="rockbible3App.valoracionBand.timestamp" for="field_timestamp">Timestamp</label>
             <div class="d-flex">
@@ -30,12 +29,19 @@
                   />
             </div>
         </div>
-        -->
+
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="rockbible3App.valoracionBand.band" for="field_band">Band</label>
             <select class="form-control" id="field_band" name="band" [(ngModel)]="valoracionBand.band" >
                 <option [ngValue]="null"></option>
                 <option [ngValue]="bandOption.id === valoracionBand.band?.id ? valoracionBand.band : bandOption" *ngFor="let bandOption of bands; trackBy: trackBandById">{{bandOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="rockbible3App.valoracionBand.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" [(ngModel)]="valoracionBand.user" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userOption.id === valoracionBand.user?.id ? valoracionBand.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
             </select>
         </div>
     </div>
