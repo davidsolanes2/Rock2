@@ -97,11 +97,11 @@ public class ArtistResource {
     public List<Artist> getAllArtists() {
         log.debug("REST request to get all Artists");
         return artistRepository.findAllWithEagerRelationships();
-        }
+    }
 
     @GetMapping("/artists-by-name/{artistaNombre}")
     @Timed
-    public ResponseEntity<List<Artist>> getArtistsByName(@PathVariable String artistaNombre){
+    public ResponseEntity<List<Artist>> getArtistsByName(@PathVariable String artistaNombre) {
         log.debug("Rest request to get artists by Name", artistaNombre);
         List<Artist> artists = artistRepository.findByName(artistaNombre);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(artists));
@@ -109,11 +109,12 @@ public class ArtistResource {
 
     @GetMapping("/artist-by-nameContaining/{artistaNombre}")
     @Timed
-    public ResponseEntity<List<Artist>> getArtistByNameContaining(@PathVariable String artistaNombre){
+    public ResponseEntity<List<Artist>> getArtistByNameContaining(@PathVariable String artistaNombre) {
         log.debug("Rest request to get artist by Name containing", artistaNombre);
         List<Artist> artists = artistRepository.findByNameContaining(artistaNombre);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(artists));
     }
+
     /**
      * GET  /artists/:id : get the "id" artist.
      *
@@ -142,72 +143,19 @@ public class ArtistResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
-    //subir imagénes de artista
-    @RequestMapping(value = "/uploadartistpic",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-
-    public void handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
-
-        log.debug("REST request to handleFileUpload");
-        File theDir = new File("./src/main/webapp/uploads/artists");
-        byte[] bytes;
-        String artistPic = "";
-        try {
-            if (!theDir.exists()) {
-
-                System.out.println("creating directory: /uploads/artists");
-                boolean result = false;
-                try {
-
-                    theDir.mkdir();
-
-                    result = true;
-
-                } catch (SecurityException se) {
-
-                    //handle it
-
-                }
-
-                if (result) {
-
-                    System.out.println("DIR created");
-
-                }
-
-            }
-
-            file.getContentType();
-
-            //Get name of file
-
-            artistPic = name;
-
-            //Create new file in path
-
-            BufferedOutputStream stream =
-
-                new BufferedOutputStream(new FileOutputStream(new File("./src/main/webapp/uploads/artists/" + artistPic + ".jpg")));
-
-            stream.write(file.getBytes());
-
-            stream.close();
-
-            log.debug("You successfully uploaded " + file.getName() + "!");
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-
-        }
-
-    }
-
-    @GetMapping("/getConcertsByArtist/testInicial")
+    @GetMapping("/getArtistByName/{nombreArtist}")
     @Timed
-    public Ticketmaster getTestInicial() {
-        return TicketmasterDTOService.getStageByArtist();
-
+    public ResponseEntity<MusixMatch> getArtistByName(@PathVariable String nombreArtist) {
+        log.debug("Buscando Artista por nombre : ", nombreArtist);
+        MusixMatch artist = MusixMatchDTOService.getArtist(nombreArtist);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(artist));
     }
 
-
+    @GetMapping("/getConcertsByArtist/{nombreArtist}")
+    @Timed
+    public ResponseEntity<Ticketmaster> getArtistByName() {
+        log.debug("Buscando Conciertos por Artista : ");
+        Ticketmaster artist = TicketmasterDTOService.getStageByArtist();
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(artist));
+    }
 }

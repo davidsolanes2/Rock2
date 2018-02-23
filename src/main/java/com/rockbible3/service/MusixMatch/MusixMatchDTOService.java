@@ -17,9 +17,10 @@ public class MusixMatchDTOService {
     public static final String apiKey = "834e902d53b2e87b494431d7fda16e8f";
     static MusixMatchDTORepository apiService = MusixMatchDTORepository.retrofit.create(MusixMatchDTORepository.class);
 
+
     public static MusixMatch getTopSongs(){
         MusixMatch topSongs = null;
-        Call<MusixMatch> callTopSongs = apiService.getTopSongs(1, 5, "es", 1,  apiKey);
+        Call<MusixMatch> callTopSongs = apiService.getTopSongs(1, 10, "es", 1,  apiKey);
         System.out.println(callTopSongs);
         try {
             topSongs = callTopSongs.execute().body();
@@ -31,9 +32,9 @@ public class MusixMatchDTOService {
     }
 
 
-    public static MusixMatch getTrack(){
+    public static MusixMatch getTrack(String nombre){
         MusixMatch track = null;
-        Call<MusixMatch> callTracks = apiService.getTrack(1, "Justin Bieber", 5,"DESC", apiKey);
+        Call<MusixMatch> callTracks = apiService.getTrack(1, nombre, 20,"DESC", apiKey);
         System.out.println(callTracks);
         try {
             track = callTracks.execute().body();
@@ -44,9 +45,9 @@ public class MusixMatchDTOService {
         return track;
     }
 
-    public static MusixMatch getArtist(){
+    public static MusixMatch getArtist(String ArtistName){
         MusixMatch artist = null;
-        Call<MusixMatch> callArtists = apiService.getArtist(1,"Prodigy",5 ,apiKey);
+        Call<MusixMatch> callArtists = apiService.getArtist(1, ArtistName,1 ,apiKey);
         System.out.println(callArtists);
         try {
             artist = callArtists.execute().body();

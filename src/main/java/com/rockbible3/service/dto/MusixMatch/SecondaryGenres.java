@@ -9,13 +9,13 @@ public class SecondaryGenres {
 
     @SerializedName("music_genre_list")
     @Expose
-    private List<MusicGenreList_> musicGenreList = null;
+    private List<Object> musicGenreList = null;
 
-    public List<MusicGenreList_> getMusicGenreList() {
+    public List<Object> getMusicGenreList() {
         return musicGenreList;
     }
 
-    public void setMusicGenreList(List<MusicGenreList_> musicGenreList) {
+    public void setMusicGenreList(List<Object> musicGenreList) {
         this.musicGenreList = musicGenreList;
     }
 

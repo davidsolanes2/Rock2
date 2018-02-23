@@ -1,12 +1,13 @@
 package com.rockbible3.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import com.rockbible3.domain.Band;
 import com.rockbible3.domain.Song;
 
 import com.rockbible3.repository.SongRepository;
 import com.rockbible3.service.MusixMatch.MusixMatchDTOService;
+import com.rockbible3.service.Napster.NapsterDTOService;
 import com.rockbible3.service.dto.MusixMatch.MusixMatch;
+import com.rockbible3.service.dto.Napster.Napster;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -15,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import retrofit2.http.GET;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -132,12 +132,21 @@ public class SongResource {
 
     }
 
-    @GetMapping("/getTrack/testInicial")
+    @GetMapping("/topSongsNap/testInicial")
     @Timed
-    public MusixMatch getTestInicialTrack() {
-        return MusixMatchDTOService.getTrack();
+    public Napster getTopCanciones() {
+        return NapsterDTOService.getTopSongNap();
 
     }
+
+    @GetMapping("/getTrack-by-artistName/{nombreArtist}")
+    @Timed
+    public ResponseEntity<MusixMatch> getTrackByArtist(@PathVariable String nombreArtist){
+        log.debug("Buscando Canciones por nombre Artista : ", nombreArtist);
+        MusixMatch songs = MusixMatchDTOService.getTrack(nombreArtist);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(songs));
+    }
+
     /**
      * Buscar Canciones por Género
      **/

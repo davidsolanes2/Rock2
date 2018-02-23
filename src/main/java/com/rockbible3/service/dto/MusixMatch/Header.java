@@ -12,6 +12,9 @@ public class Header {
     @SerializedName("execute_time")
     @Expose
     private Double executeTime;
+    @SerializedName("available")
+    @Expose
+    private Integer available;
 
     public Integer getStatusCode() {
         return statusCode;
@@ -27,6 +30,14 @@ public class Header {
 
     public void setExecuteTime(Double executeTime) {
         this.executeTime = executeTime;
+    }
+
+    public Integer getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Integer available) {
+        this.available = available;
     }
 
 }

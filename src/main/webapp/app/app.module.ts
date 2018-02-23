@@ -8,12 +8,14 @@ import { Rockbible3SharedModule, UserRouteAccessService } from './shared';
 import { Rockbible3HomeModule } from './home/home.module';
 import { Rockbible3AdminModule } from './admin/admin.module';
 import { Rockbible3AccountModule } from './account/account.module';
+import { Rockbible3PageSetsModule } from './pages/page-sets.module';
 import { Rockbible3EntityModule } from './entities/entity.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
+import { HttpClientModule } from '@angular/common/http';
 
 import {
     JhiMainComponent,
@@ -23,7 +25,7 @@ import {
     ProfileService,
     PageRibbonComponent,
     ActiveMenuDirective,
-    ErrorComponent
+    ErrorComponent,
 } from './layouts';
 
 @NgModule({
@@ -34,9 +36,11 @@ import {
         Rockbible3SharedModule,
         Rockbible3HomeModule,
         Rockbible3AdminModule,
+        Rockbible3PageSetsModule,
         Rockbible3AccountModule,
         Rockbible3EntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
+        HttpClientModule,
     ],
     declarations: [
         JhiMainComponent,

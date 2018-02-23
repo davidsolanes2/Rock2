@@ -10,6 +10,62 @@ Main page styles
     background-size: contain;
 }
 
+.fondo{
+    background-size: cover;
+    background-image: url("../../content/images/fondoTopTracks.jpg");
+}
+
+.cover {
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 10px;
+    border: 2px solid #151515;
+    position: relative;
+}
+.audio{
+    align-content: center;
+    margin-top: 22%;
+    width: 100%;
+}
+
+.tituloSong{
+    color: white;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+}
+.overlayInfo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: gray;
+}
+.cover img{
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    float: left;
+    margin-left: 35%;
+    display: inline-block;
+    margin-top: 25%;
+}
+
+.cover:hover .overlayInfo{
+    opacity: 0.9;
+}
+
+.image{
+
+}
+
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),

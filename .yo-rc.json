@@ -37,5 +37,11 @@
       "nl",
       "es"
     ]
+  },
+  "generator-jhipster-pages": {
+    "promptValues": {
+      "pageSet": "_CreateNew_",
+      "pageType": "form"
+    }
   }
 }
