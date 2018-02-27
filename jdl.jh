@@ -92,9 +92,7 @@ entity ValoracionBand{
 }
 
 entity Collections {
-    trackId String,
-    concertId String,
-    artistId String,
+    NapsterId String,
     type String
 }
 

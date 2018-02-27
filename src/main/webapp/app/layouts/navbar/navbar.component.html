@@ -5,7 +5,7 @@
         </a>
         <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
             <span class="logo-img"></span>
-            <span jhiTranslate="global.title" class="navbar-title">Rockbible3</span> <span class="navbar-version">{{version}}</span>
+            <span jhiTranslate="global.title" class="navbar-title">PuigTheSong</span>
         </a>
     </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
@@ -33,6 +33,23 @@
                             </a>
                         </li>
                         <!-- jhipster-needle-add-element-to-prueba - JHipster will add elements to the prueba here -->
+                    </ul>
+                </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="pagehome-menu">
+                        <span>
+                            <i class="fa fa-panel with heading" aria-hidden="true"></i>
+                            <span>Usuario</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <li>
+                            <a class="dropdown-item" routerLink="pagehome-phome" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <i class="fa fa-panel with heading" aria-hidden="true"></i>&nbsp;
+                                <span jhiTranslate="global.menu.pagehome-phome">Home</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-element-to-pagehome - JHipster will add elements to the pagehome here -->
                     </ul>
                 </li>
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->

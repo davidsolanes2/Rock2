@@ -10,15 +10,7 @@
     ],
     "fields": [
         {
-            "fieldName": "trackId",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "concertId",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "artistId",
+            "fieldName": "napsterId",
             "fieldType": "String"
         },
         {

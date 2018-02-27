@@ -21,14 +21,8 @@ public class Collections implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "track_id")
-    private String trackId;
-
-    @Column(name = "concert_id")
-    private String concertId;
-
-    @Column(name = "artist_id")
-    private String artistId;
+    @Column(name = "napster_id")
+    private String napsterId;
 
     @Column(name = "jhi_type")
     private String type;
@@ -45,43 +39,17 @@ public class Collections implements Serializable {
         this.id = id;
     }
 
-    public String getTrackId() {
-        return trackId;
+    public String getNapsterId() {
+        return napsterId;
     }
 
-    public Collections trackId(String trackId) {
-        this.trackId = trackId;
+    public Collections napsterId(String napsterId) {
+        this.napsterId = napsterId;
         return this;
     }
 
-    public void setTrackId(String trackId) {
-        this.trackId = trackId;
-    }
-
-    public String getConcertId() {
-        return concertId;
-    }
-
-    public Collections concertId(String concertId) {
-        this.concertId = concertId;
-        return this;
-    }
-
-    public void setConcertId(String concertId) {
-        this.concertId = concertId;
-    }
-
-    public String getArtistId() {
-        return artistId;
-    }
-
-    public Collections artistId(String artistId) {
-        this.artistId = artistId;
-        return this;
-    }
-
-    public void setArtistId(String artistId) {
-        this.artistId = artistId;
+    public void setNapsterId(String napsterId) {
+        this.napsterId = napsterId;
     }
 
     public String getType() {
@@ -135,9 +103,7 @@ public class Collections implements Serializable {
     public String toString() {
         return "Collections{" +
             "id=" + getId() +
-            ", trackId='" + getTrackId() + "'" +
-            ", concertId='" + getConcertId() + "'" +
-            ", artistId='" + getArtistId() + "'" +
+            ", napsterId='" + getNapsterId() + "'" +
             ", type='" + getType() + "'" +
             "}";
     }

@@ -1,39 +1,226 @@
 <div class="fondo container-fluid">
-<div class="row">
-    <div class="col-sm-12" style="text-align: center"><h1>Top Canciones</h1></div>
-    <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-2 col-md-3 col-sm-6">
-        <div class="cover"  [style.background-image]="sanitizeImage(data.albumId)">
-            <div class="overlayInfo">
-                <div>
-                    <img class="image" src="../../content/images/heart-1.png" height="20px" width="20px"/>
-                    <audio controls class="audio">
-                        <source src="{{data.previewURL}}" type="audio/mpeg">
-                    </audio>
-                </div>
-            </div>
-        </div>
-        <p class="tituloSong" style="text-align: center; color: white">{{data.name}}</p>
-    </div>
-</div>
-    <br>
-    <div class="row">
-        <div class="col-sm-12">
-            <input [(ngModel)]="search" type="text" required>
-            <button class="btn btn-primary" (click)="searchSong()">Buscar</button>
-        </div>
-    </div>
-    <div class="row">
-        <div *ngFor="let data of DataSearch" class="infoDiv col-lg-2 col-md-3 col-sm-6">
-            <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
-                <div class="overlayInfo">
-                    <div>
-                        <audio controls class="audio">
-                            <source src="{{data.previewURL}}" type="audio/mpeg">
-                        </audio>
+    <section id="showcase">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="showcase-left">
+                        <!--<img src="https://media.giphy.com/media/AVgVoizvG6IBa/giphy.gif" alt="video"></img>-->
+                        <img src="https://ih0.redbubble.net/image.29497206.8072/sticker,375x360-bg,ffffff.u4.png" alt="relaaax">
                     </div>
-                    <div class="tituloSong">{{data.name}}</div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="showcase-right">
+                        <h1>Bienvenidos a Puigthesong</h1>
+                        <p>
+                            Ponemos a un Click la posibilidad de tener tus aficciones musicales organizadas
+                        </p>
+                    </div>
+                    <br>
+                    <a class="btn btn-default btn-lg showcase-btn"> Mas info!</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="section2">
+        <div class="container">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, error! Rerum deserunt expedita placeat aliquam non nisi vitae, porro quas repellat?
+                Iusto, error! Rerum deserunt expedita placeat aliquam"</p>
+            <p class="costumer"> - Borja</p>
+        </div>
+    </section>
+    <br>
+
+    <section id="info1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="info-left">
+                        <img src="https://ih1.redbubble.net/image.85474659.5054/sticker,375x360-bg,ffffff.u1.png" alt="diggity doggie">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="info-right">
+                        <h2>Tus artistas favoritos!</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vitae officiis. Voluptas similique voluptates quia accusamus!</p>
+                        <br>
+                        <a href="#" class="btn btn-default btn-lg"> Mas info!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="hr-style">
+
+        <section id="info2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="info-left">
+                            <h2>Los mejores conciertos!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vitae officiis. Voluptas similique voluptates quia accusamus!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="info-right">
+                            <h2>Tú música favorita!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vitae officiis. Voluptas similique voluptates quia accusamus!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-5">
+                    <div class="container">
+                        <!-- Trigger the modal with a button -->
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5"></div>
+                            <div class="col-sm-2 col-md-2">
+                                <button type="button" class="btn btn-lg" id="myBtn">Login</button>
+                            </div>
+                            <div class="col-sm-5 col-md-5"></div>
+                        </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" style="padding:35px 50px;">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                                    </div>
+                                    <div class="modal-body" style="padding:40px 50px;">
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Usuario</label>
+                                                <input type="text" class="form-control" id="usrname" placeholder="Introduce tu usuario">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Contraseña</label>
+                                                <input type="text" class="form-control" id="psw" placeholder="Introduce tu contraseña">
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" checked>Recuerdame</label>
+                                            </div>
+                                            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8">
+                                                <p><a href="#">Aún no eres miembro? Apúntate!</a></p>
+                                                <p><a href="#">Olvidaste la contraseña?</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-7">
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
+
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<!--JS del login con modal-->
+<script>
+
+    /*JS del SR*/
+    window.sr = ScrollReveal();
+    sr.reveal('.navbar',{
+        duration: 2000,
+        origin: 'bottom'
+    });
+
+    sr.reveal('.showcase-left',{
+        duration: 2000,
+        origin: 'top',
+        distance: '300px'
+    });
+
+    sr.reveal('.showcase-right',{
+        duration: 2000,
+        origin: 'right',
+        distance: '300px'
+    });
+
+    sr.reveal('.showcase-btn',{
+        duration: 2000,
+        delay: 2000,
+        origin: 'bottom',
+        distance: '300px'
+    });
+
+    sr.reveal('#testimonial div',{
+        duration: 2000,
+        origin: 'bottom'
+    });
+
+    sr.reveal('.info-left',{
+        duration: 2000,
+        origin: 'left',
+        distance: '300px',
+        viewFactor: 0.3
+    });
+
+    sr.reveal('.info-right',{
+        duration: 2000,
+        origin: 'top',
+        distance: '300px',
+        viewFactor: 0.2
+    });
+
+    /*JS del modal*/
+    $(document).ready(function(){
+        $("#myBtn").click(function(){
+            $("#myModal").modal();
+        });
+    });
+
+    /*JS links cabecera*/
+    //Select all links with hashes
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
+                &&
+                location.hostname === this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+
+                    });
+                }
+            }
+        });
+</script>
+

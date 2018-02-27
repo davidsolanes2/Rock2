@@ -40,7 +40,7 @@ import {
         Rockbible3AccountModule,
         Rockbible3EntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        HttpClientModule,
+        HttpClientModule
     ],
     declarations: [
         JhiMainComponent,

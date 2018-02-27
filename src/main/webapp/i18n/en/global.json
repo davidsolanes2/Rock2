@@ -5,6 +5,7 @@
         "menu": {
             "home": "Home",
             "prueba-fromulario": "Fromulario",
+            "pagehome-phome": "Phome",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
@@ -144,5 +145,5 @@
         "emailexists": "Email is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "This is your footer"
+    "footer": "Building by:"
 }

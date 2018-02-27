@@ -38,14 +38,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = Rockbible3App.class)
 public class CollectionsResourceIntTest {
 
-    private static final String DEFAULT_TRACK_ID = "AAAAAAAAAA";
-    private static final String UPDATED_TRACK_ID = "BBBBBBBBBB";
-
-    private static final String DEFAULT_CONCERT_ID = "AAAAAAAAAA";
-    private static final String UPDATED_CONCERT_ID = "BBBBBBBBBB";
-
-    private static final String DEFAULT_ARTIST_ID = "AAAAAAAAAA";
-    private static final String UPDATED_ARTIST_ID = "BBBBBBBBBB";
+    private static final String DEFAULT_NAPSTER_ID = "AAAAAAAAAA";
+    private static final String UPDATED_NAPSTER_ID = "BBBBBBBBBB";
 
     private static final String DEFAULT_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_TYPE = "BBBBBBBBBB";
@@ -88,9 +82,7 @@ public class CollectionsResourceIntTest {
      */
     public static Collections createEntity(EntityManager em) {
         Collections collections = new Collections()
-            .trackId(DEFAULT_TRACK_ID)
-            .concertId(DEFAULT_CONCERT_ID)
-            .artistId(DEFAULT_ARTIST_ID)
+            .napsterId(DEFAULT_NAPSTER_ID)
             .type(DEFAULT_TYPE);
         return collections;
     }
@@ -115,9 +107,7 @@ public class CollectionsResourceIntTest {
         List<Collections> collectionsList = collectionsRepository.findAll();
         assertThat(collectionsList).hasSize(databaseSizeBeforeCreate + 1);
         Collections testCollections = collectionsList.get(collectionsList.size() - 1);
-        assertThat(testCollections.getTrackId()).isEqualTo(DEFAULT_TRACK_ID);
-        assertThat(testCollections.getConcertId()).isEqualTo(DEFAULT_CONCERT_ID);
-        assertThat(testCollections.getArtistId()).isEqualTo(DEFAULT_ARTIST_ID);
+        assertThat(testCollections.getNapsterId()).isEqualTo(DEFAULT_NAPSTER_ID);
         assertThat(testCollections.getType()).isEqualTo(DEFAULT_TYPE);
     }
 
@@ -151,9 +141,7 @@ public class CollectionsResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(collections.getId().intValue())))
-            .andExpect(jsonPath("$.[*].trackId").value(hasItem(DEFAULT_TRACK_ID.toString())))
-            .andExpect(jsonPath("$.[*].concertId").value(hasItem(DEFAULT_CONCERT_ID.toString())))
-            .andExpect(jsonPath("$.[*].artistId").value(hasItem(DEFAULT_ARTIST_ID.toString())))
+            .andExpect(jsonPath("$.[*].napsterId").value(hasItem(DEFAULT_NAPSTER_ID.toString())))
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())));
     }
 
@@ -168,9 +156,7 @@ public class CollectionsResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(collections.getId().intValue()))
-            .andExpect(jsonPath("$.trackId").value(DEFAULT_TRACK_ID.toString()))
-            .andExpect(jsonPath("$.concertId").value(DEFAULT_CONCERT_ID.toString()))
-            .andExpect(jsonPath("$.artistId").value(DEFAULT_ARTIST_ID.toString()))
+            .andExpect(jsonPath("$.napsterId").value(DEFAULT_NAPSTER_ID.toString()))
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()));
     }
 
@@ -192,9 +178,7 @@ public class CollectionsResourceIntTest {
         // Update the collections
         Collections updatedCollections = collectionsRepository.findOne(collections.getId());
         updatedCollections
-            .trackId(UPDATED_TRACK_ID)
-            .concertId(UPDATED_CONCERT_ID)
-            .artistId(UPDATED_ARTIST_ID)
+            .napsterId(UPDATED_NAPSTER_ID)
             .type(UPDATED_TYPE);
 
         restCollectionsMockMvc.perform(put("/api/collections")
@@ -206,9 +190,7 @@ public class CollectionsResourceIntTest {
         List<Collections> collectionsList = collectionsRepository.findAll();
         assertThat(collectionsList).hasSize(databaseSizeBeforeUpdate);
         Collections testCollections = collectionsList.get(collectionsList.size() - 1);
-        assertThat(testCollections.getTrackId()).isEqualTo(UPDATED_TRACK_ID);
-        assertThat(testCollections.getConcertId()).isEqualTo(UPDATED_CONCERT_ID);
-        assertThat(testCollections.getArtistId()).isEqualTo(UPDATED_ARTIST_ID);
+        assertThat(testCollections.getNapsterId()).isEqualTo(UPDATED_NAPSTER_ID);
         assertThat(testCollections.getType()).isEqualTo(UPDATED_TYPE);
     }
 

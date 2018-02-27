@@ -1,0 +1,58 @@
+<div>
+    <h2><span data-translate="rockbible3App.pagehome.phome.title">Tu música a un solo Click</span></h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+<!--
+    <div class="table-responsive" *ngIf="phomes">
+        <table class="table table-striped">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let phome of phomes ;trackBy: trackId">
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+-->
+    <p> Bienvenido {{account.login}} </p>
+    <div class="fondo container-fluid">
+        <div class="row">
+            <div class="col-sm-12" style="text-align: center"><h1>Top Canciones</h1></div>
+            <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-2 col-md-3 col-sm-6">
+                <div class="cover"  [style.background-image]="sanitizeImage(data.albumId)">
+                    <div class="overlayInfo">
+                        <div>
+                            <audio controls class="audio">
+                                <source src="{{data.previewURL}}" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="tituloSong">{{data.name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <input [(ngModel)]="search" type="text" required>
+                <button class="btn btn-primary" (click)="searchSong()">Buscar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let data of DataSearch" class="infoDiv col-lg-2 col-md-3 col-sm-6">
+                <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
+                    <div class="overlayInfo">
+                        <div>
+                            <audio controls class="audio">
+                                <source src="{{data.previewURL}}" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="tituloSong">{{data.name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,70 +1,129 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
+/*Body*/
 
-.hipster {
-    display: inline-block;
-    width: 347px;
-    height: 497px;
-    background: url("../../content/images/hipster.png") no-repeat center top;
-    background-size: contain;
+body{
+    margin-top: 70px;
+    font-size: 16px;
 }
 
-.fondo{
-    background-size: cover;
-    background-image: url("../../content/images/fondoTopTracks.jpg");
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Dosis', sans-serif;
 }
 
-.cover {
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: 10px;
-    border: 2px solid #151515;
-    position: relative;
-}
-.audio{
-    align-content: center;
-    margin-top: 22%;
-    width: 100%;
+p{
+    font-family: 'Gloria Hallelujah', cursive;
+    color: grey;
 }
 
-.tituloSong{
-    color: white;
+
+/*Navbar*/
+.navbar-default{
+    background: #fff;
+    border: 0;
+    font-family: 'Dosis', sans-serif;
+}
+
+.navbar-brand{
     font-size: 20px;
-    position: relative;
+    color: black !important;
+    font-weight: bold;
+}
+
+a{
+    display: flex;
+    align-items: center;
+}
+
+a > img{
+    margin-right: 5px;
+}
+
+/*Content*/
+.showcase-left > img{
+    height: 400px;
+    width: 90%;
+    margin-right: 60px;
+}
+
+#showcase > h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#showcase .showcase-right{
+    margin-top: 90px;
+}
+
+#section2{
+    background: #f1f1f1;
+    padding: 50px 0px 30px 0px;
     text-align: center;
-}
-.overlayInfo {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: gray;
-}
-.cover img{
-    cursor: pointer;
-    width: 65px;
-    height: 65px;
-    float: left;
-    margin-left: 35%;
-    display: inline-block;
-    margin-top: 25%;
-}
-
-.cover:hover .overlayInfo{
-    opacity: 0.9;
-}
-
-.image{
+    margin-top: 40px;
 
 }
+
+#section2 p{
+    font-size: 32px;
+    font-family: 'Dosis';
+    color: black;
+}
+
+#section2 p.costumer{
+    font-size: 20px;
+    color: #666;
+}
+
+#info1 > .info-right{
+    margin-top: 90px;
+}
+
+.hr-style{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+#info2{
+    margin: 20px 0 60px 0;
+}
+
+#contact{
+    height: 250px;
+    background-image:url('http://www.hdfondos.eu/preview/get_photo/212919/1920/1200');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    width:100%;
+    padding: 40px;
+    border-top: #333 7px solid;
+    border-bottom: #333 7px solid;
+}
+/*Modal*/
+.modal-header, h4, .close {
+    background-color: rgb(74, 74, 74);
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.modal-footer {
+    background-color: rgba(0,0,0,1);
+}
+.modal-footer button{
+    margin-top: 15px;
+}
+
+/*Footer*/
+footer{
+    padding: 40px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media
@@ -74,9 +133,6 @@ only screen and (     -o-min-device-pixel-ratio: 2/1),
 only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
-    .hipster {
-        background: url("../../content/images/hipster2x.png") no-repeat center top;
-        background-size: contain;
-    }
+
 }
 

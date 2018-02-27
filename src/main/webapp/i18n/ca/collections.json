@@ -15,9 +15,7 @@
             "detail": {
                 "title": "Collections"
             },
-            "trackId": "Track Id",
-            "concertId": "Concert Id",
-            "artistId": "Artist Id",
+            "napsterId": "Napster Id",
             "type": "Type",
             "user": "User"
         }

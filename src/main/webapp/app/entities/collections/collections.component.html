@@ -17,9 +17,7 @@
             <thead>
             <tr>
             <th><span jhiTranslate="global.field.id">ID</span></th>
-            <th><span jhiTranslate="rockbible3App.collections.trackId">Track Id</span></th>
-            <th><span jhiTranslate="rockbible3App.collections.concertId">Concert Id</span></th>
-            <th><span jhiTranslate="rockbible3App.collections.artistId">Artist Id</span></th>
+            <th><span jhiTranslate="rockbible3App.collections.napsterId">Napster Id</span></th>
             <th><span jhiTranslate="rockbible3App.collections.type">Type</span></th>
             <th><span jhiTranslate="rockbible3App.collections.user">User</span></th>
             <th></th>
@@ -28,9 +26,7 @@
             <tbody>
             <tr *ngFor="let collections of collections ;trackBy: trackId">
                 <td><a [routerLink]="['../collections', collections.id ]">{{collections.id}}</a></td>
-                <td>{{collections.trackId}}</td>
-                <td>{{collections.concertId}}</td>
-                <td>{{collections.artistId}}</td>
+                <td>{{collections.napsterId}}</td>
                 <td>{{collections.type}}</td>
                 <td>
                     {{collections.user?.login}}
