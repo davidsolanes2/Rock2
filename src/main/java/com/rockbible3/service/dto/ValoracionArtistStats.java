@@ -2,9 +2,11 @@ package com.rockbible3.service.dto;
 
 import com.rockbible3.domain.Artist;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 
-    @Data
+@EqualsAndHashCode(callSuper = true)
+@Data
 
 public class ValoracionArtistStats extends ValoracionStats{
 

@@ -1,13 +1,15 @@
 .fondo{
     background-size: cover;
-    background-image: url("../../../content/images/fondoTopTracks.jpg");
+    /*background-image: url("../../../content/images/fondoTopTracks.jpg");*/
+    background: linear-gradient(to bottom right, white, #409cff);
 }
 
 .cover {
+    /* imagenes de los discos*/
     background-size: cover;
     width: 200px;
     height: 200px;
-    display: block;
+    display: inline-block;
     margin: 10px;
     border: 2px solid #151515;
     position: relative;
@@ -38,15 +40,20 @@
     background-color: gray;
 }
 .cover img{
+    /* imagenes del fondo los discos*/
     cursor: pointer;
     width: 65px;
     height: 65px;
-    float: left;
-    margin-left: 35%;
+    margin-left: 25%;
     display: inline-block;
     margin-top: 25%;
 }
 
 .cover:hover .overlayInfo{
     opacity: 0.9;
+}
+
+.image-top {
+    max-width: inherit!important;
+    text-align: center;
 }
