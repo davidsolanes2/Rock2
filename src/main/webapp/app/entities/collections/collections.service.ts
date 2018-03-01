@@ -14,8 +14,17 @@ export class CollectionsService {
     constructor(private http: Http) { }
 
     create(collections: Collections): Observable<Collections> {
+
         const copy = this.convert(collections);
         return this.http.post(this.resourceUrl, copy).map((res: Response) => {
+            const jsonResponse = res.json();
+            return this.convertItemFromServer(jsonResponse);
+        });
+    }
+
+    like(idNapster: string): Observable<Collections> {
+
+        return this.http.post(this.resourceUrl + '/songs/' + idNapster, "").map((res: Response) => {
             const jsonResponse = res.json();
             return this.convertItemFromServer(jsonResponse);
         });

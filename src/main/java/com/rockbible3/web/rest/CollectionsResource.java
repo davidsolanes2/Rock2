@@ -4,11 +4,14 @@ import com.codahale.metrics.annotation.Timed;
 import com.rockbible3.domain.Collections;
 
 import com.rockbible3.repository.CollectionsRepository;
+import com.rockbible3.repository.UserRepository;
+import com.rockbible3.security.SecurityUtils;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +34,9 @@ public class CollectionsResource {
 
     private final CollectionsRepository collectionsRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     public CollectionsResource(CollectionsRepository collectionsRepository) {
         this.collectionsRepository = collectionsRepository;
     }
@@ -51,6 +57,23 @@ public class CollectionsResource {
         }
         Collections result = collectionsRepository.save(collections);
         return ResponseEntity.created(new URI("/api/collections/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+            .body(result);
+    }
+
+    @PostMapping("/collections/songs/{idNapster:.+}")
+    @Timed
+    public ResponseEntity<Collections> likeCollections(@PathVariable String idNapster) throws URISyntaxException {
+        log.debug("REST request to Like a Song : {}", idNapster);
+
+        Collections collections = new Collections();
+        collections.setNapsterId(idNapster);
+        collections.setType("song");
+        collections.setUser(userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get());
+
+        Collections result = collectionsRepository.save(collections);
+
+        return ResponseEntity.created(new URI("/api/collections/songs/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
     }

@@ -53,7 +53,20 @@ export class CollectionsDialogComponent implements OnInit {
         }
     }
 
+    like(idNapster : string) {
+        this.isSaving = true;
+
+            this.subscribeToLikeResponse(
+                this.collectionsService.like(idNapster));
+
+    }
+
     private subscribeToSaveResponse(result: Observable<Collections>) {
+        result.subscribe((res: Collections) =>
+            this.onSaveSuccess(res), (res: Response) => this.onSaveError());
+    }
+
+    private subscribeToLikeResponse(result: Observable<Collections>) {
         result.subscribe((res: Collections) =>
             this.onSaveSuccess(res), (res: Response) => this.onSaveError());
     }
