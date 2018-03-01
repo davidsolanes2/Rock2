@@ -24,7 +24,7 @@ export class CollectionsService {
 
     like(idNapster: string): Observable<Collections> {
 
-        return this.http.post(this.resourceUrl + '/songs/' + idNapster, "").map((res: Response) => {
+        return this.http.post(this.resourceUrl + '/songs/' + idNapster, '').map((res: Response) => {
             const jsonResponse = res.json();
             return this.convertItemFromServer(jsonResponse);
         });

@@ -3,14 +3,15 @@
     <h2 style="text-align: center"><span data-translate="rockbible3App.pagehome.phome.title">Tu música a un solo Click</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
-
+    <!--
     <p> Bienvenido {{account.login}} </p>
+    -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12" style="text-align: center"><h1>Top Canciones</h1></div>
         </div>
         <div class="row">
-            <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-2 col-md-3 col-sm-6 image-top">
+            <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-3 col-md-4 col-sm-6 image-top">
                 <br>
                 <div class="cover"  [style.background-image]="sanitizeImage(data.albumId)" >
                     <div class="overlayInfo">
@@ -36,7 +37,7 @@
         </div>
         <br>
         <div class="row">
-            <div *ngFor="let data of DataSearch" class="infoDiv col-lg-2 col-md-3 col-sm-6">
+            <div *ngFor="let data of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
                 <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
                     <div class="overlayInfo">
                         <img class="image" src="../../../content/images/heart-1.png" height="20px" width="20px"/>

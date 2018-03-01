@@ -53,7 +53,7 @@ export class CollectionsDialogComponent implements OnInit {
         }
     }
 
-    like(idNapster : string) {
+    like(idNapster: string) {
         this.isSaving = true;
 
             this.subscribeToLikeResponse(
