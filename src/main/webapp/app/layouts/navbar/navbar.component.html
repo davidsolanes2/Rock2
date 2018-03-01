@@ -36,22 +36,52 @@
                     </ul>
                 </li>
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
-                    <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="pagehome-menu">
-                        <span>
-                            <i class="fa fa-panel with heading" aria-hidden="true"></i>
-                            <span>Usuario</span>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu" ngbDropdownMenu>
-                        <li>
-                            <a class="dropdown-item" routerLink="pagehome-phome" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                                <i class="fa fa-panel with heading" aria-hidden="true"></i>&nbsp;
-                                <span jhiTranslate="global.menu.pagehome-phome">Home</span>
-                            </a>
-                        </li>
-                        <!-- jhipster-needle-add-element-to-pagehome - JHipster will add elements to the pagehome here -->
-                    </ul>
-                </li>
+                <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="pagehome-menu">
+                    <span>
+                        <i class="fa fa-panel with heading" aria-hidden="true"></i>
+                        <span>Usuario</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="pagehome-phome" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-star" aria-hidden="true"></i>&nbsp;
+                            <span jhiTranslate="global.menu.pagehome-phome">Home</span>
+                        </a>
+                    </li>
+                    <!-- jhipster-needle-add-element-to-pagehome - JHipster will add elements to the pagehome here -->
+
+                    <li>
+                        <a class="dropdown-item" routerLink="pageartist-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-star" aria-hidden="true"></i>&nbsp;
+                            <span jhiTranslate="global.menu.pageartist-pages">Pageartist Pages</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" routerLink="pageconciertos-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-star" aria-hidden="true"></i>&nbsp;
+                            <span jhiTranslate="global.menu.pageconciertos-pages">Concert</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" routerLink="pagesong-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-star" aria-hidden="true"></i>&nbsp;
+                            <span jhiTranslate="global.menu.pagesong-pages">Song</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" routerLink="pageregister-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-star" aria-hidden="true"></i>&nbsp;
+                            <span jhiTranslate="global.menu.pageregister-pages">Register</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">

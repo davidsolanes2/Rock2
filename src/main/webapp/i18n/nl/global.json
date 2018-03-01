@@ -6,6 +6,10 @@
             "home": "Startpagina",
             "prueba-fromulario": "Fromulario",
             "pagehome-phome": "Phome",
+            "pageartist-pages": "Pages",
+            "pageconciertos-pages": "Pages",
+            "pagesong-pages": "Pages",
+            "pageregister-pages": "Pages",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entiteiten",

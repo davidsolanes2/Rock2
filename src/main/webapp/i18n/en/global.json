@@ -5,7 +5,11 @@
         "menu": {
             "home": "Home",
             "prueba-fromulario": "Fromulario",
-            "pagehome-phome": "Phome",
+            "pagehome-phome": "Home",
+            "pageartist-pages": "Artist",
+            "pageconciertos-pages": "Concert",
+            "pagesong-pages": "Song",
+            "pageregister-pages": "Register",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",

@@ -1,0 +1,12 @@
+{
+    "pages": [
+        {
+            "pageName": "pages",
+            "pageType": "loadAndSaveToServer",
+            "pageGlyphIcon": "start",
+            "fields": []
+        }
+    ],
+    "pageSetGlyphIcon": "star",
+    "changelogDate": "20180301193245"
+}
