@@ -16,14 +16,14 @@
                 <div class="cover"  [style.background-image]="sanitizeImage(data.albumId)" >
                     <div class="overlayInfo">
                         <div>
-                            <img class="image" src="../../../content/images/heart-1.png" height="20px" width="20px"/>
+                            <img class="image" (click)="like(data.id)" src="../../../content/images/heart-1.png" height="20px" width="20px"/>
                             <audio controls class="audio">
                                 <source src="{{data.previewURL}}" type="audio/mpeg">
                             </audio>
                         </div>
-                        <div class="tituloSong">{{data.name}}</div>
                     </div>
                 </div>
+                <div class="tituloSong">{{data.name}}</div>
                 <br>
             </div>
         </div>

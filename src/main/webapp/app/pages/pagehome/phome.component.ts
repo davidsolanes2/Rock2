@@ -5,7 +5,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Account, LoginModalService, Principal } from '../../shared';
 
-import { Subscription } from 'rxjs/Rx';
+import {Observable, Subscription} from 'rxjs/Rx';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 // import { Observable } from 'rxjs/Rx';
 
@@ -13,6 +13,9 @@ import { Phome } from './phome.model';
 import { PhomeService } from './phome.service';
 import { Http, Response } from '@angular/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import {CollectionsService} from "../../entities/collections";
+import {Collections} from "../../entities/collections/collections.model";
+
 
 @Component({
     selector: 'jhi-phome',
@@ -58,8 +61,10 @@ export class PhomeComponent implements OnInit, OnDestroy {
         private principal: Principal,
         private loginModalService: LoginModalService,
         private http: Http,
-        private _sanitizer: DomSanitizer
-    ) {
+        private _sanitizer: DomSanitizer,
+        private collectionsService: CollectionsService,
+
+) {
     }
 
     loadAll() {
@@ -142,4 +147,27 @@ export class PhomeComponent implements OnInit, OnDestroy {
     private onError(error) {
         this.jhiAlertService.error(error.message, null, null);
     }
+
+    like(idNapster: string) {
+        this.isSaving = true;
+console.log(idNapster);
+        this.subscribeToLikeResponse(
+            this.collectionsService.like(idNapster));
+
+    }
+
+    private subscribeToLikeResponse(result: Observable<Collections>) {
+        result.subscribe((res: Collections) =>
+            this.onSaveSuccess(res), (res: Response) => this.onSaveError());
+    }
+
+    private onSaveSuccess(result: Collections) {
+        this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
+        this.isSaving = false;
+    }
+
+    private onSaveError() {
+        this.isSaving = false;
+    }
+
 }
