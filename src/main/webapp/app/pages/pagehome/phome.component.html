@@ -12,19 +12,18 @@
         </div>
         <div class="row">
             <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-3 col-md-4 col-sm-6 image-top">
-                <br>
                 <div class="cover"  [style.background-image]="sanitizeImage(data.albumId)" >
                     <div class="overlayInfo">
                         <div>
-                            <img class="image" (click)="like(data.id)" src="../../../content/images/heart-1.png" height="20px" width="20px"/>
+                            <img id="{{data.id}}" (click)="like(data.id)" alt="vacio" src="../../../content/images/heart-1.png">
+                            <button class="btn btn-primary botonyoutube" (click)="searchYoutube(data.name, data.artistName)">Youtube</button>
                             <audio controls class="audio">
                                 <source src="{{data.previewURL}}" type="audio/mpeg">
                             </audio>
                         </div>
                     </div>
                 </div>
-                <div class="tituloSong">{{data.name}}</div>
-                <br>
+                <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>
             </div>
         </div>
         <br>
@@ -37,21 +36,20 @@
         </div>
         <br>
         <div class="row">
-            <div *ngFor="let data of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
+            <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
                 <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
                     <div class="overlayInfo">
-                        <img class="image" src="../../../content/images/heart-1.png" height="20px" width="20px"/>
                         <div>
+                            <img id="{{search.id}}" (click)="like(search.id)" alt="vacio" src="../../../content/images/heart-1.png">
+                            <button class="btn btn-primary botonyoutube" (click)="searchYoutube(search.name, search.artistName)">Youtube</button>
                             <audio controls class="audio">
-                                <source src="{{data.previewURL}}" type="audio/mpeg">
+                                <source src="{{search.previewURL}}" type="audio/mpeg">
                             </audio>
                         </div>
-                        <div class="tituloSong">{{data.name}}</div>
                     </div>
                 </div>
+                <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>
             </div>
         </div>
-        <br>
-        <br>
     </div>
 </div>

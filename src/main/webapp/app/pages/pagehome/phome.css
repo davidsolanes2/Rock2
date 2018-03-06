@@ -4,30 +4,28 @@
     background: linear-gradient(to bottom right, white, #409cff);
 }
 
+
 .cover {
-    /* imagenes de los discos*/
     background-size: cover;
     width: 200px;
     height: 200px;
-    display: inline-block;
+    display: block;
     margin: 10px;
     border: 2px solid #151515;
     position: relative;
 }
 .audio{
     align-content: center;
-    margin-top: 22%;
+    margin-top: 8%;
     width: 100%;
 }
 
 .tituloSong{
     color: white;
-    font-family: 'Dosis', sans-serif;
     font-size: 20px;
     position: relative;
     text-align: center;
 }
-
 .overlayInfo {
     position: absolute;
     top: 0;
@@ -41,17 +39,22 @@
     background-color: gray;
 }
 .cover img{
-    /* imagenes del fondo los discos*/
     cursor: pointer;
     width: 65px;
     height: 65px;
-    margin-left: 35%;
+    float: left;
+    margin-left: 32%;
     display: inline-block;
-    margin-top: 25%;
+    margin-top: 15%;
 }
 
 .cover:hover .overlayInfo{
     opacity: 0.9;
+}
+
+.botonyoutube{
+    margin-top: 5%;
+    margin-left: 27%;
 }
 
 .image-top {

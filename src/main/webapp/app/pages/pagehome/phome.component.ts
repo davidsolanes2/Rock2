@@ -52,7 +52,10 @@ export class PhomeComponent implements OnInit, OnDestroy {
     DataTopTracks: any = [];
     DataSearch: any = [];
     search = '';
-
+    idYoutube = "";
+    idNapster = "";
+    likeVacio = require("../../../content/images/heart-1.png");
+    likeCompleto = require("../../../content/images/heart-2.png");
     constructor(
         private phomeService: PhomeService,
         private parseLinks: JhiParseLinks,
@@ -82,7 +85,14 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 this.DataSearch = data.search.data.tracks;
             });
     }
-
+    public searchYoutube(nombre: string, artist: string) {
+        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${nombre}-${artist}&type=video&maxResults=1&&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
+            .subscribe((res: Response) => {
+                const data = res.json();
+                this.idYoutube = data.items[0].id.videoId;
+                window.open(`https://www.youtube.com/watch?v=${this.idYoutube}`, "Youtube", "width=720,height=500,top=200,left=400,status=no,location=no,menubar=no")
+            });
+    }
     ngOnInit() {
 
         this.loadAll();
@@ -150,20 +160,37 @@ export class PhomeComponent implements OnInit, OnDestroy {
 
     like(idNapster: string) {
         this.isSaving = true;
-console.log(idNapster);
-        this.subscribeToLikeResponse(
-            this.collectionsService.like(idNapster));
-
+        if (document.images[idNapster].alt == "vacio") {
+            this.idNapster = idNapster;
+           /* document.images[idNapster].src = this.likeCompleto;
+            document.images[idNapster].alt = "completo";*/
+            console.log(idNapster);
+            this.subscribeToLikeResponse(
+                this.collectionsService.like(idNapster));
+        }
+        else {
+            document.images[idNapster].src = this.likeVacio;
+            document.images[idNapster].alt = "vacio";
+        }
     }
 
     private subscribeToLikeResponse(result: Observable<Collections>) {
-        result.subscribe((res: Collections) =>
-            this.onSaveSuccess(res), (res: Response) => this.onSaveError());
+        console.log("Antes subscribe");
+        result.subscribe((res: Collections) => {
+                console.log("dentro subscribe. Antes de onsavesucces");
+                this.onSaveSuccess(res), (res: Response) => this.onSaveError()
+                console.log("dentro subscribe. Despues de onsavesucces");
+
+            }
+        );
+
     }
 
     private onSaveSuccess(result: Collections) {
         this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
         this.isSaving = false;
+        document.images[this.idNapster].src = this.likeCompleto;
+        document.images[this.idNapster].alt = "completo";
     }
 
     private onSaveError() {
