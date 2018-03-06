@@ -45,8 +45,6 @@ entity Band{
     status Status
 }
 
-
-
 entity Social {
 	name String
 }
@@ -96,6 +94,10 @@ entity Collections {
     type String
 }
 
+entity CollectionsTicketMaster {
+    TicketMasterId String
+}
+
 
 /*Many To One*/
 relationship ManyToOne {
@@ -115,7 +117,8 @@ relationship ManyToOne {
     ValoracionArtist{user(login)} to User,
     ValoracionBand{band(name)} to Band{valoracion},
     ValoracionBand{user(login)} to User,
-    Collections {user(login)} to User
+    Collections {user(login)} to User,
+    CollectionsTicketMaster {user(login)} to User
 }
 
 

@@ -79,6 +79,7 @@ public class CacheConfiguration {
             cm.createCache(com.rockbible3.domain.Genre.class.getName() + ".songs", jcacheConfiguration);
             cm.createCache(com.rockbible3.domain.Song.class.getName() + ".genres", jcacheConfiguration);
             cm.createCache(com.rockbible3.domain.Collections.class.getName(), jcacheConfiguration);
+            cm.createCache(com.rockbible3.domain.CollectionsTicketMaster.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

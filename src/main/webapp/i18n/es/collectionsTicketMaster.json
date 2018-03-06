@@ -1,0 +1,22 @@
+{
+    "rockbible3App": {
+        "collectionsTicketMaster" : {
+            "home": {
+                "title": "Collections Ticket Masters",
+                "createLabel": "Crear nuevo Collections Ticket Master",
+                "createOrEditLabel": "Crear o editar Collections Ticket Master"
+            },
+            "created": "Un nuevo Collections Ticket Master ha sido creado con el identificador {{ param }}",
+            "updated": "Un Collections Ticket Master ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Collections Ticket Master ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Collections Ticket Master {{ id }}?"
+            },
+            "detail": {
+                "title": "Collections Ticket Master"
+            },
+            "ticketMasterId": "Ticket Master Id",
+            "user": "User"
+        }
+    }
+}

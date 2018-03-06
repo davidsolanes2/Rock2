@@ -15,6 +15,7 @@ import { Rockbible3ValoracionSongModule } from './valoracion-song/valoracion-son
 import { Rockbible3ValoracionArtistModule } from './valoracion-artist/valoracion-artist.module';
 import { Rockbible3ValoracionBandModule } from './valoracion-band/valoracion-band.module';
 import { Rockbible3CollectionsModule } from './collections/collections.module';
+import { Rockbible3CollectionsTicketMasterModule } from './collections-ticket-master/collections-ticket-master.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -34,6 +35,7 @@ import { Rockbible3CollectionsModule } from './collections/collections.module';
         Rockbible3ValoracionArtistModule,
         Rockbible3ValoracionBandModule,
         Rockbible3CollectionsModule,
+        Rockbible3CollectionsTicketMasterModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

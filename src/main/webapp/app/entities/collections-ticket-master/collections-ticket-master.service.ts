@@ -3,40 +3,33 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { SERVER_API_URL } from '../../app.constants';
 
-import { Collections } from './collections.model';
+import { CollectionsTicketMaster } from './collections-ticket-master.model';
 import { ResponseWrapper, createRequestOption } from '../../shared';
 
 @Injectable()
-export class CollectionsService {
+export class CollectionsTicketMasterService {
 
-    private resourceUrl = SERVER_API_URL + 'api/collections';
+    private resourceUrl = SERVER_API_URL + 'api/collections-ticket-masters';
 
     constructor(private http: Http) { }
 
-    create(collections: Collections): Observable<Collections> {
-        const copy = this.convert(collections);
+    create(collectionsTicketMaster: CollectionsTicketMaster): Observable<CollectionsTicketMaster> {
+        const copy = this.convert(collectionsTicketMaster);
         return this.http.post(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
             return this.convertItemFromServer(jsonResponse);
         });
     }
 
-    like(idNapster: string): Observable<Collections> {
-        return this.http.post(this.resourceUrl + '/songs/' + idNapster, '').map((res: Response) => {
-            const jsonResponse = res.json();
-            return this.convertItemFromServer(jsonResponse);
-        });
-    }
-
-    update(collections: Collections): Observable<Collections> {
-        const copy = this.convert(collections);
+    update(collectionsTicketMaster: CollectionsTicketMaster): Observable<CollectionsTicketMaster> {
+        const copy = this.convert(collectionsTicketMaster);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
             return this.convertItemFromServer(jsonResponse);
         });
     }
 
-    find(id: number): Observable<Collections> {
+    find(id: number): Observable<CollectionsTicketMaster> {
         return this.http.get(`${this.resourceUrl}/${id}`).map((res: Response) => {
             const jsonResponse = res.json();
             return this.convertItemFromServer(jsonResponse);
@@ -63,18 +56,18 @@ export class CollectionsService {
     }
 
     /**
-     * Convert a returned JSON object to Collections.
+     * Convert a returned JSON object to CollectionsTicketMaster.
      */
-    private convertItemFromServer(json: any): Collections {
-        const entity: Collections = Object.assign(new Collections(), json);
+    private convertItemFromServer(json: any): CollectionsTicketMaster {
+        const entity: CollectionsTicketMaster = Object.assign(new CollectionsTicketMaster(), json);
         return entity;
     }
 
     /**
-     * Convert a Collections to a JSON which can be sent to the server.
+     * Convert a CollectionsTicketMaster to a JSON which can be sent to the server.
      */
-    private convert(collections: Collections): Collections {
-        const copy: Collections = Object.assign({}, collections);
+    private convert(collectionsTicketMaster: CollectionsTicketMaster): CollectionsTicketMaster {
+        const copy: CollectionsTicketMaster = Object.assign({}, collectionsTicketMaster);
         return copy;
     }
 }

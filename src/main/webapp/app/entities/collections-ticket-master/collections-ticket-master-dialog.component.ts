@@ -6,19 +6,19 @@ import { Observable } from 'rxjs/Rx';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
-import { Collections } from './collections.model';
-import { CollectionsPopupService } from './collections-popup.service';
-import { CollectionsService } from './collections.service';
+import { CollectionsTicketMaster } from './collections-ticket-master.model';
+import { CollectionsTicketMasterPopupService } from './collections-ticket-master-popup.service';
+import { CollectionsTicketMasterService } from './collections-ticket-master.service';
 import { User, UserService } from '../../shared';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
-    selector: 'jhi-collections-dialog',
-    templateUrl: './collections-dialog.component.html'
+    selector: 'jhi-collections-ticket-master-dialog',
+    templateUrl: './collections-ticket-master-dialog.component.html'
 })
-export class CollectionsDialogComponent implements OnInit {
+export class CollectionsTicketMasterDialogComponent implements OnInit {
 
-    collections: Collections;
+    collectionsTicketMaster: CollectionsTicketMaster;
     isSaving: boolean;
 
     users: User[];
@@ -26,7 +26,7 @@ export class CollectionsDialogComponent implements OnInit {
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
-        private collectionsService: CollectionsService,
+        private collectionsTicketMasterService: CollectionsTicketMasterService,
         private userService: UserService,
         private eventManager: JhiEventManager
     ) {
@@ -44,35 +44,22 @@ export class CollectionsDialogComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        if (this.collections.id !== undefined) {
+        if (this.collectionsTicketMaster.id !== undefined) {
             this.subscribeToSaveResponse(
-                this.collectionsService.update(this.collections));
+                this.collectionsTicketMasterService.update(this.collectionsTicketMaster));
         } else {
             this.subscribeToSaveResponse(
-                this.collectionsService.create(this.collections));
+                this.collectionsTicketMasterService.create(this.collectionsTicketMaster));
         }
     }
 
-    like(idNapster: string) {
-        this.isSaving = true;
-            this.subscribeToLikeResponse(
-                this.collectionsService.like(idNapster));
-    }
-
-    private subscribeToSaveResponse(result: Observable<Collections>) {
-        result.subscribe((res: Collections) =>
+    private subscribeToSaveResponse(result: Observable<CollectionsTicketMaster>) {
+        result.subscribe((res: CollectionsTicketMaster) =>
             this.onSaveSuccess(res), (res: Response) => this.onSaveError());
     }
 
-    private subscribeToLikeResponse(result: Observable<Collections>) {
-        console.log('Entra');
-        result.subscribe((res: Collections) =>
-            this.onSaveSuccess(res), (res: Response) => this.onSaveError());
-        console.log('Sale');
-    }
-
-    private onSaveSuccess(result: Collections) {
-        this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
+    private onSaveSuccess(result: CollectionsTicketMaster) {
+        this.eventManager.broadcast({ name: 'collectionsTicketMasterListModification', content: 'OK'});
         this.isSaving = false;
         this.activeModal.dismiss(result);
     }
@@ -91,26 +78,26 @@ export class CollectionsDialogComponent implements OnInit {
 }
 
 @Component({
-    selector: 'jhi-collections-popup',
+    selector: 'jhi-collections-ticket-master-popup',
     template: ''
 })
-export class CollectionsPopupComponent implements OnInit, OnDestroy {
+export class CollectionsTicketMasterPopupComponent implements OnInit, OnDestroy {
 
     routeSub: any;
 
     constructor(
         private route: ActivatedRoute,
-        private collectionsPopupService: CollectionsPopupService
+        private collectionsTicketMasterPopupService: CollectionsTicketMasterPopupService
     ) {}
 
     ngOnInit() {
         this.routeSub = this.route.params.subscribe((params) => {
             if ( params['id'] ) {
-                this.collectionsPopupService
-                    .open(CollectionsDialogComponent as Component, params['id']);
+                this.collectionsTicketMasterPopupService
+                    .open(CollectionsTicketMasterDialogComponent as Component, params['id']);
             } else {
-                this.collectionsPopupService
-                    .open(CollectionsDialogComponent as Component);
+                this.collectionsTicketMasterPopupService
+                    .open(CollectionsTicketMasterDialogComponent as Component);
             }
         });
     }

@@ -28,6 +28,7 @@
                 "valoracionArtist": "Valoracion Artist",
                 "valoracionBand": "Valoracion Band",
                 "collections": "Collections",
+                "collectionsTicketMaster": "Collections Ticket Master",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

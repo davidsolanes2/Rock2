@@ -3,9 +3,7 @@
     <h2 style="text-align: center"><span data-translate="rockbible3App.pagehome.phome.title">Tu música a un solo Click</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
-    <!--
-    <p> Bienvenido {{account.login}} </p>
-    -->
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12" style="text-align: center"><h1>Top Canciones</h1></div>
@@ -37,7 +35,7 @@
         <br>
         <div class="row">
             <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
-                <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
+                <div class="cover" [style.background-image]="sanitizeImage(search.albumId)">
                     <div class="overlayInfo">
                         <div>
                             <img id="{{search.id}}" (click)="like(search.id)" alt="vacio" src="../../../content/images/heart-1.png">

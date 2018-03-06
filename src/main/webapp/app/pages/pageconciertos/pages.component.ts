@@ -11,7 +11,10 @@ import { Principal } from '../../shared';
 
 @Component({
     selector: 'jhi-pages',
-    templateUrl: './pages.component.html'
+    templateUrl: './pages.component.html',
+    styleUrls: [
+        'pageconciertos.css'
+    ]
 })
 export class PagesComponent implements OnInit, OnDestroy {
 
