@@ -7,7 +7,10 @@ import { Observable } from 'rxjs/Rx';
 
 import { Pages } from './pages.model';
 import { PagesService } from './pages.service';
-import { Principal } from '../../shared';
+import {Principal, ResponseWrapper} from '../../shared';
+import {Response} from '@angular/http';
+import {Collections} from '../../entities/collections';
+import {CollectionsService} from '../../entities/collections';
 
 @Component({
     selector: 'jhi-pages',
@@ -18,6 +21,8 @@ import { Principal } from '../../shared';
 })
 export class PagesComponent implements OnInit, OnDestroy {
 
+    collections: Collections;
+    coleccion : Collections[];
     pages: Pages = new Pages();
 
     currentAccount: any;
@@ -38,11 +43,20 @@ export class PagesComponent implements OnInit, OnDestroy {
         private parseLinks: JhiParseLinks,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private principal: Principal
+        private principal: Principal,
+        private collectionsService: CollectionsService
+
     ) {
     }
 
     loadAll() {
+        this.collectionsService.listar().subscribe(
+            (res: ResponseWrapper) => {
+                this.coleccion = res.json;
+                console.log(this.coleccion)
+            },
+            (res: ResponseWrapper) => this.onError(res.json)
+        );
     }
 
     ngOnInit() {
@@ -53,6 +67,7 @@ export class PagesComponent implements OnInit, OnDestroy {
         });
 
         this.registerChangeInPages();
+
     }
 
     ngOnDestroy() {
@@ -72,5 +87,21 @@ export class PagesComponent implements OnInit, OnDestroy {
     }
     private onError(error) {
         this.jhiAlertService.error(error.message, null, null);
+    }
+
+    private subscribeToListCollectionsResponse(result: Observable<Collections>) {
+        result.subscribe((res: Collections) => {
+                this.onSaveSuccess(res), (res: Response) => this.onSaveError()
+            }
+        );
+    }
+
+    private onSaveSuccess(result: Collections) {
+        this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
+        this.isSaving = false;
+    }
+
+    private onSaveError() {
+        this.isSaving = false;
     }
 }

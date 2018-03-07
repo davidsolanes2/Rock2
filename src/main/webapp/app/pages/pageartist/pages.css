@@ -1,8 +1,25 @@
-.fondo{
-    background-size: cover;
-    /*background-image: url("../../../content/images/fondoTopTracks.jpg");*/
-    background: linear-gradient(to bottom right, white, #409cff);
+
+@media only screen and (min-width: 450px) {
+    .fondo {
+        background-size: cover;
+        /*background-image: url("../../../content/images/wallpaper-conciertos-4.jpg");*/
+        background: linear-gradient(to bottom right, white, #409cff);
+    }
+    .container{
+        background-image: url("../../../content/images/wallpaper-conciertos-4.jpg");
+    }
 }
+
+/*.fondo{
+    background-size: cover;
+    !*background-image: url("../../../content/images/fondoTopTracks.jpg");*!
+    background: linear-gradient(to bottom right, white, #409cff);
+}*/
+
+/*.marco {
+    width: 1200px;
+    height: 800px;
+}*/
 
 .cover {
     /* imagenes de los discos*/

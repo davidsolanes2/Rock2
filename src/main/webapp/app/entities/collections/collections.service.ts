@@ -28,6 +28,13 @@ export class CollectionsService {
         });
     }
 
+    listar(req?: any): Observable<ResponseWrapper> {
+        const options = createRequestOption(req);
+        return this.http.get(this.resourceUrl + '/NapsterbyUser')
+            .map((res: Response) => this.convertResponse(res));
+    }
+
+
     update(collections: Collections): Observable<Collections> {
         const copy = this.convert(collections);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {

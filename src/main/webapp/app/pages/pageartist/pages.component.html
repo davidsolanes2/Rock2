@@ -1,20 +1,25 @@
 <div class="fondo">
     <br>
-    <h2 style="text-align: center"><span data-translate="rockbible3App.pageartist.pages.title">Mis Artistas</span></h2>
+        <h2 style="text-align: center"><span data-translate="rockbible3App.pageartist.pages.title">Mis Artistas</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
+    <div class="jumbotron fondo">
+        <div class="row">
+            <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <!--<div class="cover" [style.background-image]="sanitizeImage(search.albumId)">
+                    <div class="overlayInfo">
+                        <div>
+                            <img id="{{search.id}}" (click)="like(search.id)" alt="vacio" src="../../../content/images/heart-1.png">
+                            <button class="btn btn-primary botonyoutube" (click)="searchYoutube(search.name, search.artistName)">Youtube</button>
+                            <audio controls class="audio">
+                                <source src="{{search.previewURL}}" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>-->
+            </div>
+        </div>
+    </div>
 </div>

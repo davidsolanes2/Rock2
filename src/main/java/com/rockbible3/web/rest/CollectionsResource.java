@@ -126,6 +126,14 @@ public class CollectionsResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(collections));
     }
 
+    @GetMapping("/collections/NapsterbyUser")
+    @Timed
+    public ResponseEntity<List<Collections>> getCollectionsNapsterbyUser() {
+        log.debug("REST request to get Collections : {}");
+        List<Collections> collections = collectionsRepository.findAllByUser(userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get());
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(collections));
+    }
+
     /**
      * DELETE  /collections/:id : delete the "id" collections.
      *

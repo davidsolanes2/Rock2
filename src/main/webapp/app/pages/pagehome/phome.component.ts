@@ -178,11 +178,11 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 console.log('dentro subscribe. Antes de onsavesucces');
                 this.onSaveSuccess(res), (res: Response) => this.onSaveError()
                 console.log('dentro subscribe. Despues de onsavesucces');
-
             }
         );
-
     }
+
+
 
     private onSaveSuccess(result: Collections) {
         this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
