@@ -1,14 +1,26 @@
 
 package com.rockbible3.service.dto.Napster;
 
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Albums {
+public class Stations {
 
+    @SerializedName("ids")
+    @Expose
+    private List<String> ids = null;
     @SerializedName("href")
     @Expose
     private String href;
+
+    public List<String> getIds() {
+        return ids;
+    }
+
+    public void setIds(List<String> ids) {
+        this.ids = ids;
+    }
 
     public String getHref() {
         return href;

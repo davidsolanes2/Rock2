@@ -7,7 +7,7 @@ import com.rockbible3.repository.SongRepository;
 import com.rockbible3.service.MusixMatch.MusixMatchDTOService;
 import com.rockbible3.service.Napster.NapsterDTOService;
 import com.rockbible3.service.dto.MusixMatch.MusixMatch;
-import com.rockbible3.service.dto.Napster.Napster;
+import com.rockbible3.service.dto.Napster.NapsterTracksDTO;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -134,7 +134,7 @@ public class SongResource {
 
     @GetMapping("/topSongsNap/testInicial")
     @Timed
-    public Napster getTopCanciones() {
+    public NapsterTracksDTO getTopCanciones() {
         return NapsterDTOService.getTopSongNap();
 
     }

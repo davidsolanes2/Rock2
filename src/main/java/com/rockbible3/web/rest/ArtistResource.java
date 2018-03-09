@@ -5,23 +5,19 @@ import com.rockbible3.domain.Artist;
 
 import com.rockbible3.repository.ArtistRepository;
 import com.rockbible3.service.MusixMatch.MusixMatchDTOService;
+import com.rockbible3.service.Napster.NapsterDTOService;
 import com.rockbible3.service.Ticketmaster.TicketmasterDTOService;
 import com.rockbible3.service.dto.MusixMatch.MusixMatch;
+import com.rockbible3.service.dto.Napster.NapsterArtistsDTO;
 import com.rockbible3.service.dto.Ticketmaster.Ticketmaster;
 import com.rockbible3.web.rest.errors.BadRequestAlertException;
 import com.rockbible3.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -52,6 +48,7 @@ public class ArtistResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new artist, or with status 400 (Bad Request) if the artist has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
+
     @PostMapping("/artists")
     @Timed
     public ResponseEntity<Artist> createArtist(@RequestBody Artist artist) throws URISyntaxException {
@@ -157,5 +154,12 @@ public class ArtistResource {
         log.debug("Buscando Conciertos por Artista : ");
         Ticketmaster artist = TicketmasterDTOService.getStageByArtist();
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(artist));
+    }
+
+    @GetMapping("/topArtistsNap")
+    @Timed
+    public NapsterArtistsDTO getTopArtistsNap() {
+        return NapsterDTOService.getTopArtistsNap();
+
     }
 }

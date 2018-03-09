@@ -4,7 +4,7 @@ package com.rockbible3.service.dto.Napster;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Albums {
+public class TopTracks {
 
     @SerializedName("href")
     @Expose

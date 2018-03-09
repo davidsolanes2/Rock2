@@ -6,29 +6,36 @@ import com.google.gson.annotations.SerializedName;
 
 public class Links {
 
-    @SerializedName("artists")
-    @Expose
-    private Artists artists;
     @SerializedName("albums")
     @Expose
     private Albums albums;
-    @SerializedName("composers")
+    @SerializedName("images")
     @Expose
-    private Composers composers;
+    private Images images;
+    @SerializedName("posts")
+    @Expose
+    private Posts posts;
+    @SerializedName("topTracks")
+    @Expose
+    private TopTracks topTracks;
     @SerializedName("genres")
     @Expose
     private Genres genres;
-    @SerializedName("tags")
+    @SerializedName("stations")
     @Expose
-    private Tags tags;
-
-    public Artists getArtists() {
-        return artists;
-    }
-
-    public void setArtists(Artists artists) {
-        this.artists = artists;
-    }
+    private Stations stations;
+    @SerializedName("contemporaries")
+    @Expose
+    private Contemporaries contemporaries;
+    @SerializedName("followers")
+    @Expose
+    private Followers followers;
+    @SerializedName("influences")
+    @Expose
+    private Influences influences;
+    @SerializedName("relatedProjects")
+    @Expose
+    private RelatedProjects relatedProjects;
 
     public Albums getAlbums() {
         return albums;
@@ -38,12 +45,28 @@ public class Links {
         this.albums = albums;
     }
 
-    public Composers getComposers() {
-        return composers;
+    public Images getImages() {
+        return images;
     }
 
-    public void setComposers(Composers composers) {
-        this.composers = composers;
+    public void setImages(Images images) {
+        this.images = images;
+    }
+
+    public Posts getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Posts posts) {
+        this.posts = posts;
+    }
+
+    public TopTracks getTopTracks() {
+        return topTracks;
+    }
+
+    public void setTopTracks(TopTracks topTracks) {
+        this.topTracks = topTracks;
     }
 
     public Genres getGenres() {
@@ -54,12 +77,44 @@ public class Links {
         this.genres = genres;
     }
 
-    public Tags getTags() {
-        return tags;
+    public Stations getStations() {
+        return stations;
     }
 
-    public void setTags(Tags tags) {
-        this.tags = tags;
+    public void setStations(Stations stations) {
+        this.stations = stations;
+    }
+
+    public Contemporaries getContemporaries() {
+        return contemporaries;
+    }
+
+    public void setContemporaries(Contemporaries contemporaries) {
+        this.contemporaries = contemporaries;
+    }
+
+    public Followers getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(Followers followers) {
+        this.followers = followers;
+    }
+
+    public Influences getInfluences() {
+        return influences;
+    }
+
+    public void setInfluences(Influences influences) {
+        this.influences = influences;
+    }
+
+    public RelatedProjects getRelatedProjects() {
+        return relatedProjects;
+    }
+
+    public void setRelatedProjects(RelatedProjects relatedProjects) {
+        this.relatedProjects = relatedProjects;
     }
 
 }

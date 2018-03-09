@@ -1,6 +1,7 @@
 package com.rockbible3.service.Napster;
 
-import com.rockbible3.service.dto.Napster.Napster;
+import com.rockbible3.service.dto.Napster.NapsterTracksDTO;
+import com.rockbible3.service.dto.Napster.NapsterArtistsDTO;
 import retrofit2.Call;
 import retrofit2.GsonConverterFactory;
 import retrofit2.Retrofit;
@@ -16,8 +17,12 @@ public interface NapsterDTORepository {
         .build();
 
     @GET("tracks/top")
-    Call<Napster> getTopSong(@Query("limit") int limit
+    Call<NapsterTracksDTO> getTopSong(@Query("limit") int limit
         , @Query("catalog") String catalog
         , @Query("apikey") String apiKey);
 
+    @GET("artists/top")
+    Call<NapsterArtistsDTO> getTopArtists (@Query("limit") int limit
+        , @Query("catalog") String catalog
+        , @Query("apikey") String apiKey);
 }
