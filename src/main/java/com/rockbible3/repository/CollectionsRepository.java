@@ -20,4 +20,7 @@ public interface CollectionsRepository extends JpaRepository<Collections, Long> 
 
     List<Collections> findAllByUser(User usuario);
 
+    List<Collections> findAllByUserLoginAndNapsterId(String userLogin, String napsterId);
+
+
 }

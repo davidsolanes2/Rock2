@@ -147,4 +147,13 @@ public class CollectionsResource {
         collectionsRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
+
+//    @DeleteMapping("/collections/{idNapster}")
+//    @Timed
+//    public ResponseEntity<Void> deleteCollectionsNapster(@PathVariable Long idNapster) {
+//        log.debug("REST request to delete Collections Napster : {}", idNapster);
+//        List<Collections> collection = collectionsRepository.findByNapsterIdAndUser(idNapster, userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get());
+//        collectionsRepository.delete(collection.get(0).getId());
+//        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, idNapster.toString())).build();
+//    }
 }

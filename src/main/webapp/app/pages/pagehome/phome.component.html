@@ -1,20 +1,23 @@
 <div class="fondo">
     <br>
-    <h2 style="text-align: center"><span data-translate="rockbible3App.pagehome.phome.title">Tu música a un solo Click</span></h2>
+    <h2 style="text-align: center"><span
+        data-translate="rockbible3App.pagehome.phome.title">Tu música a un solo Click</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12" style="text-align: center"><h1>Top Canciones</h1></div>
         </div>
         <div class="row">
-            <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-3 col-md-4 col-sm-6 image-top">
-                <div class="cover"  [style.background-image]="sanitizeImage(data.albumId)" >
+            <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-2 col-md-4 col-sm-6 image-top">
+                <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
                     <div class="overlayInfo">
                         <div>
-                            <img id="{{data.id}}" (click)="like(data.id)" alt="vacio" src="../../../content/images/heart-1.png">
-                            <button class="btn btn-primary botonyoutube" (click)="searchYoutube(data.name, data.artistName)">Youtube</button>
+                            <img id="{{data.id}}" (click)="like(data.id)" alt="vacio"
+                                 src="../../../content/images/heart-1.png">
+                            <button class="btn btn-primary botonyoutube"
+                                    (click)="openModal(data.name, data.artistName)">Youtube
+                            </button>
                             <audio controls class="audio">
                                 <source src="{{data.previewURL}}" type="audio/mpeg">
                             </audio>
@@ -23,31 +26,54 @@
                 </div>
                 <p class="tituloSong" style="text-align: center; color: white">{{data.name}}</p>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <br>
-            <div class="col-sm-12">
-                <input [(ngModel)]="search" type="text" required>
-                <button class="btn btn-primary" (click)="searchSong()">Buscar</button>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
-                <div class="cover" [style.background-image]="sanitizeImage(search.albumId)">
-                    <div class="overlayInfo">
-                        <div>
-                            <img id="{{search.id}}" (click)="like(search.id)" alt="vacio" src="../../../content/images/heart-1.png">
-                            <button class="btn btn-primary botonyoutube" (click)="searchYoutube(search.name, search.artistName)">Youtube</button>
-                            <audio controls class="audio">
-                                <source src="{{search.previewURL}}" type="audio/mpeg">
-                            </audio>
+            <div class="backdrop" [ngStyle]="{'display':display}"></div>
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                                aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Model Title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="myFrame" width="470" height="315" [src]="video" frameborder="0"
+                                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
                         </div>
                     </div>
                 </div>
-                <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>
+            </div>
+            <br>
+            <div class="row">
+                <br>
+                <div class="col-sm-12">
+                    <input [(ngModel)]="search" type="text" required>
+                    <button class="btn btn-primary" (click)="searchSong()">Buscar</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
+                    <div class="cover" [style.background-image]="sanitizeImage(search.albumId)">
+                        <div class="overlayInfo">
+                            <div>
+                                <img id="{{search.id}}" (click)="like(search.id)" alt="vacio"
+                                     src="../../../content/images/heart-1.png">
+                                <button class="btn btn-primary botonyoutube"
+                                        (click)="openModal(search.name, search.artistName)">Youtube
+                                </button>
+                                <audio controls class="audio">
+                                    <source src="{{search.previewURL}}" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+

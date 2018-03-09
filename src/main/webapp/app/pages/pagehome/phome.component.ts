@@ -12,7 +12,7 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 import { Phome } from './phome.model';
 import { PhomeService } from './phome.service';
 import { Http, Response } from '@angular/http';
-import { DomSanitizer } from '@angular/platform-browser';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {CollectionsService} from '../../entities/collections';
 import {Collections} from '../../entities/collections';
 
@@ -48,11 +48,13 @@ export class PhomeComponent implements OnInit, OnDestroy {
      * Fin control del usuario logeado
      */
 
+    display = 'none';
     DataTopTracks: any = [];
     DataSearch: any = [];
     search = '';
     idYoutube = '';
     idNapster = '';
+    video: SafeUrl;
     likeVacio = require('../../../content/images/heart-1.png');
     likeCompleto = require('../../../content/images/heart-2.png');
     constructor(
@@ -84,13 +86,32 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 this.DataSearch = data.search.data.tracks;
             });
     }
-    public searchYoutube(nombre: string, artist: string) {
+/*
+public searchYoutube(nombre: string, artist: string) {
         this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${nombre}-${artist}&type=video&maxResults=1&&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.idYoutube = data.items[0].id.videoId;
-                window.open(`https://www.youtube.com/watch?v=${this.idYoutube}`, 'Youtube', 'width=720,height=500,top=200,left=400,status=no,location=no,menubar=no')
+                window.open(`https://www.youtube.com/watch?v=${this.idYoutube}`, 'Youtube', 'width=720,height=500,top=200,left=400,status=no,location=no,menubar=no');
+
+
             });
+    }
+*/
+    openModal(nombre:string, artist:string){
+        this.display="block";
+        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${nombre}-${artist}&type=video&maxResults=1&&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
+            .subscribe((res: Response) => {
+                const data = res.json();
+                this.idYoutube = data.items[0].id.videoId;
+                this.video = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.idYoutube}`);
+            });
+    }
+
+    onCloseHandled(){
+
+        this.display="none";
+
     }
     ngOnInit() {
 
@@ -161,9 +182,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
         this.isSaving = true;
         if (document.images[idNapster].alt === 'vacio') {
             this.idNapster = idNapster;
-           /* document.images[idNapster].src = this.likeCompleto;
-            document.images[idNapster].alt = "completo";*/
-            console.log(idNapster);
             this.subscribeToLikeResponse(
                 this.collectionsService.like(idNapster));
         } else {
@@ -181,8 +199,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
             }
         );
     }
-
-
 
     private onSaveSuccess(result: Collections) {
         this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
