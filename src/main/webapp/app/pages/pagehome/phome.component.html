@@ -15,9 +15,10 @@
                         <div>
                             <img id="{{data.id}}" (click)="like(data.id)" alt="vacio"
                                  src="../../../content/images/heart-1.png">
-                            <button class="btn btn-primary botonyoutube"
-                                    (click)="openModal(data.name, data.artistName)">Youtube
-                            </button>
+                            <div class="youtube">
+                                <img class="botonyoutube" (click)="openModal(data.name, data.artistName)"
+                                     src="../../../content/images/youtube.png">
+                            </div>
                             <audio controls class="audio">
                                 <source src="{{data.previewURL}}" type="audio/mpeg">
                             </audio>
@@ -26,21 +27,16 @@
                 </div>
                 <p class="tituloSong" style="text-align: center; color: white">{{data.name}}</p>
             </div>
-            <div class="backdrop" [ngStyle]="{'display':display}"></div>
-            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+                <div class="backdrop"></div>
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-                                aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Model Title</h4>
-                        </div>
                         <div class="modal-body">
-                            <iframe id="myFrame" width="470" height="315" [src]="video" frameborder="0"
-                                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+                            <button type="button" class="close" (click)="onCloseHandled()">X</button>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe id="embed-responsive-item" [src]="video" frameborder="0"
+                                        allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,7 +45,7 @@
             <div class="row">
                 <br>
                 <div class="col-sm-12">
-                    <input [(ngModel)]="search" type="text" required>
+                    <input (keyup.enter)="searchSong()" [(ngModel)]="search" type="text" required>
                     <button class="btn btn-primary" (click)="searchSong()">Buscar</button>
                 </div>
             </div>
@@ -61,9 +57,10 @@
                             <div>
                                 <img id="{{search.id}}" (click)="like(search.id)" alt="vacio"
                                      src="../../../content/images/heart-1.png">
-                                <button class="btn btn-primary botonyoutube"
-                                        (click)="openModal(search.name, search.artistName)">Youtube
-                                </button>
+                                <div class="youtube">
+                                    <img class="botonyoutube" (click)="openModal(search.name, search.artistName)"
+                                         src="../../../content/images/youtube.png">
+                                </div>
                                 <audio controls class="audio">
                                     <source src="{{search.previewURL}}" type="audio/mpeg">
                                 </audio>

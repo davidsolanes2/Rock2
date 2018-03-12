@@ -72,3 +72,37 @@
     margin-top: 5%;
     margin-left: 27%;
 }
+
+
+.modal-dialog {
+    max-width: 1000px;
+    margin: 110px auto 30px;
+}
+
+
+
+.modal-body {
+    position:relative;
+    padding:0px;
+}
+.close {
+    position:absolute;
+    right:-30px;
+    top:0;
+    z-index:999;
+    font-size:2rem;
+    font-weight: normal;
+    color: red;
+    opacity:1;
+    cursor: pointer;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.8;
+}

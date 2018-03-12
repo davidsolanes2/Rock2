@@ -99,18 +99,20 @@ public searchYoutube(nombre: string, artist: string) {
     }
 */
     openModal(nombre:string, artist:string){
-        this.display="block";
-        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${nombre}-${artist}&type=video&maxResults=1&&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
+        this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
+        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${artist}-${nombre}&type=video&maxResults=1&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.idYoutube = data.items[0].id.videoId;
-                this.video = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.idYoutube}`);
+                this.video = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.idYoutube}?autoplay=1`);
+                this.display="block";
             });
     }
 
     onCloseHandled(){
-
         this.display="none";
+        this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
+
 
     }
     ngOnInit() {
@@ -132,7 +134,7 @@ public searchYoutube(nombre: string, artist: string) {
          * Fin control del usuario logeado
          */
         // this.http.get('api/topSongsNap/testInicial')
-        this.http.get('http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=10&catalog=ES')
+        this.http.get('http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=10&catalog=ES&range=week')
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.DataTopTracks = data.tracks;

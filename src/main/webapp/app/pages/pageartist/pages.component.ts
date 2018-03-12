@@ -26,9 +26,9 @@ export class PagesComponent implements OnInit, OnDestroy {
     collections: Collections;
     Coleccion : Collections[];
     Favoritos : any = [];
-    prueba : any = [];
     pages: Pages = new Pages();
     video: SafeUrl;
+    iframe = document.getElementById("myFrame") as HTMLIFrameElement;
     display = 'none';
     idYoutube = '';
     currentAccount: any;
@@ -78,16 +78,18 @@ export class PagesComponent implements OnInit, OnDestroy {
         );
     }
     openModal(nombre:string, artist:string){
-        this.display="block";
-        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${nombre}-${artist}&type=video&maxResults=1&&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
+        this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
+        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${nombre}-${artist}&type=video&maxResults=1&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.idYoutube = data.items[0].id.videoId;
-                this.video = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.idYoutube}`);
+                this.video = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.idYoutube}?autoplay=1`);
+                this.display="block";
             });
     }
     onCloseHandled(){
         this.display="none";
+        this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
     }
     ngOnInit() {
         this.loadAll();
