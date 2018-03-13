@@ -111,6 +111,15 @@ public class SongResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(song));
     }
 
+    /*@GetMapping("/SongNapsterInfo/{idNapster}")
+    @Timed
+    public ResponseEntity<Song> getNapsterSong(@PathVariable Long id) {
+        log.debug("REST request to get Song : {}", id);
+        //return NapsterDTOService.getTopSongNap();
+
+    }*/
+
+
     /**
      * DELETE  /songs/:id : delete the "id" song.
      *

@@ -34,7 +34,6 @@ export class CollectionsService {
             .map((res: Response) => this.convertResponse(res));
     }
 
-
     update(collections: Collections): Observable<Collections> {
         const copy = this.convert(collections);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {

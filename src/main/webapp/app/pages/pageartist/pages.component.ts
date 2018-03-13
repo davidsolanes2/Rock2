@@ -1,18 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+// import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
+// import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 import { Observable } from 'rxjs/Rx';
 
 import { Pages } from './pages.model';
 import { PagesService } from './pages.service';
-import {Principal, ResponseWrapper} from '../../shared';
-import {Http, Response} from '@angular/http';
-import {Collections} from '../../entities/collections';
-import {CollectionsService} from '../../entities/collections';
-import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
-
+import { Principal, ResponseWrapper } from '../../shared';
+import { Http, Response } from '@angular/http';
+import { Collections } from '../../entities/collections';
+import { CollectionsService } from '../../entities/collections';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
     selector: 'jhi-pages',
@@ -24,11 +23,11 @@ import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 export class PagesComponent implements OnInit, OnDestroy {
 
     collections: Collections;
-    Coleccion : Collections[];
-    Favoritos : any = [];
+    Coleccion: Collections[];
+    Favoritos: any = [];
     pages: Pages = new Pages();
     video: SafeUrl;
-    iframe = document.getElementById("myFrame") as HTMLIFrameElement;
+    iframe = document.getElementById('myFrame') as HTMLIFrameElement;
     display = 'none';
     idYoutube = '';
     currentAccount: any;
@@ -62,9 +61,9 @@ export class PagesComponent implements OnInit, OnDestroy {
         this.collectionsService.listar().subscribe(
             (res: ResponseWrapper) => {
                 this.Coleccion = res.json;
-                for (let i=0; i < this.Coleccion.length; i++){
+                for (let i = 0; i < this.Coleccion.length; i++) {
                     console.log(this.Coleccion[i].napsterId);
-                    //Consulta en cada vuelta los datos de las canciones
+                    // Consulta en cada vuelta los datos de las canciones
                     this.http.get(`http://api.napster.com/v2.2/tracks/${this.Coleccion[i].napsterId}?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll`)
                         .subscribe((res: Response) => {
                             const data = res.json();
@@ -72,23 +71,23 @@ export class PagesComponent implements OnInit, OnDestroy {
                             this.Favoritos.push(data.tracks);
                         });
                 }
-                //console.log(this.Favoritos);
+                // console.log(this.Favoritos);
             },
             (res: ResponseWrapper) => this.onError(res.json)
         );
     }
-    openModal(nombre:string, artist:string){
+    openModal(nombre: string, artist: string) {
         this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
         this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${nombre}-${artist}&type=video&maxResults=1&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.idYoutube = data.items[0].id.videoId;
                 this.video = this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.idYoutube}?autoplay=1`);
-                this.display="block";
+                this.display = 'block';
             });
     }
-    onCloseHandled(){
-        this.display="none";
+    onCloseHandled() {
+        this.display = 'none';
         this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
     }
     ngOnInit() {
