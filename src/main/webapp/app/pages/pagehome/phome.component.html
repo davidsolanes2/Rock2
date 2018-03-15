@@ -1,76 +1,157 @@
 <div class="fondo">
-    <br>
-    <h2 style="text-align: center"><span
-        data-translate="rockbible3App.pagehome.phome.title">Tu música a un solo Click</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12" style="text-align: center"><h1>Top Canciones</h1></div>
-        </div>
-        <div class="row">
-            <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-2 col-md-4 col-sm-6 image-top">
-                <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
-                    <div class="overlayInfo">
-                        <div>
-                            <img id="{{data.id}}" (click)="like(data.id)" alt="vacio"
-                                 src="../../../content/images/heart-1.png">
-                            <div class="youtube">
-                                <img class="botonyoutube" (click)="openModal(data.name, data.artistName)"
-                                     src="../../../content/images/youtube.png">
-                            </div>
-                            <audio controls class="audio">
-                                <source src="{{data.previewURL}}" type="audio/mpeg">
-                            </audio>
-                        </div>
-                    </div>
-                </div>
-                <p class="tituloSong" style="text-align: center; color: white">{{data.name}}</p>
-            </div>
-            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-                <div class="backdrop"></div>
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="close" (click)="onCloseHandled()">X</button>
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe id="embed-responsive-item" [src]="video" frameborder="0"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <br>
+
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar" class="active">
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Perfil
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-search"></i>
+                        Buscar canción
+                    </a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-link"></i>
+                        Mi colección
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a href="#">Artista</a></li>
+                        <li><a href="#">Canción</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-music"></i>
+                        Music
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-star"></i>
+                        Artistas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-cog"></i>
+                        Ajustes
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-send"></i>
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <div class="col-10">
                 <div class="col-sm-12">
-                    <input (keyup.enter)="searchSong()" [(ngModel)]="search" type="text" required>
-                    <button class="btn btn-primary" (click)="searchSong()">Buscar</button>
+                    <input type="text" [(ngModel)]="search" class="buscador" placeholder="Buscar artista o canción">
+                    <button class="btn btn-primary" (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
+
+                </div><br>
+                <div class="row">
+                    <div class="col-sm-12" style="text-align: center"><h1><span class="glyphicon glyphicon-search"></span> Búsquedas</h1></div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
-                    <div class="cover" [style.background-image]="sanitizeImage(search.albumId)">
-                        <div class="overlayInfo">
-                            <div>
-                                <img id="{{search.id}}" (click)="like(search.id)" alt="vacio"
-                                     src="../../../content/images/heart-1.png">
-                                <div class="youtube">
-                                    <img class="botonyoutube" (click)="openModal(search.name, search.artistName)"
-                                         src="../../../content/images/youtube.png">
+                <div class="row">
+                    <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
+                        <div class="cover" [style.background-image]="sanitizeImage(search.albumId)">
+                            <div class="overlayInfo">
+                                <div>
+                                    <img id="{{search.id}}" (click)="like(search.id)" alt="vacio"
+                                         src="../../../content/images/heart-1.png">
+                                    <button class="btn btn-primary botonyoutube"
+                                            (click)="openModal(search.name, search.artistName)">Youtube
+                                    </button>
+                                    <audio controls class="audio">
+                                        <source src="{{search.previewURL}}" type="audio/mpeg">
+                                    </audio>
                                 </div>
-                                <audio controls class="audio">
-                                    <source src="{{search.previewURL}}" type="audio/mpeg">
-                                </audio>
+                            </div>
+                        </div>
+                        <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12" style="text-align: center"><h1><span class="glyphicon glyphicon-music"></span> Top Canciones</h1></div>
+                </div>
+                <div class="row">
+                    <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-3 col-md-4 col-sm-6 image-top">
+                        <div class="cover" [style.background-image]="sanitizeImage(data.albumId)">
+                            <div class="overlayInfo">
+                                <div>
+                                    <img id="{{data.id}}" (click)="like(data.id)" alt="vacio"
+                                         src="../../../content/images/heart-1.png">
+                                    <button class="btn btn-primary botonyoutube"
+                                            (click)="openModal(data.name, data.artistName)"><span class="glyphicon glyphicon-play"></span>Youtube
+                                    </button>
+                                    <audio controls class="audio">
+                                        <source src="{{data.previewURL}}" type="audio/mpeg">
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="tituloSong" style="text-align: center; color: white">{{data.name}}</p>
+                    </div>
+                    <div class="backdrop" [ngStyle]="{'display':display}"></div>
+                    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                                        aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Model Title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe id="myFrame" width="470" height="315" [src]="video" frameborder="0"
+                                            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>
+                    <br>
+
+                    <br>
+
+                    -->
                 </div>
+                <div class="row">
+                    <div class="col-sm-12" style="text-align: center"><h1><span class="glyphicon glyphicon-star"></span> Top Artistas</h1></div>
+
+                </div>
+
             </div>
         </div>
+
     </div>
 </div>
-

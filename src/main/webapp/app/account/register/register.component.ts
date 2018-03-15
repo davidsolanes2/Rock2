@@ -7,7 +7,10 @@ import { LoginModalService, EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } f
 
 @Component({
     selector: 'jhi-register',
-    templateUrl: './register.component.html'
+    templateUrl: './register.component.html',
+    styleUrls: [
+        'register.css'
+    ]
 })
 export class RegisterComponent implements OnInit, AfterViewInit {
 
