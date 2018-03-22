@@ -10,6 +10,7 @@
             "pageconciertos-pages": "Pages",
             "pagesong-pages": "Pages",
             "pageregister-pages": "Pages",
+            "layouts-sidebar": "Sidebar",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entiteiten",

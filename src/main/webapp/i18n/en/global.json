@@ -5,11 +5,12 @@
         "menu": {
             "home": "Home",
             "prueba-fromulario": "Fromulario",
-            "pagehome-phome": "Home",
-            "pageartist-pages": "Artist",
-            "pageconciertos-pages": "Concert",
+            "pagehome-phome": "Tendencias",
+            "pageartist-pages": "Artistas",
+            "pageconciertos-pages": "Conciertos",
             "pagesong-pages": "Song",
             "pageregister-pages": "Register",
+            "layouts-sidebar": "Sidebar",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",

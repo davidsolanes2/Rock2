@@ -41,7 +41,7 @@
   "generator-jhipster-pages": {
     "promptValues": {
       "pageSet": "_CreateNew_",
-      "pageType": "loadAndSaveToServer"
+      "pageType": "table"
     }
   }
 }

@@ -1,32 +1,35 @@
 <div class="fondo">
-    <br>
-        <h2 style="text-align: center"><span data-translate="rockbible3App.pageartist.pages.title">Mis Artistas</span></h2>
-    <hr>
+
     <jhi-alert-error></jhi-alert-error>
-    <div class="jumbotron fondo">
-        <div class="row">
-            <div *ngFor="let favourites of Favoritos" class="infoDiv col-lg-2 col-md-4 col-sm-6">
-              <div class="cover" [style.background-image]="sanitizeImage(favourites[0].albumId)">
-                    <div class="overlayInfo">
-                        <div>
-                            <img id="{{favourites[0].id}}" (click)="like(favourites[0].id)" alt="completo" src="../../../content/images/heart-2.png">
-                            <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)">Youtube</button>
-                            <audio controls class="audio">
-                                <source src="{{favourites[0].previewURL}}" type="audio/mpeg">
-                            </audio>
+    <div class="fondo">
+        <div id="fh5co-main">
+            <br>
+            <h2 style="text-align: center"><span data-translate="rockbible3App.pageartist.pages.title">Mis Artistas</span></h2>
+
+            <div class="row">
+                <div *ngFor="let favourites of Favoritos" class="infoDiv col-lg-3 col-md-4 col-sm-6">
+                    <div class="cover" [style.background-image]="sanitizeImage(favourites[0].albumId)">
+                        <div class="overlayInfo">
+                            <div>
+                                <img id="{{favourites[0].id}}" (click)="like(favourites[0].id)" alt="completo" src="../../../content/images/heart-2.png">
+                                <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)">Youtube</button>
+                                <audio controls class="audio">
+                                    <source src="{{favourites[0].previewURL}}" type="audio/mpeg">
+                                </audio>
+                            </div>
                         </div>
                     </div>
+                    <p class="tituloSong" style="text-align: center; color: white">{{favourites[0].name}}</p>
                 </div>
-                <p class="tituloSong" style="text-align: center; color: white">{{favourites[0].name}}</p>
-            </div>
-            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-                <div class="backdrop"></div>
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="close" (click)="onCloseHandled()">X</button>
-                           <div class="embed-responsive embed-responsive-16by9">
-                               <iframe id="embed-responsive-item" [src]="video" frameborder="0" allowfullscreen></iframe>
+                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+                    <div class="backdrop"></div>
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" (click)="onCloseHandled()">X</button>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe id="embed-responsive-item" [src]="video" frameborder="0" allowfullscreen></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>

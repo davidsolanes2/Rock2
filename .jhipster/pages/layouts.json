@@ -1,0 +1,12 @@
+{
+    "pages": [
+        {
+            "pageName": "sidebar",
+            "pageType": "table",
+            "fields": [],
+            "pagination": "no"
+        }
+    ],
+    "pageSetGlyphIcon": "",
+    "changelogDate": "20180315194137"
+}
