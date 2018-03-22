@@ -74,4 +74,5 @@ export class PagesComponent implements OnInit, OnDestroy {
     private onError(error) {
         this.jhiAlertService.error(error.message, null, null);
     }
+
 }

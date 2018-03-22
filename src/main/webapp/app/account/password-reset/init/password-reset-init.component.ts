@@ -5,7 +5,11 @@ import { EMAIL_NOT_FOUND_TYPE } from '../../../shared';
 
 @Component({
     selector: 'jhi-password-reset-init',
-    templateUrl: './password-reset-init.component.html'
+    templateUrl: './password-reset-init.component.html',
+    styleUrls: [
+        'password-reset-init.css'
+    ]
+
 })
 export class PasswordResetInitComponent implements OnInit, AfterViewInit {
     error: string;

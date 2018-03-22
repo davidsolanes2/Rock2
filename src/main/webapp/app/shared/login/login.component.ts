@@ -1,21 +1,34 @@
-import { Component, AfterViewInit, Renderer, ElementRef } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
-import { JhiEventManager } from 'ng-jhipster';
+import {AfterViewInit, Component, ElementRef, OnInit, Renderer} from '@angular/core';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router';
+import {JhiEventManager, JhiLanguageService} from 'ng-jhipster';
 
-import { LoginService } from './login.service';
-import { StateStorageService } from '../auth/state-storage.service';
+import {LoginService} from './login.service';
+import {StateStorageService} from '../auth/state-storage.service';
+import {Register} from "../../account/register/register.service";
+import {EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE} from "../index";
 
 @Component({
     selector: 'jhi-login-modal',
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    styleUrls: [
+        'login.css'
+    ]
 })
-export class JhiLoginModalComponent implements AfterViewInit {
+export class JhiLoginModalComponent implements OnInit, AfterViewInit {
     authenticationError: boolean;
     password: string;
     rememberMe: boolean;
     username: string;
     credentials: any;
+    registerAccount: any;
+    errors: string;
+    success: boolean;
+    confirmPassword: string;
+    errorEmailExists: string;
+    errorUserExists: string;
+    doNotMatch: string;
+    error: string;
 
     constructor(
         private eventManager: JhiEventManager,
@@ -24,11 +37,17 @@ export class JhiLoginModalComponent implements AfterViewInit {
         private elementRef: ElementRef,
         private renderer: Renderer,
         private router: Router,
-        public activeModal: NgbActiveModal
+        public activeModal: NgbActiveModal,
+        private languageService: JhiLanguageService,
+        private registerService: Register
     ) {
         this.credentials = {};
     }
 
+    ngOnInit() {
+        this.success = false;
+        this.registerAccount = {};
+    }
     ngAfterViewInit() {
         this.renderer.invokeElementMethod(this.elementRef.nativeElement.querySelector('#username'), 'focus', []);
     }
@@ -75,13 +94,41 @@ export class JhiLoginModalComponent implements AfterViewInit {
         });
     }
 
+
+
     register() {
         this.activeModal.dismiss('to state register');
         this.router.navigate(['/register']);
     }
 
+    registerForm() {
+        if (this.registerAccount.password !== this.confirmPassword) {
+            this.doNotMatch = 'ERROR';
+        } else {
+            this.doNotMatch = null;
+            this.error = null;
+            this.errorUserExists = null;
+            this.errorEmailExists = null;
+            this.languageService.getCurrent().then((key) => {
+                this.registerAccount.langKey = key;
+                this.registerService.save(this.registerAccount).subscribe(() => {
+                    this.success = true;
+                }, (response) => this.processError(response));
+            });
+        }
+    }
     requestResetPassword() {
         this.activeModal.dismiss('to state requestReset');
         this.router.navigate(['/reset', 'request']);
+    }
+    private processError(response) {
+        this.success = null;
+        if (response.status === 400 && response.json().type === LOGIN_ALREADY_USED_TYPE) {
+            this.errorUserExists = 'ERROR';
+        } else if (response.status === 400 && response.json().type === EMAIL_ALREADY_USED_TYPE) {
+            this.errorEmailExists = 'ERROR';
+        } else {
+            this.error = 'ERROR';
+        }
     }
 }
