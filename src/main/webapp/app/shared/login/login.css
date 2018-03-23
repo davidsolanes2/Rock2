@@ -116,7 +116,14 @@ span{
 .boton2:hover {
     background: #16aa56;
 }
+#close{
+    color:black!important;
 
+}
+#close:hover{
+    color: red!important;
+
+}
 
 .b {
     background: #b5cd60;

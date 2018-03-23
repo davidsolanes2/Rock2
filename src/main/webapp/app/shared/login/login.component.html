@@ -1,7 +1,9 @@
 <div class="modal-header">
     <div class="logo">
         <img src="../../../content/images/logo.png" height="225" width="225"/>
+
     </div>
+    <button id="close" aria-label="Close" data-dismiss="modal" class="close" type="button" (click)="activeModal.dismiss('closed')"><span aria-hidden="true">x</span></button>
 </div>
 <div class="body">
 <ngb-tabset>
