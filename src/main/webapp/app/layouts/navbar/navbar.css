@@ -38,10 +38,10 @@
 #fh5co-aside #fh5co-logo {
     text-align: center;
     font-family: Dosis, sans-serif;
-    font-weight: 450;
+    font-weight: 400;
     margin-bottom: 2em;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 20px;
 }
 @media screen and (max-width: 768px) {
     #fh5co-aside #fh5co-logo {
@@ -129,7 +129,7 @@
 #fh5co-aside .fh5co-footer {
     position: relative;
     bottom: -60px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     width: 100%;
     font-weight: 400;
