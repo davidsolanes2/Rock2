@@ -358,6 +358,27 @@ a.article, a.article:hover {
     opacity: 0.8;
 }
 
+#fh5co-main {
+    width: 85%;
+    float: right;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    background: linear-gradient(#33b7ff,#020d1c);
+
+}
+
+@media screen and (max-width: 1200px) {
+    #fh5co-main {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 768px) {
+    #fh5co-main {
+        width: 100%;
+    }
+}
+
 
 /* ---------------------------------------------------
     CONTENT STYLE
