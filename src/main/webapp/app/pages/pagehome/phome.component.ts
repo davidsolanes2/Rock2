@@ -1,20 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-
-// import { HttpResponse, HttpErrorResponse} from '@angular/common/http';
-// import { ActivatedRoute, Router } from '@angular/router';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Account, LoginModalService, Principal } from '../../shared';
-
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {Account, LoginModalService, Principal} from '../../shared';
 import {Observable, Subscription} from 'rxjs/Rx';
-import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
-// import { Observable } from 'rxjs/Rx';
-
-import { Phome } from './phome.model';
-import { PhomeService } from './phome.service';
-import { Http, Response } from '@angular/http';
+import {JhiEventManager, JhiParseLinks, JhiAlertService} from 'ng-jhipster';
+import {Phome} from './phome.model';
+import {PhomeService} from './phome.service';
+import {Http, Response} from '@angular/http';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import {CollectionsService} from '../../entities/collections';
 import {Collections} from '../../entities/collections';
+// import { HttpResponse, HttpErrorResponse} from '@angular/common/http';
+// import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'jhi-phome',
@@ -23,10 +19,11 @@ import {Collections} from '../../entities/collections';
         'phome.css'
     ]
 })
+
+
 export class PhomeComponent implements OnInit, OnDestroy {
 
     phome: Phome = new Phome();
-
     currentAccount: any;
     eventSubscriber: Subscription;
     isSaving: Boolean;
@@ -57,26 +54,27 @@ export class PhomeComponent implements OnInit, OnDestroy {
     video: SafeUrl;
     likeVacio = require('../../../content/images/heart-1.png');
     likeCompleto = require('../../../content/images/heart-2.png');
-    constructor(
-        private phomeService: PhomeService,
-        private parseLinks: JhiParseLinks,
-        private jhiAlertService: JhiAlertService,
-        private eventManager: JhiEventManager,
-        private principal: Principal,
-        private loginModalService: LoginModalService,
-        private http: Http,
-        private _sanitizer: DomSanitizer,
-        private collectionsService: CollectionsService,
 
-) {
+    constructor(private phomeService: PhomeService,
+                private parseLinks: JhiParseLinks,
+                private jhiAlertService: JhiAlertService,
+                private eventManager: JhiEventManager,
+                private principal: Principal,
+                private loginModalService: LoginModalService,
+                private http: Http,
+                private _sanitizer: DomSanitizer,
+                private collectionsService: CollectionsService,) {
     }
 
+
     loadAll() {
+
     }
 
     public sanitizeImage(image: string) {
         return this._sanitizer.bypassSecurityTrustStyle(`url(http://direct.rhapsody.com/imageserver/v2/albums/${image}/images/500x500.jpg)`);
     }
+
     public searchSong() {
         console.log(this.search);
         this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=5`)
@@ -102,8 +100,8 @@ export class PhomeComponent implements OnInit, OnDestroy {
         this.display = 'none';
         this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
     }
-    ngOnInit() {
 
+    ngOnInit() {
         this.loadAll();
         this.principal.identity().then((account) => {
             this.currentAccount = account;
@@ -121,27 +119,30 @@ export class PhomeComponent implements OnInit, OnDestroy {
          * Fin control del usuario logeado
          */
         // this.http.get('api/topSongsNap/testInicial')
-        this.http.get('http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=10&catalog=ES&range=week')
+        this.http.get('http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=8&catalog=ES&range=day')
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.DataTopTracks = data.tracks;
             });
+
     }
 
     ngOnDestroy() {
 
         this.eventManager.destroy(this.eventSubscriber);
     }
+
     registerChangeInPhomes() {
         this.eventSubscriber = this.eventManager.subscribe('phomeListModification', (response) => this.loadAll());
     }
+
     /**
      * Inicio control del usuario logeado
      */
     registerAuthenticationSuccess() {
         this.eventManager.subscribe('authenticationSuccess', (message) => {
             this.principal.identity().then((account) => {
-            this.account = account;
+                this.account = account;
             });
         });
     }
@@ -153,6 +154,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     login() {
         this.modalRef = this.loginModalService.open();
     }
+
     /**
      * Fin control del usuario logeado
      */
@@ -163,6 +165,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
         }
         return result;
     }
+
     private onError(error) {
         this.jhiAlertService.error(error.message, null, null);
     }
@@ -190,7 +193,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     }
 
     private onSaveSuccess(result: Collections) {
-        this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
+        this.eventManager.broadcast({name: 'collectionsListModification', content: 'OK'});
         this.isSaving = false;
         document.images[this.idNapster].src = this.likeCompleto;
         document.images[this.idNapster].alt = 'completo';
@@ -201,3 +204,5 @@ export class PhomeComponent implements OnInit, OnDestroy {
     }
 
 }
+
+//$(document).ready(inici);

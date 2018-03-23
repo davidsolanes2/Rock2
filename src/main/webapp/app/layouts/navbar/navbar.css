@@ -10,7 +10,7 @@
     background-color: lightsteelblue;
     padding-top: 60px;
     padding-bottom: 40px;
-    width: 17%;
+    width: 12%;
     position: fixed;
     bottom: 0;
     top: 0;
@@ -127,8 +127,8 @@
     transform: scaleX(1);
 }
 #fh5co-aside .fh5co-footer {
-    position: absolute;
-    bottom: 40px;
+    position: relative;
+    bottom: -60px;
     font-size: 14px;
     text-align: center;
     width: 100%;
