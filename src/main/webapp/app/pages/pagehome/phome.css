@@ -10,6 +10,10 @@
     background: linear-gradient(#020d1c,#020d1c);
 }
 
+.row{
+    width: 93%!important;
+    margin-left: 10%!important;
+}
 h1{
     color:white!important;
 }

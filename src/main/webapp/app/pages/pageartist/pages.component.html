@@ -4,7 +4,9 @@
     <div class="fondo">
         <div id="fh5co-main">
             <br>
-            <h2 style="text-align: center"><span data-translate="rockbible3App.pageartist.pages.title">Mis Artistas</span></h2>
+<div class="row">
+    <div class="col-md-12" style="text-align: center"><h1><span class="glyphicon glyphicon-star"></span> Mis Canciones</h1></div>
+</div>
 
             <div class="row">
                 <div *ngFor="let favourites of Favoritos" class="infoDiv col-lg-3 col-md-4 col-sm-6">
@@ -12,7 +14,9 @@
                         <div class="overlayInfo">
                             <div>
                                 <img id="{{favourites[0].id}}" (click)="like(favourites[0].id)" alt="completo" src="../../../content/images/heart-2.png">
-                                <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)">Youtube</button>
+
+
+                                <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)"><span class="glyphicon glyphicon-play"></span>Youtube</button>
                                 <audio controls class="audio">
                                     <source src="{{favourites[0].previewURL}}" type="audio/mpeg">
                                 </audio>
