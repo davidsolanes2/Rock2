@@ -54,7 +54,8 @@
     }
 }
 #fh5co-aside #fh5co-logo a {
-    color: #000;
+    font-weight: bold!important;
+
 }
 #fh5co-aside #fh5co-logo a span {
     font-weight: 300;
@@ -95,7 +96,7 @@
     bottom: 7px;
     left: 10px;
     right: 10px;
-    background-color: #228896;
+    background-color: #007bff!important;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
@@ -168,7 +169,7 @@
 #fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
     text-decoration: none;
     outline: none;
-    color: #228896;
+    color: #007bff!important;
 }
 
 #fh5co-main {
