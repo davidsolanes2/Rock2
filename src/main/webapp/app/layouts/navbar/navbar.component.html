@@ -313,7 +313,7 @@
 <!-- Sidebar-->
 <!--<nav class="navbar navbar-dark navbar-expand-md jh-navbar">-->
     <aside  id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <h1 id="fh5co-logo"><a href="index.html">PuigTheSong</a></h1>
+        <h1 id="fh5co-logo"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">PuigTheSong</a></h1>
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
                 <li class="fh5co">
@@ -323,13 +323,13 @@
                     </a>
                 </li>
                 <li class="fh5co">
-                    <a routerLink="pagesong-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <a routerLink="pageartist-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                         <i class="fa fa-star-half-full" aria-hidden="true"></i>&nbsp;
                         <span jhiTranslate="global.menu.pagesong-pages">Song</span>
                     </a>
                 </li>
                 <li class="fh5co">
-                    <a routerLink="pageartist-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <a routerLink="pagesong-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                         <i class="fa fa-star-half-full" aria-hidden="true"></i>&nbsp;
                         <span jhiTranslate="global.menu.pageartist-pages">Pageartist Pages</span>
                     </a>

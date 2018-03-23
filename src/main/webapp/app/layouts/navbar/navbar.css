@@ -35,7 +35,12 @@
         transform: translateX(-270px);
     }
 }
-#fh5co-aside #fh5co-logo {
+
+
+
+
+/*Titulo*/
+#fh5co-logo {
     text-align: center;
     font-family: Dosis, sans-serif;
     font-weight: 400;
@@ -197,14 +202,6 @@
     }
 }
 
-
-/*#fh5co-hero {
-    min-height: 500px;
-    background: #fff url(../images/loader.gif) no-repeat center center;
-    width: 100%;
-    float: left;
-    clear: both;
-}*/
 #fh5co-hero .btn {
     font-size: 24px;
 }
