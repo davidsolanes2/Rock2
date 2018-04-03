@@ -60,7 +60,6 @@ h1{
 
 .tituloSong{
     color: white;
-    font-size: 20px;
     position: relative;
     text-align: center;
 }
@@ -388,6 +387,14 @@ a.article, a.article:hover {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+
+
+@media (max-width: 580px) {
+    .row{
+        left: 80px!important;
+    }
+
+}
 @media (max-width: 768px) {
     #sidebar {
         min-width: 80px;

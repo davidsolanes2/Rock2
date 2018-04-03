@@ -22,17 +22,29 @@
 }
 @media screen and (max-width: 1200px) {
     #fh5co-aside {
-        width: 20%;
+        width: 18%;
     }
 }
 @media screen and (max-width: 768px) {
-    #fh5co-aside {
-        width: 270px;
-        -moz-transform: translateX(-270px);
-        -webkit-transform: translateX(-270px);
-        -ms-transform: translateX(-270px);
-        -o-transform: translateX(-270px);
-        transform: translateX(-270px);
+
+           span{
+               display:none!important;
+
+           }
+}
+
+@media screen and (max-width: 400px) {
+
+    span{
+        display:none!important;
+
+    }
+
+    #fh5co-logo{
+        display: none!important;
+    }
+    small{
+        font-size: 63%!important;
     }
 }
 
@@ -58,7 +70,7 @@
 
 }
 #fh5co-aside #fh5co-logo a span {
-    font-weight: 300;
+    font-weight: 200;
     color: rgba(0, 0, 0, 0.5);
 }
 #fh5co-aside #fh5co-main-menu ul {
