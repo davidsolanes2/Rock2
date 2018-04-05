@@ -472,3 +472,22 @@ a.article, a.article:hover {
         width: 100%;
     }
 
+    .box-info {
+        background: rgba(35, 35, 35, 0.7);
+        box-sizing: border-box;
+        /*height: 100%;*/
+        width: 100%;
+        -webkit-transition: opacity 0.45s ease-in-out;
+        transition: opacity 0.45s ease-in-out;
+        text-align: center;
+        padding: 10% 0 0;
+        font-weight: 900;
+        font-size: 30px;
+        font-family: "Dosis", sans-serif;
+        color: #fff;
+        opacity: 0;
+    }
+    .box-info:hover {
+        opacity: 1;
+    }
+
