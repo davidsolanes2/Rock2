@@ -75,12 +75,16 @@ export class PhomeComponent implements OnInit, OnDestroy {
         return this._sanitizer.bypassSecurityTrustStyle(`url(http://direct.rhapsody.com/imageserver/v2/albums/${image}/images/500x500.jpg)`);
     }
 
+
+    public sanitizeImageCountry(pais: string) {
+        return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/Paises/${pais}.jpg)`);
+    }
+
     public searchSong() {
         console.log(this.search);
         this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=5`)
             .subscribe((res: Response) => {
                 const data = res.json();
-                console.log(data.search.data.tracks);
                 this.DataSearch = data.search.data.tracks;
             });
     }
@@ -185,9 +189,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     private subscribeToLikeResponse(result: Observable<Collections>) {
         console.log('Antes subscribe');
         result.subscribe((res: Collections) => {
-                console.log('dentro subscribe. Antes de onsavesucces');
                 this.onSaveSuccess(res), (res: Response) => this.onSaveError()
-                console.log('dentro subscribe. Despues de onsavesucces');
             }
         );
     }

@@ -7,7 +7,7 @@
     background: linear-gradient(#020d1c,#020d1c);
     float:right!important;
     width:90%!important;
-    display: none;
+
 }
 
 .row{
@@ -35,6 +35,17 @@ h1{
 }
 .buscador{
     width:94%;
+}
+
+.paises {
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    width: 260px;
+    height: 240px;
+    display: block;
+    margin: 10px;
+    position: relative;
 }
 
 .cover {
@@ -81,6 +92,11 @@ h1{
     margin-left: 32%;
     display: inline-block;
     margin-top: 15%;
+}
+
+.paises:hover .overlayInfo{
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 .cover:hover .overlayInfo{
@@ -460,7 +476,7 @@ a.article, a.article:hover {
 
     .picture-grid {
         padding-top: 5%;
-        padding-left: 10%;
+        padding-left: 12%;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         justify-items: center;
@@ -489,5 +505,10 @@ a.article, a.article:hover {
     }
     .box-info:hover {
         opacity: 1;
+    }
+
+    .nombre a{
+
+
     }
 
