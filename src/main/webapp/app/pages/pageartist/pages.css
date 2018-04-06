@@ -347,11 +347,12 @@ a.article, a.article:hover {
     right:-30px;
     top:0;
     z-index:999;
-    font-size:2rem;
+    font-size:3rem;
     font-weight: normal;
     color: red;
     opacity:1;
     cursor: pointer;
+
 }
 
 .backdrop {
@@ -378,7 +379,49 @@ a.article, a.article:hover {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+
+
+@media (max-width: 600px){
+    .cover{
+        margin-left: 100px!important;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .cover{
+        margin-left: -30px!important;
+    }
+}
+@media screen and (max-width: 767px) {
+
+    .tituloSong{
+        margin-left: 100px!important;
+    }
+}
+
+
+@media screen and (max-width: 730px){
+    .tituloSong{
+        margin-left: -50px!important;
+    }
+}
+
+@media screen and (max-width: 600px){
+   .tituloSong{
+       margin-left: -13px!important;
+   }
+}
+
 @media (max-width: 768px) {
+
+
+    .tituloSong{
+        margin-left: 100px!important;
+    }
+    .cover{
+        margin-left: 100px!important;
+    }
     #sidebar {
         min-width: 80px;
         max-width: 80px;

@@ -169,6 +169,15 @@ span{
     .boton2 {
         margin-left: 22%!important;
     }
+#password{
+    margin-left: 27%!important;
+}
+#username{
+    margin-left: 14px!important;
+}
+#rememberMe{
+    margin-left: 5px!important;
+}
 
 #form{
     margin-left: 24%!important;

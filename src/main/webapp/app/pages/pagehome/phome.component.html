@@ -120,8 +120,10 @@
             <div class="row">
                 <div class="col-sm-12 buscador">
                     <br>
-                    <input type="text" (keyup.enter)="searchSong()" [(ngModel)]="search" class="buscador" placeholder="Buscar artista o canción">
-                    <button class="btn btn-primary"  (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
+
+                    <input type="text"  id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search" placeholder="Buscar artista o canción">
+                    <button class="btn-primary" id="b"  (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
+
                 </div><br>
                 <div class="row">
                     <div class="col-lg-10" style="text-align: center"><h1><span class="glyphicon glyphicon-search"></span> Búsquedas</h1></div>
@@ -173,6 +175,7 @@
                             <div class="backdrop"></div>
                             <div class="modal-content">
                                 <div class="modal-body">
+                                    <!-- X ponerla visible -->
                                     <button type="button" class="close" (click)="onCloseHandled()">X</button>
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <iframe id="embed-responsive-item" [src]="video" frameborder="0" allowfullscreen></iframe>

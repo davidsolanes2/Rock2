@@ -24,6 +24,14 @@ label{
     font-style: italic!important;
     font-size: 14px!important;
 }
+#fondos{
+    margin-left: 70px!important;
+}
+h1{
+    color:white!important;
+    margin-left: 16%!important;
+    font-weight:bold!important;
+}
 
 button:hover{
     -webkit-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
@@ -36,5 +44,32 @@ button:hover{
 
     .boton2{
         margin-left: 41%!important;
+    }
+    .form-control{
+        width: 60%!important;
+        margin-left: 27%!important;
+    }
+    label{
+        margin-left: 27%!important;
+    }
+    h1{
+        margin-left: 40%!important;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .boton2{
+        margin-left: 41%!important;
+    }
+    .form-control{
+        width: 60%!important;
+        margin-left: 27%!important;
+    }
+    label{
+        margin-left: 27%!important;
+    }
+    h1{
+        margin-left: 40%!important;
     }
 }

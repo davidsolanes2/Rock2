@@ -33,8 +33,21 @@ h1{
     color: grey;
     font-style: italic;
 }
-.buscador{
-    width:94%;
+#buscador {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 24px;
+    width: 500px;
+    border: transparent;
+    border-bottom: solid 1px #ccc;
+    outline: none;
+    color:white!important;
+    margin-left: 27%!important;
+
+
+}
+#b{
+    background-color: black!important;
+    border-color: white!important;
 }
 
 .paises {
@@ -59,7 +72,7 @@ h1{
 }
 .audio{
     align-content: center;
-    margin-top: 8%;
+    margin-top: 2%;
     width: 100%;
 }
 
@@ -166,6 +179,7 @@ p {
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
+    margin-left: -48px!important;
 
 }
 
@@ -313,6 +327,11 @@ a[aria-expanded="true"]::before {
     content: '\e260';
 }
 
+.infoDiv col-lg-3 col-md-4 col-sm-6 image-top {
+    padding-right: 83px!important;
+    padding-left: 15px!important;
+    margin-left: 100px!important;
+}
 
 ul ul a {
     font-size: 0.9em !important;
@@ -360,7 +379,7 @@ a.article, a.article:hover {
     right:-30px;
     top:0;
     z-index:999;
-    font-size:2rem;
+    font-size:3rem;
     font-weight: normal;
     color: red;
     opacity:1;
@@ -402,14 +421,57 @@ a.article, a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 
+@media (max-width: 800px) {
 
-@media (max-width: 580px) {
+    #buscador{
+        width: 555px!important;
+        margin-left: 29px!important;
+    }
+
+    .audio{
+        margin-top:5%!important;
+    }
+
+}
+
+@media (max-width: 700px) {
     .row{
         left: 80px!important;
+    }
+    #buscador{
+        width: 504px!important;
+        margin-left: 5px!important;
+    }
+    .audio{
+        margin-top: 10%!important;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .row{
+        left: 80px!important;
+    }
+    #buscador{
+        width: 600px!important;
+        margin-left: 3px!important;
+    }
+    #b{
+        display:none!important;
     }
 
 }
 @media (max-width: 768px) {
+
+    .buscador{
+        width: 400px!important;
+        margin-left: 2px!important;
+
+    }
+
+    #b{
+        display:none!important;
+    }
     #sidebar {
         min-width: 80px;
         max-width: 80px;
