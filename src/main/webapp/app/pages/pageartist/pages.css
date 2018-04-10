@@ -72,7 +72,7 @@ h1{
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
     background-color: #f5f5f5;
 }
 .cover img{
@@ -380,7 +380,11 @@ a.article, a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 
-
+@media (min-width: 576px){
+    .col-sm-6{
+    max-width: 40%!important;
+    }
+}
 @media (max-width: 600px){
     .cover{
         margin-left: 100px!important;
