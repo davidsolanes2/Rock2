@@ -46,6 +46,8 @@ export class PhomeComponent implements OnInit, OnDestroy {
      */
 
     display = 'none';
+    displayMain = 'none';
+    displayCountry = 'block';
     DataTopTracks: any = [];
     DataSearch: any = [];
     search = '';
@@ -90,7 +92,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
     }
 
     openModal(nombre: string, artist: string) {
-        this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
         this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${artist}-${nombre}&type=video&maxResults=1&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
             .subscribe((res: Response) => {
                 const data = res.json();
@@ -103,6 +104,22 @@ export class PhomeComponent implements OnInit, OnDestroy {
     onCloseHandled() {
         this.display = 'none';
         this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
+    }
+
+    topSong(ISO: string){
+        this.http.get(`http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=8&catalog=${ISO}&range=day`)
+            .subscribe((res: Response) => {
+                const data = res.json();
+                this.DataTopTracks = data.tracks;
+                this.displayCountry = 'none';
+                this.displayMain = 'block';
+            });
+    }
+
+    changeCountry(){
+        this.displayCountry = 'block';
+        this.displayMain = 'none';
+
     }
 
     ngOnInit() {
