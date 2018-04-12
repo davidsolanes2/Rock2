@@ -122,14 +122,16 @@
         <div class="row">
                 <div class="col-sm-12 buscador">
                     <br>
-                    <button (click)="changeCountry()">Cambiar Pais</button>
+
                     <input type="text"  id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search" placeholder="Buscar artista o canción">
                     <button class="btn-primary" id="b"  (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
+                    <button class="fa fa-globe fa-lg" id="mundo"(click)="changeCountry()"></button>
 
-                </div><br>
-                <div class="row">
-                    <div class="col-lg-10" style="text-align: center"><h1><span class="glyphicon glyphicon-search"></span> Búsquedas</h1></div>
-                </div>
+                </div><br><br>
+            <!--
+               <div class="row">
+                <div class="col-lg-10" style="text-align: center"><h1 [ngStyle]="{'display':displayMain}"><span class="glyphicon glyphicon-search"></span> Búsquedas</h1></div>
+                </div>-->
                 <div class="row">
                     <div *ngFor="let search of DataSearch" class="infoDiv col-lg-3 col-md-4 col-sm-6">
                         <div class="cover" [style.background-image]="sanitizeImage(search.albumId)">

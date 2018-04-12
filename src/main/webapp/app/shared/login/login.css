@@ -165,6 +165,12 @@ span{
     border-color: black!important;
 }
 
+#registro{
+    bakground-color: white!important;
+    color: grey!important;
+    text-decoration: none!important;
+}
+
 @media only screen and (max-width: 700px) {
     .boton2 {
         margin-left: 22%!important;
