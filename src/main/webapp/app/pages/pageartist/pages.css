@@ -8,13 +8,13 @@
 
 .fondo{
     background-size: cover;
-    background: linear-gradient(#020d1c,#020d1c);
+    background-color: #d6cece!important;
     float:right!important;
     width:90%!important;
 }
 
 h1{
-    color:white!important;
+    color:black!important;
     font-size: 2.5em!important;
     display:inline-block!important;
     margin-left: -10%;
@@ -45,7 +45,6 @@ h1{
     height: 200px;
     display: block;
     margin: 10px;
-    border: 2px solid white;
     position: relative;
 }
 .audio{
@@ -59,7 +58,7 @@ h1{
 }
 
 .tituloSong{
-    color: white;
+    color: black;
     font-size: 20px;
     position: relative;
     text-align: center;
@@ -106,9 +105,9 @@ h1{
 }
 
 button:hover{
-    -webkit-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
-    -moz-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
-    box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 0px 51px 4px rgb(255, 61, 112);
+    -moz-box-shadow: 0px 0px 51px 4px rgb(255, 0, 10);
+    box-shadow: 0px 0px 30px 4px rgb(255, 0, 10);
     cursor:pointer;
 }
 
@@ -262,7 +261,7 @@ i, span {
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
-    background-color: #f5f5f5!important;
+    background-color: #4169E1!important;
     height:100%;
 }
 

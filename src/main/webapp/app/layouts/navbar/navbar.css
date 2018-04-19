@@ -7,7 +7,7 @@
 
 /* Diseño del sidebar */
 #fh5co-aside {
-    background-color: lightsteelblue;
+    background-color: #ea4d4d!important;
     padding-top: 60px;
     padding-bottom: 40px;
     width: 12%;
@@ -19,6 +19,7 @@
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+    color:white!important;
 }
 @media screen and (max-width: 1200px) {
     #fh5co-aside {
@@ -91,6 +92,7 @@
     font-family: Dosis, sans-serif;
     font-weight: 400;
     margin-bottom: 2em;
+    margin-left: 1px;
     text-transform: uppercase;
     font-size: 20px;
 }
@@ -123,7 +125,7 @@
     list-style: none;
 }
 #fh5co-aside #fh5co-main-menu ul li a {
-    color: rgba(0, 0, 0, 0.9);
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 20px;
@@ -142,7 +144,7 @@
     bottom: 7px;
     left: 10px;
     right: 10px;
-    background-color: #007bff!important;
+    background-color: white!important;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
@@ -157,7 +159,7 @@
 }
 #fh5co-aside #fh5co-main-menu ul li a:hover {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 #fh5co-aside #fh5co-main-menu ul li a:hover:after {
     visibility: visible;
@@ -168,7 +170,7 @@
     transform: scaleX(1);
 }
 #fh5co-aside #fh5co-main-menu ul li.fh5co-active a {
-    color: black;
+    color: white;
 }
 #fh5co-aside #fh5co-main-menu ul li.fh5co-active a:after {
     visibility: visible;
@@ -215,7 +217,7 @@
 #fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
     text-decoration: none;
     outline: none;
-    color: #007bff!important;
+    color: white!important;
 }
 
 #fh5co-main {
@@ -495,7 +497,6 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     -o-transform: scale(1);
     transform: scale(1);
 }
-
 .work {
     background-size: cover;
     background: no-repeat center center;
@@ -574,7 +575,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 }
 
 .fh5co-heading-colored {
-    color: #228896;
+    color: white;
     font-size: 30px;
 }
 
@@ -704,12 +705,12 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     }
 }
 .fh5co-social li a:hover {
-    color: #228896;
+    color: white;
 }
 .fh5co-social li a:hover, .fh5co-social li a:active, .fh5co-social li a:focus {
     outline: none;
     text-decoration: none;
-    color: #228896;
+    color: white;
 }
 
 #map {
@@ -779,7 +780,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     margin-top: 30px;
 }
 .fh5co-feature.fh5co-feature-sm .fh5co-icon i {
-    color: #228896;
+    color: white;
     font-size: 40px;
 }
 @media screen and (max-width: 1200px) {

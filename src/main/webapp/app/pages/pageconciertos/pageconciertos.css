@@ -8,14 +8,14 @@
 
 .fondo{
     background-size: cover;
-    background: linear-gradient(#020d1c,#020d1c);
+    background-color: #d6cece!important;
     float:right!important;
     width:90%!important;
 }
 
 h1{
-    color:white!important;
-    font-size: 2em!important;
+    color:black!important;
+    font-size: 2.5em!important;
     display:inline-block!important;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

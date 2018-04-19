@@ -14,7 +14,6 @@
                             <div>
                                 <img id="{{favourites[0].id}}" (click)="like(favourites[0].id)" alt="completo" src="../../../content/images/heart-2.png">
 
-
                                 <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)"><span class="glyphicon glyphicon-play"></span>Youtube</button>
                                 <audio controls class="audio">
                                     <source src="{{favourites[0].previewURL}}" type="audio/mpeg">
@@ -22,7 +21,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tituloSong" style="text-align: center; color: white">{{favourites[0].name}}</p>
+                    <p class="tituloSong" style="text-align: center; color: black">{{favourites[0].name}}</p>
                 </div>
                 <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
                     <div class="backdrop"></div>

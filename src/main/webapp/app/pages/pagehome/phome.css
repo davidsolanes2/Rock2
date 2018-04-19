@@ -4,13 +4,17 @@
 
 .fondo{
     background-size: cover;
-    background: black!important;
+    background-color: #d6cece!important;
     float:right!important;
     width:90%!important;
     display: none;
 
 }
 
+#mas{
+    background-color: #d6cece!important;
+    color: white!important;
+}
 .fa fa-globe{
     background-color: black!important;
 }
@@ -22,7 +26,7 @@
     margin-left: 5%!important;
 }
 h1{
-    color:white!important;
+    color:black!important;
     font-size: 2.5em!important;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -47,7 +51,7 @@ h1{
 }
 #buscador {
     background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
-    background-size: 24px;
+    background-size: 0px;
     width: 54%!important;
     border: transparent;
     border-bottom: solid 1px #ccc;
@@ -59,8 +63,9 @@ h1{
 }
 
 #mundo{
-    color: black!important;
-    background-color: #dddddd!important;
+    color:black!important;
+    background-color: #d6cece!important;
+    border-color: #d6cece!important;
 
 }
 
@@ -95,7 +100,6 @@ h1{
     height: 200px;
     display: block;
     margin: 10px;
-    border: 2px solid white;
     position: relative;
 }
 .audio{
@@ -109,7 +113,7 @@ h1{
 }
 
 .tituloSong{
-    color: white;
+    color: black;
     position: relative;
     text-align: center;
 }
@@ -123,12 +127,14 @@ h1{
     width: 100%;
     opacity: 0;
     transition: 0.5s ease;
-    background-color: #f5f5f5;
+    background-color: white!important;
     text-align: center;
 }
 
 .hijo{
     line-height: 260px!important;
+    color:  #ea4d4d!important;
+    font-weight: bold!important;
 }
 .cover img{
     cursor: pointer;
@@ -151,7 +157,7 @@ h1{
 
 .botonyoutube{
     margin-top: 15%;
-    margin-left: 3%;
+    margin-left: 2%;
     background-color: red;
     border-color: white;
     border-radius: 4px;
@@ -165,11 +171,12 @@ h1{
 }
 
 button:hover{
-    -webkit-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
-    -moz-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
-    box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 0px 51px 4px rgb(255, 61, 112);
+    -moz-box-shadow: 0px 0px 51px 4px rgb(255, 0, 10);
+    box-shadow: 0px 0px 30px 4px rgb(255, 0, 10);
     cursor:pointer;
 }
+
 
 .boton2{
     color:white!important;
@@ -391,6 +398,7 @@ ul.CTAs a {
     border-radius: 5px;
     margin-bottom: 5px;
 }
+
 
 a.download {
     background: #fff;
