@@ -49,9 +49,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="social">
-                            <br>
-                            <button class="fb btn block" ng-click="FBLogin();"><i class="ion-social-facebook-outline"></i> Inicia sesión con <strong>Facebook</strong></button><br>
-                            <button class="google btn block" ng-click="authenticate('google','Se ha producido un error al iniciar sesión con Google. Por favor, vuelva a intentarlo.')"><i class="ion-social-google" aria-hidden="true"></i> Inicia sesión con <strong>Google</strong></button>
+                            <br><br>
 
                             <a class="alert" (click)="requestResetPassword()" jhiTranslate="login.password.forgot">¿Olvidaste la <strong>contraseña?</strong></a><br>
                             <a href="#login-controls" class="reg" (click)="register()"   ng-hide="formVisibility" role="button" jhiTranslate="global.messages.info.register.noaccount">¿No eres usuario? <strong jhiTranslate="global.messages.info.register.link">¡Regístrate!</strong></a>

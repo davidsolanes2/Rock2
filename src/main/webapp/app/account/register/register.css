@@ -19,6 +19,7 @@ label{
 
 .text-danger{
     font-size: 14px!important;
+    background-color: red!important;
 }
 
 .form-control{
@@ -207,12 +208,13 @@ form{
     margin-left: 50px!important;
 }
 .texto {
-    color: #ea4d4d!important;
+    color: black!important;
     font-size: 40px;
     margin: 2% auto;
     text-align: center;
     text-shadow: 1px 2px 1px  rgba(0,0,0,.5);
     padding-top: 40px;
+    margin-left: 10x;
 }
 
 p:hover {

@@ -4,6 +4,11 @@
     margin-left: 47%!important;
     border-color:white!important;
 }
+.btn:hover{
+    color:green!important;
+    background-color: white!important;
+    border-color:green!important;
+}
 
 span{
     color:white!important;
@@ -17,6 +22,10 @@ label{
     font-size: 14px!important;
 }
 
+span{
+    font-size: 13px!important;
+}
+
 .form-control{
     border-radius: 5px!important;
     height: 35px!important;
@@ -26,6 +35,14 @@ label{
     font-size: 14px!important;
 }
 
+h1{
+    color: black!important;
+    font-size: 2.5em!important;
+}
+
+span{
+    font-size: 15px!important;
+}
 button:hover{
     -webkit-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
     -moz-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
