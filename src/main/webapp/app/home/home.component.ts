@@ -3,6 +3,7 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { Account, LoginModalService, Principal } from '../shared';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
     selector: 'jhi-home',
@@ -20,7 +21,20 @@ export class HomeComponent implements OnInit {
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-    ) {
+        private _sanitizer: DomSanitizer, ) {
+
+    }
+
+    public sanitizerHome1(home1: string) {
+        return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/${home1}.jpg)`);
+    }
+
+    public sanitizerHome2(home2: string) {
+        return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/${home2}.jpg)`);
+    }
+
+    public sanitizerHome3(home3: string) {
+        return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/${home3}.jpg)`);
     }
 
     ngOnInit() {
