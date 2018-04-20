@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     registerAccount: any;
     success: boolean;
     modalRef: NgbModalRef;
+    displayRegistre = 'block';
 
     constructor(
         private languageService: JhiLanguageService,
@@ -49,13 +50,18 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             this.error = null;
             this.errorUserExists = null;
             this.errorEmailExists = null;
+
             this.languageService.getCurrent().then((key) => {
                 this.registerAccount.langKey = key;
                 this.registerService.save(this.registerAccount).subscribe(() => {
                     this.success = true;
+                    this.displayRegistre = 'none';
+
                 }, (response) => this.processError(response));
+
             });
         }
+
     }
 
     openLogin() {

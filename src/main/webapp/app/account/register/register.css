@@ -19,7 +19,7 @@ label{
 
 .text-danger{
     font-size: 14px!important;
-    background-color: red!important;
+    color: red!important;
 }
 
 .form-control{
@@ -187,6 +187,19 @@ input {
     color: #363636;
     margin-bottom: 20px;
     width: 304px;
+}
+
+.alert-success{
+    margin-left: 23%!important;
+    text-align: center!important;
+    color:black!important;
+}
+
+
+.alert-danger{
+    margin-left: 23%!important;
+    text-align: center!important;
+    color:black!important;
 }
 
 .Registro input[type="submit"] {

@@ -50,6 +50,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     displayCountry = 'block';
     displayTitle = 'block';
     displayTitleBuscador = 'none';
+    displayMas = 'none';
     DataTopTracks: any = [];
     DataSearch: any = [];
     search = '';
@@ -86,12 +87,23 @@ export class PhomeComponent implements OnInit, OnDestroy {
 
     public searchSong() {
         console.log(this.search);
-        this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=5`)
+        this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=8`)
             .subscribe((res: Response) => {
+                this.displayTitleBuscador = 'block';
                 const data = res.json();
                 this.DataSearch = data.search.data.tracks;
+                this.displayMas = 'block';
             });
-        this.displayTitleBuscador = 'block';
+    }
+    public searchSongMas() {
+        console.log(this.search);
+        this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=16`)
+            .subscribe((res: Response) => {
+                this.displayTitleBuscador = 'block';
+                const data = res.json();
+                this.DataSearch = data.search.data.tracks;
+                this.displayMas = 'block';
+            });
     }
 
     openModal(nombre: string, artist: string) {
@@ -111,6 +123,17 @@ export class PhomeComponent implements OnInit, OnDestroy {
 
     topSong(ISO: string){
         this.http.get(`http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=8&catalog=${ISO}&range=day`)
+            .subscribe((res: Response) => {
+                const data = res.json();
+                this.DataTopTracks = data.tracks;
+                this.displayCountry = 'none';
+                this.displayTitle = 'none';
+                this.displayMain = 'block';
+            });
+    }
+
+    topSongMas(ISO: string){
+        this.http.get(`http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=20&catalog=${ISO}&range=day`)
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.DataTopTracks = data.tracks;

@@ -11,7 +11,7 @@
 
 }
 
-#mas{
+.mas{
     background-color: #d6cece!important;
     color: white!important;
 }
@@ -25,10 +25,24 @@
     width: 93%!important;
     margin-left: 5%!important;
 }
-h1{
+.top{
     color:black!important;
     font-size: 2.5em!important;
+    margin-left: 11%!important;
 }
+
+.less{
+
+    color:black!important;
+    font-size: 2.5em!important;
+    margin-left: -1%!important;
+
+}
+h2 {
+    color: black !important;
+    font-size: 2.5em !important;
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: grey;
     font-style: italic;
@@ -66,6 +80,7 @@ h1{
     color:black!important;
     background-color: #d6cece!important;
     border-color: #d6cece!important;
+    margin-left: 50%!important;
 
 }
 

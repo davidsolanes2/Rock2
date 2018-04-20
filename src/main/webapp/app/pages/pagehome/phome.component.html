@@ -1,5 +1,5 @@
 <p>
-<div class="col-md-12" id="top" style="text-align: center" [ngStyle]="{'display':displayTitle}"><h1><i class="fa fa-globe fa-lg"> </i> TOP PAÏSES</h1></div>
+<div class="col-md-12" id="top" style="text-align: center" [ngStyle]="{'display':displayTitle}"><h1 class="top"><i class="fa fa-globe fa-lg"> </i> TOP PAÏSES</h1></div>
 </p>
 <div [ngStyle]="{'display':displayCountry}">
     <div class="picture-grid">
@@ -128,7 +128,7 @@
                     <input type="text"  id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search" placeholder="Buscar artista o canción">
                     <button class="btn-primary" id="b"  (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
                     <p>
-                    <div class="col-md-12" style="text-align: center" [ngStyle]="{'display':displayTitleBuscador}"><h1><i class="fa fa-search fa-lg"> </i> BÚSQUEDAS</h1></div>
+                    <div class="col-md-12" style="text-align: center" [ngStyle]="{'display':displayTitleBuscador}"><h1 class="less"><i class="fa fa-search fa-lg"> </i> Búsquedas</h1></div>
                     </p>
                 </div><br><br>
             <!--
@@ -153,11 +153,21 @@
                         </div>
                         <p class="tituloSong" style="text-align: center; color: white">{{search.name}}</p>
                     </div>
+                    <div class="row">
+<br><br>
+                        <div class="col-sm-12 col-lg-12" style="text-align: center" [ngStyle]="{'display':displayMas}">  <button class="fa fa-plus fa-lg mas" (click)="searchSongMas()"> Ver más</button></div>
+                    </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-12 col-lg-12" style="text-align: center"> <button class="fa fa-globe fa-lg" id="mundo"(click)="changeCountry()"></button><h1><span class="glyphicon glyphicon-music"></span> Top Canciones</h1></div>
+                    <div class="col-sm-12 col-lg-12" style="text-align: center"> <h2><span class="glyphicon glyphicon-music"></span> Top Canciones</h2></div>
+
                 </div>
+            <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <button class="fa fa-globe fa-lg" id="mundo"(click)="changeCountry()"></button>
+            </div>
+            </div>
                 <div class="row">
                     <div *ngFor="let data of DataTopTracks" class="infoDiv col-lg-3 col-md-4 col-sm-6 image-top">
                         <div class="cover img-responsive" [style.background-image]="sanitizeImage(data.albumId)">
@@ -195,15 +205,15 @@
                     <br>
                 </div>
             <div class="row">
-
-                <div class="col-sm-12 col-lg-12" style="text-align: center">  <button class="fa fa-plus fa-lg" id="mas"(click)="changeCountry()"> Ver más</button></div>
+<br>
+                <div class="col-sm-12 col-lg-12" style="text-align: center">  <button class="fa fa-plus fa-lg mas" (click)="topSongMas()"> Ver más</button></div>
             </div>
-                <div class="row">
-                    <div class="col-md-12" style="text-align: center"><h1><span class="glyphicon glyphicon-star"></span> Top Artistas</h1></div>
+                <div class="row" >
+                    <div class="col-md-12" style="text-align: center"><h2><span class="glyphicon glyphicon-star"></span> Top Artistas</h2></div>
                 </div><br>
-                <div class="row">
+                <div class="row" >
 
-                    <div class="col-sm-12 col-lg-12" style="text-align: center">  <button class="fa fa-plus fa-lg" id="mas"(click)="changeCountry()"> Ver más</button>
+                    <div class="col-sm-12 col-lg-12" style="text-align: center">  <button class="fa fa-plus fa-lg mas"> Ver más</button>
                     </div>
             </div>
         </div>
