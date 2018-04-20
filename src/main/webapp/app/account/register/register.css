@@ -39,6 +39,12 @@ h1{
     font-weight:bold!important;
 }
 
+@media (min-width: 768px){
+          .col-md-4 {
+margin-left: -29%!important;
+          }
+}
+
 button:hover{
     -webkit-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
     -moz-box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
@@ -200,12 +206,13 @@ input {
 }
 
 .Registro input[type="submit"]:hover {
-    background-color: #d6cece!important;
+    background-color: black!important;
     box-shadow: 2px 2px 20px  #d6cece, #fff 0 -1px 2px;
 }
 
+
 form{
-    margin-left: 50px!important;
+    margin-left: 54%!important;
 }
 .texto {
     color: black!important;
@@ -214,9 +221,9 @@ form{
     text-align: center;
     text-shadow: 1px 2px 1px  rgba(0,0,0,.5);
     padding-top: 40px;
-    margin-left: 10x;
+    margin-left: 69%;
 }
 
 p:hover {
-    text-shadow: 2px 2px 20px  #2c90c6, #fff 0 -1px 2px;
+    text-shadow: 2px 2px 20px  grey, #fff 0 -1px 2px;
 }

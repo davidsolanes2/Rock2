@@ -1,7 +1,7 @@
 .btn{
     color:white!important;
     background-color: green!important;
-    margin-left: 47%!important;
+    margin-left: 45%!important;
     border-color:white!important;
 }
 .btn:hover{
@@ -26,6 +26,9 @@ span{
     font-size: 13px!important;
 }
 
+form{
+    margin-left: 4%!important;
+}
 .form-control{
     border-radius: 5px!important;
     height: 35px!important;
@@ -33,6 +36,7 @@ span{
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-style: italic!important;
     font-size: 14px!important;
+    width: 100%!important;
 }
 
 h1{
@@ -49,3 +53,16 @@ button:hover{
     box-shadow: 0px 0px 51px 4px rgba(255,255,255,1);
     cursor:pointer;
 }
+
+@media (min-width: 600px) {
+    .col-md-8{
+        width: 64%!important;
+    }
+}
+@media (min-width: 400px) {
+    .col-md-8{
+        width: 50%!important;
+    }
+}
+
+

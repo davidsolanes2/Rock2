@@ -48,6 +48,8 @@ export class PhomeComponent implements OnInit, OnDestroy {
     display = 'none';
     displayMain = 'none';
     displayCountry = 'block';
+    displayTitle = 'block';
+    displayTitleBuscador = 'none';
     DataTopTracks: any = [];
     DataSearch: any = [];
     search = '';
@@ -89,6 +91,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 const data = res.json();
                 this.DataSearch = data.search.data.tracks;
             });
+        this.displayTitleBuscador = 'block';
     }
 
     openModal(nombre: string, artist: string) {
@@ -112,6 +115,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 const data = res.json();
                 this.DataTopTracks = data.tracks;
                 this.displayCountry = 'none';
+                this.displayTitle = 'none';
                 this.displayMain = 'block';
             });
     }
@@ -119,6 +123,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     changeCountry(){
         this.displayCountry = 'block';
         this.displayMain = 'none';
+
 
     }
 

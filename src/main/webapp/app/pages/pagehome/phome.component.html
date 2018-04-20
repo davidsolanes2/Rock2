@@ -1,5 +1,5 @@
 <p>
-<div class="col-md-12" id="top" style="text-align: center"><h1><i class="fa fa-globe fa-lg"> </i> TOP PAÏSES</h1></div>
+<div class="col-md-12" id="top" style="text-align: center" [ngStyle]="{'display':displayTitle}"><h1><i class="fa fa-globe fa-lg"> </i> TOP PAÏSES</h1></div>
 </p>
 <div [ngStyle]="{'display':displayCountry}">
     <div class="picture-grid">
@@ -125,10 +125,11 @@
         <div class="row">
                 <div class="col-sm-12 buscador">
                     <br>
-
                     <input type="text"  id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search" placeholder="Buscar artista o canción">
                     <button class="btn-primary" id="b"  (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
-
+                    <p>
+                    <div class="col-md-12" style="text-align: center" [ngStyle]="{'display':displayTitleBuscador}"><h1><i class="fa fa-search fa-lg"> </i> BÚSQUEDAS</h1></div>
+                    </p>
                 </div><br><br>
             <!--
                <div class="row">
