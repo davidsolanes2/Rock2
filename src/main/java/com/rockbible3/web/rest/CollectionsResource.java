@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * REST controller for managing Collections.
@@ -132,6 +134,18 @@ public class CollectionsResource {
         log.debug("REST request to get Collections : {}");
         List<Collections> collections = collectionsRepository.findAllByUser(userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get());
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(collections));
+    }
+
+    @GetMapping("/collections/topSongs/liked")
+    @Timed
+    public List<String> getTopSongLikedbyUser(@RequestParam ("ids") String ids ) {
+        log.debug("REST request to get all Collections");
+        return collectionsRepository.
+            findByNapsterIdInAndUserLogin(
+                Arrays.asList(ids), SecurityUtils.getCurrentUserLogin())
+            .stream()
+            .map(Collections::getNapsterId)
+            .collect(Collectors.toList());
     }
 
     /**

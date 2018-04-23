@@ -62,11 +62,11 @@ figure figcaption {
     font-style: italic;
     font-family: Dosis, sans-serif;
 }
-@media screen and (max-width: 480px) {
+/*@media screen and (max-width: 480px) {
     figure figcaption {
         width: 100%;
     }
-}
+}*/
 
 ::-moz-selection {
     color: #fff;
@@ -98,7 +98,7 @@ figure figcaption {
     -o-transition: 0.5s;
     transition: 0.5s;
 }
-@media screen and (max-width: 1200px) {
+/*@media screen and (max-width: 1200px) {
     #fh5co-aside {
         width: 30%;
     }
@@ -112,7 +112,7 @@ figure figcaption {
         -o-transform: translateX(-270px);
         transform: translateX(-270px);
     }
-}
+}*/
 #fh5co-aside #fh5co-logo {
     text-align: center;
     font-family: "Roboto", Arial, sans-serif;
@@ -121,11 +121,11 @@ figure figcaption {
     text-transform: uppercase;
     font-size: 23px;
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     #fh5co-aside #fh5co-logo {
         margin-bottom: 1em;
     }
-}
+}*/
 #fh5co-aside #fh5co-logo a {
     color: #000;
 }
@@ -138,11 +138,11 @@ figure figcaption {
     margin: 0;
     padding: 0;
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     #fh5co-aside #fh5co-main-menu ul {
         margin: 0 0 2em 0;
     }
-}
+}*/
 #fh5co-aside #fh5co-main-menu ul li {
     margin: 0 0 20px 0;
     padding: 0;
@@ -216,12 +216,12 @@ figure figcaption {
     color: rgba(0, 0, 0, 0.6);
     padding: 0 20px;
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     #fh5co-aside .fh5co-footer {
         position: relative;
         bottom: 0;
     }
-}
+}*/
 #fh5co-aside .fh5co-footer span {
     display: block;
 }
@@ -253,7 +253,7 @@ figure figcaption {
     -o-transition: 0.5s;
     transition: 0.5s;
 }
-@media screen and (max-width: 1200px) {
+/*@media screen and (max-width: 1200px) {
     #fh5co-main {
         width: 70%;
     }
@@ -262,7 +262,7 @@ figure figcaption {
     #fh5co-main {
         width: 100%;
     }
-}
+}*/
 #fh5co-main .fh5co-narrow-content {
     position: relative;
     width: 93%;
@@ -270,12 +270,14 @@ figure figcaption {
     padding: 4em 0;
     clear: both;
 }
+/*
 @media screen and (max-width: 768px) {
     #fh5co-main .fh5co-narrow-content {
         width: 100%;
         padding: 4em 1em;
     }
 }
+*/
 
 #fh5co-hero {
     min-height: 500px;
@@ -352,11 +354,11 @@ figure figcaption {
     min-height: 700px;
     padding: 2em;
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner {
         text-align: center;
     }
-}
+}*/
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1, #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
     margin: 0;
     padding: 0;
@@ -370,11 +372,11 @@ figure figcaption {
     font-weight: 100;
     font-family: "Roboto", Arial, sans-serif;
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
         font-size: 28px;
     }
-}
+}*/
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
     font-size: 18px;
     line-height: 1.5;
@@ -388,11 +390,11 @@ figure figcaption {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-section {
     font-size: 50px;
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-section {
         font-size: 30px;
     }
-}
+}*/
 #fh5co-hero .flexslider .slider-text > .slider-text-inner s.fh5co-lead {
     font-size: 20px;
     color: #fff;
@@ -538,7 +540,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     display: table;
     overflow: hidden;
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     .work {
         height: 400px;
     }
@@ -547,7 +549,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     .work {
         height: 270px;
     }
-}
+}*/
 .work .desc {
     display: table-cell;
     vertical-align: middle;
@@ -574,7 +576,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     -webkit-transform: translate3d(0, 15px, 0);
     transform: translate3d(0, 15px, 0);
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     .work .desc {
         opacity: 1;
         background: transparent !important;
@@ -588,7 +590,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
-}
+}*/
 .work:hover .desc {
     opacity: 1;
 }

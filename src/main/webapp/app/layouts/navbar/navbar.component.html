@@ -387,36 +387,33 @@
 </div>
 -->
 <div id="fh5co-page">
-    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle">
-        <i></i>
-    </a>
+    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"></a>
     <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-
         <h1 id="fh5co-logo" class="mx-2">
             <a href="index.html">PuigTheSong</a>
         </h1>
-        <nav id="fh5co-main-menu" role="navigation">
+        <nav id="fh5co-main-menu" role="navigation" [ngSwitch]="isAuthenticated()">
             <ul>
                 <!-- <li class="fh5co-active"><i class="icon-home"></i><a href="index.html">Home</a></li> -->
                 <li>
-                    <a href="index.html">
-                        <i class=""></i>Home</a>
+                    <a routerLink="" routerLinkActive="active">Home</a>
                 </li>
                 <li>
-                    <a routerLink="pagehome-phome" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                        <i class="" aria-hidden="true"></i>&nbsp;
-                        <span>Tendencias</span>
-                    </a>
+                    <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
+                </li>
+                <li>
+                    <a href="#caracteristicas">Características</a>
+                </li>
+                <li>
+                    <a href="#login">Login</a>
+                </li>
+                <li *ngSwitchCase="true"><a href="#">Artistas</a>
+                </li>
+                <li *ngSwitchCase="true">
+                    <a (click)="logout()" id="logout">Sign out</a>
                 </li>
 
-                <li>
-                    <a href="#caracteristicas">
-                        <i class="icon-info"></i> Características </a>
-                </li>
-                <li>
-                    <a href="#login">
-                        <i class="icon-user2"></i> Login </a>
-                </li>
+
                 <!-- <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li> -->
             </ul>
@@ -425,7 +422,8 @@
         <div class="fh5co-footer">
             <p>
                 <small>Desarrollado por los Llaunes
-                    <hr>(Julio, Bryan, Borja, David y Javi)</span>
+                    <hr>
+                    (Julio, Bryan, Borja, David y Javi)</span>
                 </small>
             </p>
             <ul>

@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import { SERVER_API_URL } from '../../app.constants';
+import {Injectable} from '@angular/core';
+import {Http, RequestOptions, Response} from '@angular/http';
+import {Observable} from 'rxjs/Rx';
+import {SERVER_API_URL} from '../../app.constants';
 
-import { Collections } from './collections.model';
-import { ResponseWrapper, createRequestOption } from '../../shared';
+import {Collections} from './collections.model';
+import {ResponseWrapper, createRequestOption} from '../../shared';
 
 @Injectable()
 export class CollectionsService {
 
     private resourceUrl = SERVER_API_URL + 'api/collections';
 
-    constructor(private http: Http) { }
+    constructor(private http: Http) {
+    }
 
     create(collections: Collections): Observable<Collections> {
         const copy = this.convert(collections);
@@ -31,6 +32,19 @@ export class CollectionsService {
     listar(req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(this.resourceUrl + '/NapsterbyUser')
+            .map((res: Response) => this.convertResponse(res));
+    }
+
+    liked(ids: String []): Observable<ResponseWrapper> {
+        const options = createRequestOption(ids);
+        // let idsParams = new URLSearchParams();
+        let id = "";
+        for (let i = 0; i < ids.length; i++) {
+            id += ids[i] + ",";
+        }
+        // idsParams.set('ids', id);
+        // let request_option = new RequestOptions({search: idsParams});
+        return this.http.get(this.resourceUrl + '/topSongs/liked?ids=' + id)
             .map((res: Response) => this.convertResponse(res));
     }
 
