@@ -404,18 +404,42 @@
                 <li>
                     <a href="#caracteristicas">Características</a>
                 </li>
-                <li>
-                    <a href="#login">Login</a>
+                <li *ngSwitchCase="true">
+                    <a routerLink="pagesong-pages" routerLinkActive="active">Artistas</a>
                 </li>
-                <li *ngSwitchCase="true"><a href="#">Artistas</a>
+                <li *ngSwitchCase="true"><a routerLink="pageartist-pages" routerLinkActive="active">Canciones</a>
                 </li>
                 <li *ngSwitchCase="true">
                     <a (click)="logout()" id="logout">Sign out</a>
                 </li>
 
+                <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <div class="btn-group dropright">
+                        <button  type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </button>
+                        <div class="dropdown-menu">
+                            <!-- Dropdown menu links -->
+                            <a class="dropdown-item" routerLink="pagehome-phome" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.pagehome-phome">Home</span>
+                            </a>
+                            <!-- jhipster-needle-add-element-to-pagehome - JHipster will add elements to the pagehome here -->
+                            <a class="dropdown-item" routerLink="pageartist-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.pageartist-pages">Pageartist Pages</span>
+                            </a>
+                            <a class="dropdown-item" routerLink="pageconciertos-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.pageconciertos-pages">Concert</span>
+                            </a>
+                            <a class="dropdown-item" routerLink="pagesong-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.pagesong-pages">Song</span>
+                            </a>
+                            <a class="dropdown-item" routerLink="pageregister-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.pageregister-pages">Register</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
 
-                <!-- <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li> -->
             </ul>
         </nav>
 

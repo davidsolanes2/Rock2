@@ -20,7 +20,6 @@ import {Collections} from '../../entities/collections';
     ]
 })
 
-
 export class PhomeComponent implements OnInit, OnDestroy {
 
     phome: Phome = new Phome();
@@ -70,7 +69,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 private _sanitizer: DomSanitizer,
                 private collectionsService: CollectionsService,) {
     }
-
 
     loadAll() {
 

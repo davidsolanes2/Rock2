@@ -8,7 +8,6 @@
     float:right!important;
     width:90%!important;
     display: none;
-
 }
 
 .mas{
@@ -458,13 +457,18 @@ a.article, a.article:hover {
 }
 
 #fh5co-main {
-    width: 85%;
+    width: 80%;
+    margin-left: 18%;
     float: right;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
     background: linear-gradient(#33b7ff,#020d1c);
 
+}
+
+.picture-grid {
+    margin-left: 5%;
 }
 
 
@@ -820,5 +824,3 @@ a {
 
 
     }
-
-

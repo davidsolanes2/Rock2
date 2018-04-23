@@ -7,6 +7,7 @@ import { ProfileService } from '../profiles/profile.service';
 import { JhiLanguageHelper, Principal, LoginModalService, LoginService } from '../../shared/index';
 
 import { VERSION } from '../../app.constants';
+// import { PopperOptions } from "popper.js";
 
 @Component({
     selector: 'jhi-navbar',
