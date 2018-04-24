@@ -891,7 +891,13 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     background: #228896;
     color: #fff;
 }
-
+.btn-secondary {
+    font-family: Dosis, sans-serif;
+    font-size: 14px;
+    background: #228896;
+    color: #fff;
+    width: 200px;
+}
 .btn-success {
     background: #5cb85c;
     color: #fff;
