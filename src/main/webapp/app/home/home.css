@@ -39,3 +39,10 @@ h5 {
 .header {
     overflow: hidden;
 }
+
+.btn-primary {
+    font-size: 25px;
+    color: #f4f4f4 !important;
+    background-color: #228896;
+
+}

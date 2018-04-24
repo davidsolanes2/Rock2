@@ -11,7 +11,7 @@
                 <img class="d-block w-100" src="../../content/images/wallpaper-conciertos.jpg">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Escucha y ve videoclips de tus canciones favoritas</h1>
-                    <p><a class="btn btn-primary btn-demo" href="#login">
+                    <p><a class="btn btn-primary btn-demo" (click)="login()">
                         <i class="icon-user"></i> Haz login </a></p>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Accede a los conciertos de tus artistas favoritos </h1>
                     <p>
-                        <a class="btn btn-primary btn-demo" href="#login">
+                        <a class="btn btn-primary btn-demo" (click)="login()">
                             <i class="icon-user"></i> Haz login </a>
                     </p>
                 </div>
@@ -32,7 +32,7 @@
                 <div class="carousel-caption d-block d-md-block">
                     <h1>Descubre los conciertos de tus artistas </h1>
                     <p>
-                        <a class="btn btn-primary btn-demo" href="#login">
+                        <a class="btn btn-primary btn-demo" (click)="login()">
                             <i class="icon-user"></i> Haz login </a>
                     </p>
                 </div>
@@ -103,7 +103,9 @@
                 <p class="fh5co-lead">Descubre mas sobre esta aplicación web creando tu cuenta con nosotros y accediendo a
                     <b>todas las características!</b>
                 </p>
-                <button type="button" class="btn btn-primary" id="myBtn">Login</button>
+                <a class="btn btn-primary" id="myBtn" (click)="login()">
+                    Login
+                </a>
             </div>
         </div>
         <br>
