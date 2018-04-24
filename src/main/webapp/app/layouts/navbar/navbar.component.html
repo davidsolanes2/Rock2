@@ -394,9 +394,8 @@
         </h1>
         <nav id="fh5co-main-menu" role="navigation" [ngSwitch]="isAuthenticated()">
             <ul>
-                <!-- <li class="fh5co-active"><i class="icon-home"></i><a href="index.html">Home</a></li> -->
                 <li>
-                    <a routerLink="" routerLinkActive="active">Home</a>
+                    <a routerLink="/" routerLinkActive="active">Home</a>
                 </li>
                 <li>
                     <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
@@ -420,19 +419,26 @@
                         </button>
                         <div class="dropdown-menu">
                             <!-- Dropdown menu links -->
-                            <a class="dropdown-item" routerLink="pagehome-phome" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                                <span jhiTranslate="global.menu.pagehome-phome">Home</span>
+                            <a class="dropdown-item" routerLink="jhi-metrics" routerLinkActive="active" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.admin.metrics">Metrics</span>
                             </a>
-                            <!-- jhipster-needle-add-element-to-pagehome - JHipster will add elements to the pagehome here -->
-                            <a class="dropdown-item" routerLink="pageartist-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                                <span jhiTranslate="global.menu.pageartist-pages">Pageartist Pages</span>
+                            <a class="dropdown-item" routerLink="jhi-health" routerLinkActive="active" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.admin.health">Health</span>
                             </a>
-                            <a class="dropdown-item" routerLink="pageconciertos-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                                <span jhiTranslate="global.menu.pageconciertos-pages">Concert</span>
+                            <a class="dropdown-item" routerLink="jhi-configuration" routerLinkActive="active" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.admin.configuration">Configuration</span>
                             </a>
-                            <a class="dropdown-item" routerLink="pagesong-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                                <span jhiTranslate="global.menu.pagesong-pages">Song</span>
+                            <a class="dropdown-item" routerLink="audits" routerLinkActive="active" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.admin.audits">Audits</span>
                             </a>
+                            <a class="dropdown-item" routerLink="logs" routerLinkActive="active" (click)="collapseNavbar()">
+                                <span jhiTranslate="global.menu.admin.logs">Logs</span>
+                            </a>
+                            <li *ngIf="swaggerEnabled">
+                                <a class="dropdown-item" routerLink="docs" routerLinkActive="active" (click)="collapseNavbar()">
+                                    <span jhiTranslate="global.menu.admin.apidocs">API</span>
+                                </a>
+                            </li>
                             <a class="dropdown-item" routerLink="pageregister-pages" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                                 <span jhiTranslate="global.menu.pageregister-pages">Register</span>
                             </a>
