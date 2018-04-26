@@ -127,9 +127,9 @@
                 <div class="col-sm-12 buscador">
                     <br>
                     <input type="text"  id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search" placeholder="Buscar artista o canción">
-                    <button class="btn-primary" id="b"  (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
+                    <button class="btn-p" id="b"  (click)="searchSong()"><span class="glyphicon glyphicon-search"></span></button>
                     <p>
-                    <div class="col-md-12" style="text-align: center" [ngStyle]="{'display':displayTitleBuscador}"><h1 class="less"><i class="fa fa-search fa-lg"> </i> Búsquedas</h1></div>
+                    <div class="col-md-12 the-icons" style="text-align: center" [ngStyle]="{'display':displayTitleBuscador}"><h1 class="less"><span class="glyphicon glyphicon-search" style="font-size: 19px;"> </span> Búsquedas</h1></div>
                     </p>
                 </div><br><br>
             <!--
@@ -143,7 +143,7 @@
                                 <div>
                                     <img id="{{search.id}}" (click)="like(search.id)" alt="vacio"
                                          src="../../../content/images/heart-1.png">
-                                    <button class="btn btn-primary botonyoutube"
+                                    <button class="btn btn-primary botonyoutube" id="y"
                                             (click)="openModal(search.name, search.artistName)"><span class="glyphicon glyphicon-play"></span>Youtube
                                     </button>
                                     <audio controls class="audio">

@@ -6,7 +6,10 @@ import { ITEMS_PER_PAGE, Principal, User, UserService, ResponseWrapper } from '.
 
 @Component({
     selector: 'jhi-user-mgmt',
-    templateUrl: './user-management.component.html'
+    templateUrl: './user-management.component.html',
+    styleUrls: [
+        'user-management.css'
+    ]
 })
 export class UserMgmtComponent implements OnInit, OnDestroy {
 

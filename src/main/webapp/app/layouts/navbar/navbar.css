@@ -20,9 +20,21 @@ body {
     color: rgba(0, 0, 0, 0.5);
     background: whitesmoke;
 }
+hr{
+    color:white!important;
+}
 @media screen and (max-width: 992px) {
     body {
         font-size: 16px;
+    }
+    a{
+        font-size: 12px!important;
+    }
+}
+
+@media screen and (max-width:600px) {
+    a{
+        font-size: 14px!important;
     }
 }
 
@@ -83,11 +95,10 @@ figure figcaption {
     overflow: hidden;
     position: relative;
 }
-
 #fh5co-aside {
     padding-top: 60px;
     padding-bottom: 40px;
-    width: 17%;
+    width: 10%!important;
     position: fixed;
     bottom: 0;
     top: 0;
@@ -128,6 +139,7 @@ figure figcaption {
 }*/
 #fh5co-aside #fh5co-logo a {
     color: #000;
+    font-size: 19px!important;
 }
 #fh5co-aside #fh5co-logo a span {
     font-weight: 300;
@@ -247,7 +259,7 @@ figure figcaption {
 }
 
 #fh5co-main {
-    width: 80%;
+    width: 20%;
     float: right;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
@@ -896,7 +908,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     font-size: 14px;
     background: #228896;
     color: #fff;
-    width: 200px;
+    width: 88%;
 }
 .btn-success {
     background: #5cb85c;

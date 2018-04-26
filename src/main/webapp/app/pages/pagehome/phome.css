@@ -2,6 +2,8 @@
     DEMO STYLE
 */
 
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 .fondo{
     background-size: cover;
     background-color: #d6cece!important;
@@ -63,13 +65,12 @@ h2 {
     font-size: 15px;
 }
 #buscador {
-    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
     background-size: 0px;
     width: 54%!important;
     border: transparent;
     border-bottom: solid 1px #ccc;
     outline: none;
-    color:white!important;
+    color:black!important;
     margin-left: 22%!important;
 
 
@@ -86,6 +87,7 @@ h2 {
 #mundo:hover{
     -webkit-box-shadow: 0px 0px 0px 0px;
     cursor:pointer;
+    color:white!important;
 }
 
 .fa fa-globe{
@@ -93,10 +95,15 @@ h2 {
     width:100px!important;
 }
 #b{
-    background-color: black!important;
-    border-colxor: white!important;
+    font-size: 19px!important;
+}
+#b:hover{
+    color: white!important;
 }
 
+#y{
+    color:red!important;
+}
 .paises {
     background-size: cover;
     background-repeat:no-repeat;
@@ -127,7 +134,7 @@ h2 {
 }
 
 .tituloSong{
-    color: black;
+    color: white;
     position: relative;
     text-align: center;
 }
@@ -147,8 +154,14 @@ h2 {
 
 .hijo{
     line-height: 260px!important;
-    color:  #ea4d4d!important;
+    color:  #228896!important;
     font-weight: bold!important;
+}
+.mas:hover{
+    color: black!important;
+}
+li:hover{
+    color: #ea4d4d!important;
 }
 .cover img{
     cursor: pointer;
@@ -259,9 +272,17 @@ a, a:hover, a:focus {
 }
 
 
+.btn-primary botonyoutube{
+    color: red!important;
+}
+.btn-p{
+    color:black!important;
+    border-color: #d6cece!important;
+    background-color: #d6cece!important;
 
-.btn-primary{
-    border-color: white!important;
+}
+.less {
+    font-size: 30px;
 }
 .line {
     width: 100%;
@@ -795,6 +816,7 @@ a {
         justify-items: center;
         grid-gap: 0;
         grid-row-gap: 0;
+        margin-left: -24px;
     }
 
     .grid-box img{

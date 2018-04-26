@@ -8,7 +8,10 @@ import { ITEMS_PER_PAGE } from '../../shared';
 
 @Component({
   selector: 'jhi-audit',
-  templateUrl: './audits.component.html'
+  templateUrl: './audits.component.html',
+    styleUrls: [
+        'audits.css'
+    ]
 })
 export class AuditsComponent implements OnInit {
     audits: Audit[];
