@@ -254,12 +254,13 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Oswald, sans-serif;
+/*(Oswald Regular)*/
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
