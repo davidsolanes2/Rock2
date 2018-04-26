@@ -9,13 +9,13 @@
 }
 
 h5 {
-    font-family: Dosis, sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 25px;
     color: #d9d9d9;
 }
 
 .fh5co-text {
-    font-family: Dosis, sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 20px;
     color: #020d1c;
 }
@@ -45,4 +45,10 @@ h5 {
     color: #f4f4f4 !important;
     background-color: #228896;
 
+}
+
+
+p {
+
+    margin-bottom: 1.5em;
 }

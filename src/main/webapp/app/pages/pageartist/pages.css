@@ -8,7 +8,7 @@
 
 .fondo{
     background-size: cover;
-    background-color: white!important;
+    background-color: #b2bec3!important;
     float:right!important;
     width:90%!important;
 }
@@ -62,8 +62,7 @@ h1{
     font-size: 20px;
     position: relative;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
+    font-family: Oswald, sans-serif;    font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
@@ -148,12 +147,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Oswald, sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
