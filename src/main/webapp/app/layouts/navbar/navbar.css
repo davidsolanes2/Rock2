@@ -1175,3 +1175,120 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 .js .animate-box {
     opacity: 0;
 }
+
+
+
+@media screen and (max-width: 800px) {
+    span{
+        display:none!important;
+    }
+    #fh5co-aside #fh5co-logo a{
+        font-size: 11px!important;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    a{
+        display:none!important;
+    }
+
+
+}
+@media screen and (max-width: 1200px) {
+    #fh5co-aside {
+        width: 17%!important;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    #fh5co-aside {
+
+    }
+    .btn-secondary{
+        width:77%!important;
+    }
+    a{
+
+        font-size: 10px!important;
+    }
+    #fh5co-aside #fh5co-logo a{
+        font-size: 15px!important;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    #fh5co-aside {
+
+    }
+    .btn-secondary{
+        width:70%!important;
+    }
+    a{
+
+        font-size: 10px!important;
+    }
+    #fh5co-aside #fh5co-logo a{
+        font-size: 13px!important;
+    }
+
+}
+
+@media screen and (max-width: 610px) {
+    #fh5co-aside {
+
+    }
+    .btn-secondary{
+        width:65%!important;
+    }
+    a{
+
+        font-size: 8px!important;
+    }
+    #fh5co-aside #fh5co-logo a{
+        font-size: 11px!important;
+    }
+
+}
+
+
+@media screen and (max-width: 556px) {
+    #fh5co-aside {
+
+    }
+    .btn-secondary{
+        width:65%!important;
+    }
+    a{
+
+        font-size: 8px!important;
+    }
+    #fh5co-aside #fh5co-logo a{
+        font-size: 9px!important;
+    }
+
+}
+
+@media screen and (max-width: 485px) {
+    #fh5co-aside {
+
+    }
+    .btn-secondary{
+        width: 75%!important;
+        font-size: 8px!important;
+        margin-left: -8px!important;
+    }
+
+    a{
+display:none!important;
+    }
+    i{
+        margin-left: 30px!important;
+    }
+    #fh5co-aside #fh5co-logo a{
+        font-size: 10px!important;
+    }
+
+
+}

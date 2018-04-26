@@ -3,10 +3,6 @@
     <jhi-alert-error></jhi-alert-error>
     <div class="fondo">
         <div id="fh5co-main">
-            <br>
-<div class="row">
-    <div class="col-md-12" style="text-align: center"><h1><span class="glyphicon glyphicon-star"></span> Mis Canciones</h1></div>
-</div>
             <div class="row">
                 <div *ngFor="let favourites of Favoritos" class="infoDiv col-lg-3 col-md-4 col-sm-6">
                     <div class="cover" [style.background-image]="sanitizeImage(favourites[0].albumId)">

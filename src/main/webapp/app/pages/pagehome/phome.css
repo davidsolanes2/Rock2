@@ -6,10 +6,28 @@
 
 .fondo{
     background-size: cover;
-    background-color: #d6cece!important;
+    background-color: white!important;
     float:right!important;
     width:90%!important;
     display: none;
+}
+#imaginary_container{
+    margin-top:5%;
+}
+.input-group{
+    width: 220%!important;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
 }
 
 .mas{
@@ -257,7 +275,7 @@ a, a:hover, a:focus {
 }
 
 .navbar {
-    padding: 15px 10px;
+    margin-left: 10px!important;
     background: #fff;
     border: none;
     border-radius: 0;
