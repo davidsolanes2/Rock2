@@ -1305,3 +1305,8 @@ display:none!important;
 
 
 }
+
+input {
+    width: 100px;
+    height: 20px;
+}

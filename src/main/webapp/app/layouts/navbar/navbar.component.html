@@ -38,46 +38,33 @@
                 <li *ngSwitchCase="true">
                     <a routerLink="pageartist-pages" routerLinkActive="active">Canciones</a>
                 </li>
-
-                <div class="btn-group dropright">
+                <li *ngSwitchCase="true">
+                    <a class="dropdown-item" (click)="logout()" id="logout">
+                        <span jhiTranslate="global.menu.account.logout">Sign out</span>
+                    </a>
+                </li>
+                <br/>
+                <li *ngSwitchCase="false">
+                    <a class="dropdown-item" routerLink="register" routerLinkActive="active"
+                       (click)="collapseNavbar()">
+                        <span jhiTranslate="global.menu.account.register">Register</span>
+                    </a>
+                </li>
+                <div class="btn-group dropright" *ngSwitchCase="true">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         Account
                     </button>
                     <div class="dropdown-menu">
-                        <li *ngSwitchCase="false">
-                            <a class="dropdown-item" (click)="login()" id="login">
-                                <span jhiTranslate="global.menu.account.login">Sign in</span>
-                            </a>
-                        </li>
-                        <li *ngSwitchCase="false">
-                            <a class="dropdown-item" routerLink="register" routerLinkActive="active"
-                               (click)="collapseNavbar()">
-                                <span jhiTranslate="global.menu.account.register">Register</span>
-                            </a>
-                        </li>
 
                         <li *ngSwitchCase="true">
                             <a class="dropdown-item" routerLink="settings" routerLinkActive="active"
                                (click)="collapseNavbar()">
                                 <span jhiTranslate="global.menu.account.settings">Settings</span>
                             </a>
-                        </li>
-                        <li *ngSwitchCase="true">
                             <a class="dropdown-item" routerLink="password" routerLinkActive="active"
                                (click)="collapseNavbar()">
                                 <span jhiTranslate="global.menu.account.password">Password</span>
-                            </a>
-                        </li>
-                        <li *ngSwitchCase="true">
-                            <a class="dropdown-item" routerLink="sessions" routerLinkActive="active"
-                               (click)="collapseNavbar()">
-                                <span>Sessions</span>
-                            </a>
-                        </li>
-                        <li *ngSwitchCase="true">
-                            <a class="dropdown-item" (click)="logout()" id="logout">
-                                <span jhiTranslate="global.menu.account.logout">Sign out</span>
                             </a>
                         </li>
                     </div>
@@ -88,7 +75,7 @@
                     <div class="btn-group dropright">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                            Administrate
+                            Administration
                         </button>
                         <div class="dropdown-menu">
                             <!-- Dropdown menu links -->
@@ -122,7 +109,6 @@
                                 <span jhiTranslate="global.menu.admin.apidocs">API</span>
                             </a>
                             <!--</li>-->
-
                         </div>
                     </div>
                 </li>

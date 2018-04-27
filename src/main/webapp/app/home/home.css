@@ -1,3 +1,4 @@
+/*
 .w-100 {
     width: 100% !important;
     height: 704px !important;
@@ -51,4 +52,9 @@ h5 {
 p {
 
     margin-bottom: 1.5em;
+}
+*/
+
+iframe {
+    width: 100%;
 }

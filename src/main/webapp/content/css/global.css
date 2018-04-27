@@ -6,10 +6,6 @@ body, h1, h2, h3, h4 {
     font-weight: 300;
 }
 
-body {
-    background:#b2bec3!important
-}
-
 a {
     font-weight: bold;
 }
@@ -79,7 +75,7 @@ Generic styles
 
 .footer {
     padding-left: 20%;
-    border-top: 1px solid rgba(0,0,0,.125);
+    border-top: 1px solid rgba(217, 217, 217, 0.12);
 }
 
 /* ==========================================================================
