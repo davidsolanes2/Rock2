@@ -1,4 +1,5 @@
-<div class="header">
+
+<div class="header" [ngSwitch]="isAuthenticated()">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -11,8 +12,7 @@
                 <img class="d-block w-100" src="../../content/images/wallpaper-conciertos.jpg">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Escucha y ve videoclips de tus canciones favoritas</h1>
-                    <p><a class="btn btn-primary btn-demo" (click)="login()">
-                        <i class="icon-user"></i> Haz login </a></p>
+                    <br /><br /><br />
                 </div>
             </div>
             <!-- Slide 2 - Artistas -->
@@ -20,10 +20,7 @@
                 <img class="d-block w-100" src="../../content/images/wallpaper-discos.jpg">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Accede a los conciertos de tus artistas favoritos </h1>
-                    <p>
-                        <a class="btn btn-primary btn-demo" (click)="login()">
-                            <i class="icon-user"></i> Haz login </a>
-                    </p>
+                    <br /><br /><br />
                 </div>
             </div>
             <!-- Slide 3 -  Conciertos-->
@@ -31,10 +28,7 @@
                 <img class="d-block w-100" src="../../content/images/wallpaper-music.jpg">
                 <div class="carousel-caption d-block d-md-block">
                     <h1>Descubre los conciertos de tus artistas </h1>
-                    <p>
-                        <a class="btn btn-primary btn-demo" (click)="login()">
-                            <i class="icon-user"></i> Haz login </a>
-                    </p>
+                    <br /><br /><br />
                 </div>
             </div>
 
@@ -103,9 +97,7 @@
                 <p class="fh5co-lead">Descubre mas sobre esta aplicación web creando tu cuenta con nosotros y accediendo a
                     <b>todas las características!</b>
                 </p>
-                <a class="btn btn-primary" id="myBtn" (click)="login()">
-                    Login
-                </a>
+                <br /><br /><br />
             </div>
             <div style="text-align:center!important; margin-left:32%!important;">
                 <p>
