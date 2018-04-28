@@ -18,9 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -112,7 +110,7 @@ public class CollectionsResource {
     public List<Collections> getAllCollections() {
         log.debug("REST request to get all Collections");
         return collectionsRepository.findAll();
-        }
+    }
 
     /**
      * GET  /collections/:id : get the "id" collections.
@@ -138,13 +136,12 @@ public class CollectionsResource {
 
     @GetMapping("/collections/topSongs/liked")
     @Timed
-    public List<String> getTopSongLikedbyUser(@RequestParam ("ids") String ids ) {
+    public List<Collections> getTopSongLikedbyUser(@RequestParam("ids") String ids) {
         log.debug("REST request to get all Collections");
         return collectionsRepository.
             findByNapsterIdInAndUserLogin(
-                Arrays.asList(ids), SecurityUtils.getCurrentUserLogin())
+                Arrays.asList(ids.split(",")), SecurityUtils.getCurrentUserLogin())
             .stream()
-            .map(Collections::getNapsterId)
             .collect(Collectors.toList());
     }
 
@@ -162,12 +159,12 @@ public class CollectionsResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
-//    @DeleteMapping("/collections/{idNapster}")
-//    @Timed
-//    public ResponseEntity<Void> deleteCollectionsNapster(@PathVariable Long idNapster) {
-//        log.debug("REST request to delete Collections Napster : {}", idNapster);
-//        List<Collections> collection = collectionsRepository.findByNapsterIdAndUser(idNapster, userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get());
-//        collectionsRepository.delete(collection.get(0).getId());
-//        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, idNapster.toString())).build();
-//    }
+/*    @DeleteMapping("/collections/{idNapster:.+}")
+    @Timed
+    public ResponseEntity<Void> deleteCollectionsNapster(@PathVariable Long idNapster) {
+        log.debug("REST request to delete Collections Napster : {}", idNapster);
+        List<Collections> collection = collectionsRepository.findByUserLoginAndNapsterId(userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get(), idNapster.toString());
+        collectionsRepository.delete(collection.get(0));
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, idNapster.toString())).build();
+    }*/
 }

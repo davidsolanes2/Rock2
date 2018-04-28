@@ -29,6 +29,10 @@ export class CollectionsService {
         });
     }
 
+    dislike(idNapster: number): Observable<Response> {
+        return this.http.delete(`${this.resourceUrl}/${idNapster}`);
+    }
+
     listar(req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(this.resourceUrl + '/NapsterbyUser')

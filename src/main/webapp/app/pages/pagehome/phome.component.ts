@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
-import {Account, LoginModalService, Principal} from '../../shared';
+import {Account, LoginModalService, Principal, ResponseWrapper} from '../../shared';
 import {Observable, Subscription} from 'rxjs/Rx';
 import {JhiEventManager, JhiParseLinks, JhiAlertService} from 'ng-jhipster';
 import {Phome} from './phome.model';
@@ -52,6 +52,8 @@ export class PhomeComponent implements OnInit, OnDestroy {
     displayMas = 'none';
     DataTopTracks: any = [];
     DataSearch: any = [];
+    DataTopTracksID: any = [];
+    DataLiked: any = [];
     search = '';
     idYoutube = '';
     idNapster = '';
@@ -83,6 +85,16 @@ export class PhomeComponent implements OnInit, OnDestroy {
         return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/Paises/${pais}.jpg)`);
     }
 
+    public isLiked(id: string): boolean {
+        for (let i = 0; i < this.DataLiked.length; i++) {
+            if (this.DataLiked[i].napsterId === (id)) {
+                console.log(this.DataLiked[i].napsterId);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public searchSong() {
         console.log(this.search);
         this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=8`)
@@ -93,6 +105,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 this.displayMas = 'block';
             });
     }
+
     public searchSongMas() {
         console.log(this.search);
         this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=16`)
@@ -119,7 +132,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
         this.video = this._sanitizer.bypassSecurityTrustResourceUrl(``);
     }
 
-    topSong(ISO: string){
+    topSong(ISO: string) {
         this.http.get(`http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=8&catalog=${ISO}&range=day`)
             .subscribe((res: Response) => {
                 const data = res.json();
@@ -127,21 +140,19 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 this.displayCountry = 'none';
                 this.displayTitle = 'none';
                 this.displayMain = 'block';
+
+                for (let i = 0; i < this.DataTopTracks.length; i++) {
+                    this.DataTopTracksID.push(this.DataTopTracks[i].id);
+                }
+
+                this.collectionsService.liked(this.DataTopTracksID).subscribe(
+                    (res: ResponseWrapper) => {
+                        this.DataLiked = res.json;
+                    });
             });
     }
 
-    topSongMas(ISO: string){
-        this.http.get(`http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=20&catalog=${ISO}&range=day`)
-            .subscribe((res: Response) => {
-                const data = res.json();
-                this.DataTopTracks = data.tracks;
-                this.displayCountry = 'none';
-                this.displayTitle = 'none';
-                this.displayMain = 'block';
-            });
-    }
-
-    changeCountry(){
+    changeCountry() {
         this.displayCountry = 'block';
         this.displayMain = 'none';
 
@@ -165,13 +176,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
         /**
          * Fin control del usuario logeado
          */
-        // this.http.get('api/topSongsNap/testInicial')
-        this.http.get('http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=8&catalog=ES&range=day')
-            .subscribe((res: Response) => {
-                const data = res.json();
-                this.DataTopTracks = data.tracks;
-            });
-
     }
 
     ngOnDestroy() {
@@ -229,19 +233,48 @@ export class PhomeComponent implements OnInit, OnDestroy {
         }
     }
 
+    dislike(idNapster: string) {
+        this.isSaving = true;
+        if (document.images[idNapster].alt === 'completo') {
+            this.idNapster = idNapster;
+            this.subscribeToDislikeResponse(
+                this.collectionsService.dislike(idNapster));
+        } else {
+            document.images[idNapster].src = this.likeVacio;
+            document.images[idNapster].alt = 'vacio';
+        }
+    }
+
     private subscribeToLikeResponse(result: Observable<Collections>) {
         console.log('Antes subscribe');
         result.subscribe((res: Collections) => {
-                this.onSaveSuccess(res), (res: Response) => this.onSaveError()
+                this.onSaveSuccessLike(res), (res: Response) => this.onSaveError()
             }
         );
     }
 
-    private onSaveSuccess(result: Collections) {
-        this.eventManager.broadcast({name: 'collectionsListModification', content: 'OK'});
+    private subscribeToDislikeResponse(result: Observable<Response>) {
+        console.log('Antes subscribe Dislike');
+        result.subscribe((res: Response) => {
+                this.onSaveSuccessDislike(res), (res: Response) => this.onSaveError()
+            }
+        );
+    }
+
+    private onSaveSuccessLike(result: Collections) {
+        this.eventManager.broadcast({name: 'SongAdd', content: 'OK'});
         this.isSaving = false;
         document.images[this.idNapster].src = this.likeCompleto;
         document.images[this.idNapster].alt = 'completo';
+        document.images[this.idNapster].setAttribute('(click)', `dislike('${this.idNapster}')`);
+    }
+
+    private onSaveSuccessDislike(result: Response) {
+        this.eventManager.broadcast({name: 'SongDelete', content: 'OK'});
+        this.isSaving = false;
+        document.images[this.idNapster].src = this.likeVacio;
+        document.images[this.idNapster].alt = 'vacio';
+        document.images[this.idNapster].setAttribute('(click)', `like('${this.idNapster}')`);
     }
 
     private onSaveError() {
