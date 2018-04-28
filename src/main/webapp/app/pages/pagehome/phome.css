@@ -6,10 +6,14 @@
 
 .fondo{
     background-size: cover;
-    background-color: white!important;
+    background-color: #b2bec3!important;
     float:right!important;
     width:85%!important;
     display: none;
+    font-family: Oswald, sans-serif;
+}
+a{
+    font-family: Oswald, sans-serif;
 }
 #imaginary_container{
     margin-top:5%;
@@ -90,7 +94,8 @@ h2 {
     outline: none;
     color:black!important;
     margin-left: 22%!important;
-
+    background-color: whitesmoke;
+    font-family: Oswald, sans-serif;
 
 }
 
@@ -152,28 +157,24 @@ h2 {
 }
 
 .tituloSong{
-    color: white;
+    color: black;
+    font-size: 20px;
     position: relative;
     text-align: center;
+    font-family: Oswald, sans-serif;    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+    margin-left: -48px!important;
 }
-.overlayInfo {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s ease;
-    background-color: white!important;
-    text-align: center;
-}
+
 
 .hijo{
     line-height: 260px!important;
     color:  #228896!important;
     font-weight: bold!important;
+    text-align:center!important;
+    font-family: Oswald, sans-serif;
 }
 .mas:hover{
     color: black!important;
@@ -181,15 +182,7 @@ h2 {
 li:hover{
     color: #ea4d4d!important;
 }
-.cover img{
-    cursor: pointer;
-    width: 65px;
-    height: 65px;
-    float: left;
-    margin-left: 34%;
-    display: inline-block;
-    margin-top: 15%;
-}
+
 
 .paises:hover .overlayInfo{
     opacity: 0.9;
@@ -200,13 +193,40 @@ li:hover{
     opacity: 0.9;
 }
 
+
+.overlayInfo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #f5f5f5;
+
+}
+.cover img{
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    float: left;
+    margin-left: 32%;
+    display: inline-block;
+    margin-top: 15%;
+}
+
+.cover:hover .overlayInfo{
+    opacity: 0.9;
+}
+
 .botonyoutube{
     margin-top: 15%;
-    margin-left: 2%;
+    margin-left: 34%;
     background-color: red;
     border-color: white;
     border-radius: 4px;
-    cursor: pointer;
 }
 .botonyoutube:hover{
     background-color: white;
@@ -214,11 +234,22 @@ li:hover{
     cursor: pointer;
     color:red;
     border-radius: 4px;
+}
+
+button:hover{
     -webkit-box-shadow: 0px 0px 51px 4px rgb(255, 61, 112);
     -moz-box-shadow: 0px 0px 51px 4px rgb(255, 0, 10);
     box-shadow: 0px 0px 30px 4px rgb(255, 0, 10);
     cursor:pointer;
 }
+
+
+.boton2{
+    color:white!important;
+    background-color: green!important;
+    margin-left: 40%!important;
+}
+
 
 
 
@@ -254,12 +285,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Oswald, sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -275,14 +306,21 @@ a, a:hover, a:focus {
 }
 
 .navbar {
-    margin-left: 10px!important;
-    background: #fff;
+    margin-left:23px!important;
+    background: whitesmoke;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #228896!important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black!important;
+}
 .navbar-btn {
     box-shadow: none;
     outline: none !important;
@@ -644,7 +682,7 @@ body {
     width: 600px;
     margin: 0 auto;
     background-color: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: Oswald, sans-serif;
     color: #555555;
 }
 
@@ -694,6 +732,9 @@ a {
         0.3s border-top-color;
 }
 
+.nombre{
+    text-align:center!important;
+}
 .menu-title:hover { background: #8db842; }
 .menu-title:hover:before { border-top-color: #8db842; }
 
@@ -852,7 +893,7 @@ a {
         padding: 10% 0 0;
         font-weight: 900;
         font-size: 30px;
-        font-family: "Dosis", sans-serif;
+        font-family: Oswald, sans-serif;
         color: #fff;
         opacity: 0;
     }
@@ -864,3 +905,5 @@ a {
 
 
     }
+
+

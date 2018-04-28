@@ -141,3 +141,4 @@ Desktop.ini
 .eslintcache
 /src/main/resources/config/application-dev.yml
 /src/main/resources/config/application-prod.yml
+/src/main/webapp/app/layouts/index.ts
