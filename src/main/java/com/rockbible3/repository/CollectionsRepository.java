@@ -22,7 +22,7 @@ public interface CollectionsRepository extends JpaRepository<Collections, Long> 
 
     List<Collections> findByNapsterIdInAndUserLogin(List<String> NapsterSongIds, String login);
 
-    List<Collections> findByUserLoginAndNapsterId(User userLogin, String napsterId);
+    List<Collections> findByUserAndNapsterId(User userLogin, String napsterId);
 
 
 }
