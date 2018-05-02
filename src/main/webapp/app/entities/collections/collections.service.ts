@@ -29,7 +29,7 @@ export class CollectionsService {
         });
     }
 
-    dislike(idNapster: number): Observable<Response> {
+    dislike(idNapster: string): Observable<Response> {
         return this.http.delete(`${this.resourceUrl}/${idNapster}`);
     }
 

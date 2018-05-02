@@ -1,9 +1,4 @@
-/* =======================================================
-*
-* 	Template Style
-*	Edit this section
-*
-* ======================================================= */
+
 
 
 /* =======================================================
@@ -103,7 +98,7 @@ figure figcaption {
 }
 
 #fh5co-page {
-    width: 100%;
+    width: 17%;
     overflow: hidden;
     position: relative;
 }
@@ -1304,9 +1299,4 @@ display:none!important;
     }
 
 
-}
-
-input {
-    width: 100px;
-    height: 20px;
 }

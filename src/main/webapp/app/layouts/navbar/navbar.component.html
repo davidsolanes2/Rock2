@@ -6,12 +6,12 @@
         </h1>
         <div *ngSwitchCase="false">
             <form class="form" role="form" (ngSubmit)="login()">
-                <div class="form-group">
+                <div class="">
                     <label for="username">Login</label>
                     <input type="text" class="form-control" name="username" id="username" placeholder="Your username"
                            [(ngModel)]="username">
                 </div>
-                <div class="form-group">
+                <div class="">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" name="password" id="password"
                            placeholder="Your password"
@@ -33,11 +33,11 @@
                     <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
                 </li>
                 <li *ngSwitchCase="true">
-                    <a routerLink="pagesong-pages" routerLinkActive="active">Mi Coleccion</a>
+                    <a routerLink="pageartist-pages" routerLinkActive="active">Mi Coleccion</a>
                 </li>
-                <li *ngSwitchCase="true">
-                    <a routerLink="pageartist-pages" routerLinkActive="active">Canciones</a>
-                </li>
+               <!-- <li *ngSwitchCase="true">
+                    <a routerLink="pasesong-pages" routerLinkActive="active">Canciones</a>
+                </li>-->
                 <li *ngSwitchCase="true">
                     <a class="dropdown-item" (click)="logout()" id="logout">
                         <span jhiTranslate="global.menu.account.logout">Sign out</span>
