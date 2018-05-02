@@ -129,10 +129,10 @@
                             <input type="text" id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search"
                                    placeholder="Buscar artista o canción">
                             <span class="input-group-addon">
-                    <button(click)="searchSong()">
-                            <span class="glyphicon glyphicon-search"></span>
+                                <button (click)="searchSong()">
+                                    <span class="glyphicon glyphicon-search"></span>
                                 </button>
-                    </span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                         <a class="nav-link" (click)="changeCountry()">Cambiar País</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Canciones</a>
+                        <a class="nav-link" routerLink="/pageartist-pages" routerLinkActive="active">Mis Colecciones</a>
                     </li>
                 </ul>
             </nav>

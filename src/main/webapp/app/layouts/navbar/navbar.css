@@ -1300,3 +1300,9 @@ display:none!important;
 
 
 }
+
+.login {
+    width: 80%;
+    margin-left: 8%;
+    font-size: 2rem;
+}

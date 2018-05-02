@@ -6,12 +6,12 @@
         </h1>
         <div *ngSwitchCase="false">
             <form class="form" role="form" (ngSubmit)="login()">
-                <div class="">
+                <div class="login">
                     <label for="username">Login</label>
                     <input type="text" class="form-control" name="username" id="username" placeholder="Your username"
                            [(ngModel)]="username">
                 </div>
-                <div class="">
+                <div class="login">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" name="password" id="password"
                            placeholder="Your password"
