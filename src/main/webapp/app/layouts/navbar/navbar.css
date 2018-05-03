@@ -134,7 +134,7 @@ figure figcaption {
 }*/
 #fh5co-aside #fh5co-logo {
     text-align: center;
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
     /*font-weight: 600;*/
     margin-bottom: 2em;
     text-transform: uppercase;
@@ -178,7 +178,7 @@ figure figcaption {
     position: relative;
     padding: 10px 10px;
     letter-spacing: .2em;
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -383,14 +383,14 @@ figure figcaption {
     margin: 0;
     padding: 0;
     color: white;
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
     margin-bottom: 20px;
     font-size: 45px;
     line-height: 1.3;
     font-weight: 100;
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 /*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
@@ -912,7 +912,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     color: #fff;
 }
 .btn-secondary {
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 14px;
     background: #228896;
     color: #fff;
@@ -1054,7 +1054,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     width: 30px;
     height: 2px;
     color: #000;
-    font: bold 14px/.4 Helvetica;
+    /*font: bold 14px/.4 Helvetica;*/
     text-transform: uppercase;
     text-indent: -55px;
     background: #000;
@@ -1305,4 +1305,8 @@ display:none!important;
     width: 80%;
     margin-left: 8%;
     font-size: 2rem;
+}
+.menu1 {
+    width: 80%;
+    margin-left: 5%;
 }

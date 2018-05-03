@@ -1,5 +1,19 @@
 <div class="header">
-    <div>
-        <a>VIDEO</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div id="imaginary_container">
+                    <div class="input-group stylish-input-group">
+                        <input type="text" id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search"
+                               placeholder="Buscar artista o canción">
+                                <span class="input-group-addon">
+                                    <button (click)="searchSong()">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

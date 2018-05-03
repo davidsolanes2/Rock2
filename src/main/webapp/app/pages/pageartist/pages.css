@@ -8,7 +8,7 @@
 
 .fondo{
     background-size: cover;
-    background-color: #b2bec3!important;
+    background-color: whitesmoke !important;
     float:right!important;
     width:90%!important;
 }
@@ -368,6 +368,10 @@ a.article, a.article:hover {
     bottom: 0;
     background: black;
     opacity: 0.8;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #228896!important;
 }
 
 

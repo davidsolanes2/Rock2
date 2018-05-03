@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="paises img-responsive" [style.background-image]="sanitizeImageCountry('espana')">
+        <div class="paises img-responsive" [style.background-image]="sanitizeImageCountry('barcelona')">
             <div class="overlayInfo" (click)="topSong('ES')">
                 <div class="nombre">
                     <a class="hijo">ESPAÑA</a>
@@ -121,29 +121,13 @@
         <!-- Page Content Holder -->
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <div id="imaginary_container">
-                        <div class="input-group stylish-input-group">
-                            <input type="text" id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search"
-                                   placeholder="Buscar artista o canción">
-                            <span class="input-group-addon">
-                                <button (click)="searchSong()">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <br><br>
         <div class="row">
             <nav class="navbar navbar-expand-sm bg-light navbar-light">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav fondo1">
                     <li class="nav-item">
-                        <a class="nav-link" (click)="changeCountry()">Cambiar País</a>
+                        <a class="nav-link" (click)="changeCountry()">Cambiar País > </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/pageartist-pages" routerLinkActive="active">Mis Colecciones</a>
