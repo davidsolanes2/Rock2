@@ -120,14 +120,12 @@
     <div class="fondo" [ngStyle]="{'display':displayMain}">
         <!-- Page Content Holder -->
 
-
-
         <br><br>
         <div class="row">
             <nav class="navbar navbar-expand-sm bg-light navbar-light">
                 <ul class="navbar-nav fondo1">
                     <li class="nav-item">
-                        <a class="nav-link" (click)="changeCountry()">Cambiar País > </a>
+                        <a class="nav-link" (click)="changeCountry()">Cambiar País > {{pais}} > </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/pageartist-pages" routerLinkActive="active">Mis Colecciones</a>
@@ -182,28 +180,27 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tituloSong" style="text-align: center; color: black">{{data.name}}</p>
                 </div>
-                <div class="backdrop" [ngStyle]="{'display':display}"></div>
-                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
-                    <div class="modal-dialog" role="document">
-                        <div class="backdrop"></div>
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <!-- X ponerla visible -->
-                                <button type="button" class="close" (click)="onCloseHandled()">X</button>
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe id="embed-responsive-item" [src]="video" frameborder="0"
-                                            allowfullscreen></iframe>
-                                </div>
+                    <p class="tituloSong" style="text-align: center; color: black; margin-top: 20px;">{{data.name}}</p>
+            </div>
+            <div class="backdrop" [ngStyle]="{'display':display}"></div>
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
+                <div class="modal-dialog" role="document">
+                    <div class="backdrop"></div>
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <!-- X ponerla visible -->
+                            <button type="button" class="close" (click)="onCloseHandled()">X</button>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe id="embed-responsive-item" [src]="video" frameborder="0"
+                                        allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
-                <br>
-                <br>
             </div>
-
+            <br>
+            <br>
         </div>
     </div>
 </div>

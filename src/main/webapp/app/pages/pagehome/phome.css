@@ -16,6 +16,7 @@
 
 .fondo1 {
     font-size: 150%;
+    background-color: whitesmoke!important;
 }
 a{
     font-family: 'Oswald', sans-serif;
@@ -163,13 +164,12 @@ h2 {
 
 .tituloSong{
     color: black;
-    font-size: 20px;
     position: relative;
     text-align: center;
-    font-family: Oswald, sans-serif;    font-size: 1.1em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
     margin-left: -48px!important;
 }
 
