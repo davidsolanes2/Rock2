@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="paises img-responsive" [style.background-image]="sanitizeImageCountry('espana')">
+        <div class="paises img-responsive" [style.background-image]="sanitizeImageCountry('barcelona')">
             <div class="overlayInfo" (click)="topSong('ES')">
                 <div class="nombre">
                     <a class="hijo">ESPAÑA</a>
@@ -157,8 +157,8 @@
                             <img id="{{search.id}}" (click)="like(search.id)" alt="vacio"
                                  src="../../../content/images/heart-1.png">
                             <button class="btn btn-primary botonyoutube" id="y"
-                                    (click)="openModal(search.name, search.artistName)"><span
-                                class="glyphicon glyphicon-play"></span>Youtube
+                                    (click)="openModal(search.name, search.artistName)"><i
+                                class="glyphicon glyphicon-play fa-20x"></i>
                             </button>
                             <audio controls class="audio">
                                 <source src="{{search.previewURL}}" type="audio/mpeg">
@@ -187,8 +187,9 @@
                                          src="../../../content/images/heart-1.png">
                                 </ng-template>
                                 <button class="btn btn-primary botonyoutube" id="y2"
-                                        (click)="openModal(data.name, data.artistName)"><span
-                                    class="glyphicon glyphicon-play"></span>Youtube
+                                        (click)="openModal(data.name, data.artistName)">
+                                    <i
+                                    class="glyphicon glyphicon-play fa-20x"></i>
                                 </button>
                                 <audio controls class="audio">
                                     <source src="{{data.previewURL}}" type="audio/mpeg">
@@ -196,8 +197,9 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tituloSong" style="text-align: center; color: black">{{data.name}}</p>
                 </div>
+                    <p class="tituloSong" style="text-align: center; color: black">{{data.name}}</p>
+
             </div>
             <div class="backdrop" [ngStyle]="{'display':display}"></div>
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
