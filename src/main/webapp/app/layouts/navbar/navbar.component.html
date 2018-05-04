@@ -37,6 +37,10 @@
                 </li>
                <li *ngSwitchCase="true">
                     <a routerLink="pageregister-pages" routerLinkActive="active">Busqueda</a>
+               </li>
+                <li *ngSwitchCase="true">
+                    <a routerLink="pagesong-pages" routerLinkActive="active">About us</a>
+                </li>
                 <li *ngSwitchCase="true">
                     <a class="dropdown-item" (click)="logout()" id="logout">
                         <span jhiTranslate="global.menu.account.logout">Sign out</span>

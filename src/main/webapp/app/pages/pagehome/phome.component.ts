@@ -69,7 +69,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
                 private loginModalService: LoginModalService,
                 private http: Http,
                 private _sanitizer: DomSanitizer,
-                private collectionsService: CollectionsService,) {
+                private collectionsService: CollectionsService) {
     }
 
     loadAll() {
