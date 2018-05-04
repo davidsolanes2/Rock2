@@ -1,21 +1,21 @@
 .btn{
     color:white!important;
-    background-color: green!important;
+    background-color: #228896!important;
     margin-left: 45%!important;
     border-color:white!important;
 }
 .btn:hover{
-    color:green!important;
+    color:#228896!important;
     background-color: white!important;
-    border-color:green!important;
+    border-color:#228896!important;
 }
 
 span{
-    color:white!important;
+    color:black!important;
 }
 
 label{
-    color:white!important;
+    color:grey!important;
 }
 
 .text-danger{

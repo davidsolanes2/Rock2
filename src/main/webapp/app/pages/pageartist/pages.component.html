@@ -12,7 +12,7 @@
                             <div>
                                 <img id="{{favourites[0].id}}" (click)="like(favourites[0].id)" alt="completo" src="../../../content/images/heart-2.png">
 
-                                <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)"><span class="glyphicon glyphicon-play"></span>Youtube</button>
+                                <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)"><i class="glyphicon glyphicon-play"></i></button>
                                 <audio controls class="audio">
                                     <source src="{{favourites[0].previewURL}}" type="audio/mpeg">
                                 </audio>
