@@ -243,6 +243,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
             document.images[idNapster].src = this.likeVacio;
             document.images[idNapster].alt = 'vacio';
         }
+
     }
 
     private subscribeToLikeResponse(result: Observable<Collections>) {
