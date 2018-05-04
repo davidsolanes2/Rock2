@@ -29,8 +29,8 @@ export class CollectionsService {
         });
     }
 
-    dislike(idNapster: number): Observable<Response> {
-        return this.http.delete(`${this.resourceUrl}/${idNapster}`);
+    dislike(idNapster: string): Observable<Response> {
+        return this.http.delete(`${this.resourceUrl}/byNapsterId/${idNapster}`);
     }
 
     listar(req?: any): Observable<ResponseWrapper> {

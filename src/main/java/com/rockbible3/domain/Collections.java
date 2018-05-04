@@ -11,8 +11,10 @@ import java.util.Objects;
  * A Collections.
  */
 @Entity
-@Table(name = "collections")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Table(name = "collections", uniqueConstraints={
+    @UniqueConstraint(columnNames = {"napster_id", "user_id"})
+})
 public class Collections implements Serializable {
 
     private static final long serialVersionUID = 1L;

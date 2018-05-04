@@ -140,9 +140,8 @@ public class CollectionsResource {
         log.debug("REST request to get all Collections");
         return collectionsRepository.
             findByNapsterIdInAndUserLogin(
-                Arrays.asList(ids.split(",")), SecurityUtils.getCurrentUserLogin())
-            .stream()
-            .collect(Collectors.toList());
+                Arrays.asList(ids.split(",")), SecurityUtils.getCurrentUserLogin());
+
     }
 
     /**
@@ -159,12 +158,15 @@ public class CollectionsResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
-    @DeleteMapping("/collections/{idNapster:.+}")
+    @DeleteMapping("/collections/byNapsterId/{idNapster:.+}")
     @Timed
-    public ResponseEntity<Void> deleteCollectionsNapster(@PathVariable Long idNapster) {
+    public ResponseEntity<Void> deleteCollectionsNapster(@PathVariable String idNapster) {
         log.debug("REST request to delete Collections Napster : {}", idNapster);
-        List<Collections> collection = collectionsRepository.findByUserAndNapsterId(userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get(), idNapster.toString());
+        List<Collections> collection = collectionsRepository.findByUserAndNapsterId(
+            userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get(),
+            idNapster);
+
         collectionsRepository.delete(collection.get(0));
-        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, idNapster.toString())).build();
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, idNapster)).build();
     }
 }

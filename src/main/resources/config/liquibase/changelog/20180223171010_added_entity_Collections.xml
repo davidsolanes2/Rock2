@@ -23,20 +23,29 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="napster_id" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="jhi_type" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="user_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        
+
+        <addUniqueConstraint
+            columnNames="napster_id, user_id"
+            constraintName="User_NapsterID_Unique"
+            deferrable="true"
+            disabled="true"
+            initiallyDeferred="true"
+            tableName="collections"
+        />
+
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 </databaseChangeLog>

@@ -119,8 +119,6 @@
     <jhi-alert-error></jhi-alert-error>
     <div class="fondo" [ngStyle]="{'display':displayMain}">
         <!-- Page Content Holder -->
-
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
@@ -129,7 +127,7 @@
                             <input type="text" id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search"
                                    placeholder="Buscar artista o canción">
                             <span class="input-group-addon">
-                    <button(click)="searchSong()">
+                    <button (click)="searchSong()">
                             <span class="glyphicon glyphicon-search"></span>
                                 </button>
                     </span>
@@ -188,7 +186,7 @@
                                     <img id="{{data.id}}" (click)="like(data.id)" alt="vacio"
                                          src="../../../content/images/heart-1.png">
                                 </ng-template>
-                                <button class="btn btn-primary botonyoutube"
+                                <button class="btn btn-primary botonyoutube" id="y2"
                                         (click)="openModal(data.name, data.artistName)"><span
                                     class="glyphicon glyphicon-play"></span>Youtube
                                 </button>
@@ -200,26 +198,25 @@
                     </div>
                     <p class="tituloSong" style="text-align: center; color: black">{{data.name}}</p>
                 </div>
-                <div class="backdrop" [ngStyle]="{'display':display}"></div>
-                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
-                    <div class="modal-dialog" role="document">
-                        <div class="backdrop"></div>
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <!-- X ponerla visible -->
-                                <button type="button" class="close" (click)="onCloseHandled()">X</button>
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe id="embed-responsive-item" [src]="video" frameborder="0"
-                                            allowfullscreen></iframe>
-                                </div>
+            </div>
+            <div class="backdrop" [ngStyle]="{'display':display}"></div>
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
+                <div class="modal-dialog" role="document">
+                    <div class="backdrop"></div>
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <!-- X ponerla visible -->
+                            <button type="button" class="close" (click)="onCloseHandled()">X</button>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe id="embed-responsive-item" [src]="video" frameborder="0"
+                                        allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
-                <br>
-                <br>
             </div>
-
+            <br>
+            <br>
         </div>
     </div>
 </div>
