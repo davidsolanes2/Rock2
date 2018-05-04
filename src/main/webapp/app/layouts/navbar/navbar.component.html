@@ -1,8 +1,8 @@
 <div id="fh5co-page" [ngSwitch]="isAuthenticated()">
-    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"></a>
+    <!--<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"></a>-->
     <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
         <h1 id="fh5co-logo" class="mx-2">
-            <a href="/"><img src="../../../content/images/logo.png" height="200px" width="200px"/></a>
+            <a href="/"><img src="../../../content/images/logo.png" height="100%" width="100%"/></a>
         </h1>
         <div *ngSwitchCase="false">
             <form class="form" role="form" (ngSubmit)="login()">
@@ -26,6 +26,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
+
         </div>
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
@@ -35,24 +36,24 @@
                 <li *ngSwitchCase="true">
                     <a routerLink="pageartist-pages" routerLinkActive="active">Mi Coleccion</a>
                 </li>
-               <li *ngSwitchCase="true">
-                    <a routerLink="pageregister-pages" routerLinkActive="active">Busqueda</a>
-               </li>
                 <li *ngSwitchCase="true">
-                    <a routerLink="pagesong-pages" routerLinkActive="active">About us</a>
+                    <a routerLink="pageregister-pages" routerLinkActive="active">Busqueda</a>
+                </li>
+                <li *ngSwitchCase="true">
+                    <a routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
                 </li>
                 <li *ngSwitchCase="true">
                     <a class="dropdown-item" (click)="logout()" id="logout">
                         <span jhiTranslate="global.menu.account.logout">Sign out</span>
                     </a>
                 </li>
-                <br/>
                 <li *ngSwitchCase="false">
                     <a class="dropdown-item" routerLink="register" routerLinkActive="active"
                        (click)="collapseNavbar()">
                         <span jhiTranslate="global.menu.account.register">Register</span>
                     </a>
                 </li>
+
                 <div class="btn-group dropright menu1" *ngSwitchCase="true">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
