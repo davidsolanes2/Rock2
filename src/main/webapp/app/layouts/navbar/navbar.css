@@ -1,6 +1,4 @@
 
-
-
 /* =======================================================
 *
 * 	Template Style
@@ -8,7 +6,7 @@
 *
 * ======================================================= */
 body {
-    font-family: Oswald, sans-serif!important;
+    font-family: 'Oswald', sans-serif!important;
     font-weight: 300;
     font-size: 14px;
     line-height: 1.6;
@@ -19,20 +17,12 @@ body {
 label{
     font-size: 15px!important;
 }
-li:visited{
-color: #000000; text-decoration: none;
 
-}
 a{
-    font-family: Oswald, sans-serif!important;
+    font-family: 'Oswald', sans-serif!important;
 }
-a:visited{
-    color: #000000; text-decoration: none;
 
-}
-hr{
-    color:white!important;
-}
+
 @media screen and (max-width: 992px) {
     body {
         font-size: 16px;
@@ -67,29 +57,12 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     color: #000;
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: 400;
     margin: 0 0 30px 0;
 }
 
-figure {
-    margin-bottom: 2.5em;
-    float: left;
-    width: 100%;
-}
-figure figcaption {
-    font-size: 16px;
-    width: 80%;
-    margin: 20px auto 0px auto;
-    color: #b3b3b3;
-    font-style: italic;
-    font-family: Oswald, sans-serif;
-}
-/*@media screen and (max-width: 480px) {
-    figure figcaption {
-        width: 100%;
-    }
-}*/
+
 
 ::-moz-selection {
     color: #fff;
@@ -107,21 +80,23 @@ figure figcaption {
     position: relative;
 }
 #fh5co-aside {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     width: 17%!important;
     position: fixed;
     bottom: 0;
     top: 0;
     left: 0;
-    /*overflow-y: scroll;*/
+    /*visibility: hidden!important;*/
+    overflow-x: hidden;
+    /*overflow-y: hidden;*/
     z-index: 1001;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
     background-color:white!important;
 }
-/*@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     #fh5co-aside {
         width: 30%;
     }
@@ -135,7 +110,7 @@ figure figcaption {
         -o-transform: translateX(-270px);
         transform: translateX(-270px);
     }
-}*/
+}
 #fh5co-aside #fh5co-logo {
     text-align: center;
     font-family: 'Oswald', sans-serif;
@@ -144,11 +119,11 @@ figure figcaption {
     text-transform: uppercase;
     font-size: 23px;
 }
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #fh5co-aside #fh5co-logo {
         margin-bottom: 1em;
     }
-}*/
+}
 #fh5co-aside #fh5co-logo a {
     color: #000;
     font-size: 19px!important;
@@ -162,11 +137,11 @@ figure figcaption {
     margin: 0;
     padding: 0;
 }
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #fh5co-aside #fh5co-main-menu ul {
         margin: 0 0 2em 0;
     }
-}*/
+}
 #fh5co-aside #fh5co-main-menu ul li {
     margin: 0 0 20px 0;
     padding: 0;
@@ -175,7 +150,7 @@ figure figcaption {
 #fh5co-aside #fh5co-main-menu ul li a {
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
-    letter-spacing: .1em;
+    /*letter-spacing: .1em;*/
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
@@ -240,12 +215,12 @@ figure figcaption {
     color: rgba(0, 0, 0, 0.6);
     padding: 0 20px;
 }
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #fh5co-aside .fh5co-footer {
         position: relative;
         bottom: 0;
     }
-}*/
+}
 #fh5co-aside .fh5co-footer span {
     display: block;
 }
@@ -264,11 +239,11 @@ figure figcaption {
     color: rgba(0, 0, 0, 0.7);
     padding: 4px;
 }
-#fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
+/*#fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
     text-decoration: none;
     outline: none;
     color: #228896;
-}
+}*/
 
 #fh5co-main {
     width: 20%;
@@ -277,7 +252,13 @@ figure figcaption {
     -o-transition: 0.5s;
     transition: 0.5s;
 }
-/*@media screen and (max-width: 1200px) {
+
+.fh5co-main-menu {
+    text-align: center;
+    text-transform: uppercase;
+
+}
+@media screen and (max-width: 1200px) {
     #fh5co-main {
         width: 70%;
     }
@@ -286,7 +267,7 @@ figure figcaption {
     #fh5co-main {
         width: 100%;
     }
-}*/
+}
 #fh5co-main .fh5co-narrow-content {
     position: relative;
     width: 93%;
@@ -294,14 +275,12 @@ figure figcaption {
     padding: 4em 0;
     clear: both;
 }
-/*
 @media screen and (max-width: 768px) {
     #fh5co-main .fh5co-narrow-content {
         width: 100%;
         padding: 4em 1em;
     }
 }
-*/
 
 #fh5co-hero {
     min-height: 500px;
@@ -334,9 +313,8 @@ figure figcaption {
     background: rgba(0, 0, 0, 0.3);
 }
 #fh5co-hero .flexslider .slides li {
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom center;
+    background: no-repeat bottom center;
     min-height: 500px;
     position: relative;
 }
@@ -1314,4 +1292,8 @@ display:none!important;
 .menu1 {
     width: 80%;
     margin-left: 5%;
+   /*loguitud de la caja de Account y de Administration*/
+}
+.content1 {
+    width: 75%;
 }

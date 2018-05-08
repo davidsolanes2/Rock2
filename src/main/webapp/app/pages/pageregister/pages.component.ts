@@ -8,9 +8,9 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 import { Pages } from './pages.model';
 import { PagesService } from './pages.service';
 import {LoginModalService, Principal} from '../../shared';
-import {Http, Response} from "@angular/http";
-import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
-import {Collections, CollectionsService} from "../../entities/collections";
+import {Http, Response} from '@angular/http';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import {Collections, CollectionsService} from '../../entities/collections';
 
 @Component({
     selector: 'jhi-pages',
@@ -52,7 +52,7 @@ export class PagesComponent implements OnInit, OnDestroy {
     likeVacio = require('../../../content/images/heart-1.png');
     likeCompleto = require('../../../content/images/heart-2.png');
 
-    constructor(
+    constructor (
         private pagesService: PagesService,
         private parseLinks: JhiParseLinks,
         private jhiAlertService: JhiAlertService,

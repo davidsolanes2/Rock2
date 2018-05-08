@@ -61,15 +61,15 @@ export class PhomeComponent implements OnInit, OnDestroy {
     likeVacio = require('../../../content/images/heart-1.png');
     likeCompleto = require('../../../content/images/heart-2.png');
 
-    constructor(private phomeService: PhomeService,
-                private parseLinks: JhiParseLinks,
-                private jhiAlertService: JhiAlertService,
-                private eventManager: JhiEventManager,
-                private principal: Principal,
-                private loginModalService: LoginModalService,
-                private http: Http,
-                private _sanitizer: DomSanitizer,
-                private collectionsService: CollectionsService) {
+    constructor( private phomeService: PhomeService,
+                 private parseLinks: JhiParseLinks,
+                 private jhiAlertService: JhiAlertService,
+                 private eventManager: JhiEventManager,
+                 private principal: Principal,
+                 private loginModalService: LoginModalService,
+                 private http: Http,
+                 private _sanitizer: DomSanitizer,
+                 private collectionsService: CollectionsService) {
     }
 
     loadAll() {
@@ -79,7 +79,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
     public sanitizeImage(image: string) {
         return this._sanitizer.bypassSecurityTrustStyle(`url(http://direct.rhapsody.com/imageserver/v2/albums/${image}/images/500x500.jpg)`);
     }
-
 
     public sanitizeImageCountry(pais: string) {
         return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/Paises/${pais}.jpg)`);
@@ -95,8 +94,8 @@ export class PhomeComponent implements OnInit, OnDestroy {
         return false;
     }
 
-    public searchSong() {
-        console.log(this.search);
+    public searchSong () {
+        console.log( this.search );
         this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=8`)
             .subscribe((res: Response) => {
                 this.displayTitleBuscador = 'block';
@@ -155,7 +154,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
     changeCountry() {
         this.displayCountry = 'block';
         this.displayMain = 'none';
-
 
     }
 

@@ -7,7 +7,7 @@ import { ProfileService } from '../profiles/profile.service';
 import { JhiLanguageHelper, Principal, LoginModalService, LoginService } from '../../shared/index';
 
 import { VERSION } from '../../app.constants';
-import {StateStorageService} from "../../shared/auth/state-storage.service";
+import {StateStorageService} from '../../shared/auth/state-storage.service';
 // import { PopperOptions } from "popper.js";
 
 @Component({
@@ -25,7 +25,6 @@ export class NavbarComponent implements OnInit {
     modalRef: NgbModalRef;
     version: string;
 
-
     authenticationError: boolean;
     password: string;
     rememberMe: boolean;
@@ -39,10 +38,6 @@ export class NavbarComponent implements OnInit {
     errorUserExists: string;
     doNotMatch: string;
     error: string;
-
-
-
-
 
     constructor(
         private loginService: LoginService,
@@ -95,7 +90,7 @@ export class NavbarComponent implements OnInit {
             rememberMe: this.rememberMe
         }).then(() => {
             this.authenticationError = false;
-            //this.activeModal.dismiss('login success');
+            // this.activeModal.dismiss('login success');
             if (this.router.url === '/register' || (/^\/activate\//.test(this.router.url)) ||
                 (/^\/reset\//.test(this.router.url))) {
                 this.router.navigate(['pagehome-phome']);
@@ -119,7 +114,6 @@ export class NavbarComponent implements OnInit {
             this.authenticationError = true;
         });
     }
-
 
     logout() {
         this.collapseNavbar();
