@@ -8,7 +8,7 @@
         </h1>
         <div class="fh5co-main-menu">
             <a routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
-        </div>
+        </div><br>
         <div *ngSwitchCase="false">
             <form class="form" role="form" (ngSubmit)="login()">
                 <div class="login">
@@ -39,10 +39,10 @@
                     <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
                 </li>
                 <li *ngSwitchCase="true">
-                    <a routerLink="pageartist-pages" routerLinkActive="active">Mi Coleccion</a>
+                    <a routerLink="pageartist-pages" routerLinkActive="active">Mi Colección</a>
                 </li>
                 <li *ngSwitchCase="true">
-                    <a routerLink="pageregister-pages" routerLinkActive="active">Busqueda</a>
+                    <a routerLink="pageregister-pages" routerLinkActive="active">Búsqueda</a>
                 </li>
 
                 <li *ngSwitchCase="true">
