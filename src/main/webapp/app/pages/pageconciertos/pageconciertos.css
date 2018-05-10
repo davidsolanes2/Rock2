@@ -142,12 +142,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;

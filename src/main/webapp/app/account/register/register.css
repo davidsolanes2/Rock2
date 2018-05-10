@@ -26,7 +26,7 @@ label{
     border-radius: 5px!important;
     height: 35px!important;
     color:black!important;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     font-style: italic!important;
     font-size: 14px!important;
 }
@@ -103,13 +103,13 @@ body {
     background-image:-ms-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
     background-image:linear-gradient(to left,#1b1e24,#1b1e24 50%,#1b1e24);
     text-align: center;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     font-size: 14px;
     line-height: 1.5em;
 }
 
 [class*="fontawesome-"]:before {
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
 }
 
 input {

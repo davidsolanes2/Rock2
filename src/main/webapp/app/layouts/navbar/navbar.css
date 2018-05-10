@@ -6,7 +6,7 @@
 *
 * ======================================================= */
 body {
-    font-family: 'Oswald', sans-serif!important;
+    font-family: 'IBM Plex Sans', sans-serif!important;
     font-weight: 300;
     font-size: 14px;
     line-height: 1.6;
@@ -19,7 +19,7 @@ label{
 }
 
 a{
-    font-family: 'Oswald', sans-serif!important;
+    font-family: 'IBM Plex Sans', sans-serif!important;
 }
 
 
@@ -57,7 +57,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     color: #000;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     margin: 0 0 30px 0;
 }
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #fh5co-aside #fh5co-logo {
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     /*font-weight: 600;*/
     margin-bottom: 2em;
     text-transform: uppercase;
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     padding: 10px 10px;
     letter-spacing: .2em;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -366,14 +366,16 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     color: white;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
     margin-bottom: 20px;
     font-size: 45px;
     line-height: 1.3;
     font-weight: 100;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+
 }
 /*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
@@ -848,7 +850,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 .btn {
     margin-right: 4px;
     margin-bottom: 4px;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
@@ -896,7 +898,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     color: #fff;
 }
 .btn-secondary {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
     background: #228896;
     color: #fff;

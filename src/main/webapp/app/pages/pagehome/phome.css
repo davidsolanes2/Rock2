@@ -8,7 +8,7 @@
     float:right!important;
     width:85%!important;
     display: none;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 100%;
 }
 
@@ -17,7 +17,7 @@
     background-color: whitesmoke!important;
 }
 a{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 #imaginary_container{
     margin-top:5%;
@@ -99,7 +99,7 @@ h2 {
     color:black!important;
     margin-left: 22%!important;
     background-color: whitesmoke;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
 
 }
 
@@ -155,7 +155,7 @@ h2 {
     color: black;
     position: relative;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -168,7 +168,7 @@ h2 {
     color:  #228896!important;
     font-weight: bold!important;
     text-align:center!important;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
 }
 .mas:hover{
     color: black!important;
@@ -190,7 +190,7 @@ li:hover{
     font-size: 20px;
     position: relative;
     text-align: center;
-    font-family: Oswald, sans-serif;    font-size: 1.1em;
+    font-family: IBM Plex Sans, sans-serif;    font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
@@ -273,12 +273,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -669,7 +669,7 @@ body {
     width: 600px;
     margin: 0 auto;
     background-color: #ffffff;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     color: #555555;
 }
 
@@ -880,7 +880,7 @@ a {
         padding: 10% 0 0;
         font-weight: 900;
         font-size: 30px;
-        font-family: Oswald, sans-serif;
+        font-family: IBM Plex Sans, sans-serif;
         color: #fff;
         opacity: 0;
     }

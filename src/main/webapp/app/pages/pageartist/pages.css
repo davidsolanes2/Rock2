@@ -55,7 +55,7 @@ h1{
     font-size: 20px;
     position: relative;
     text-align: center;
-    font-family: Oswald, sans-serif;    font-size: 1.1em;
+    font-family: IBM Plex Sans, sans-serif;    font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
@@ -134,12 +134,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
