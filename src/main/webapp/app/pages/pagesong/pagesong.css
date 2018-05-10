@@ -39,7 +39,7 @@
     box-shadow: 6px 6px 7px #888888;
     width:80px;
     height:80px;
-    background-color:#3b5998;
+    background-color:black!important;
     margin-top: -86%;
     margin-left: 277px;
     -ms-transform: rotate(45deg);
@@ -108,7 +108,7 @@
 }
 .about-us-wrap {
     text-align: center;
-    font-family: 'Lato', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
     padding-top: 75px;
 }

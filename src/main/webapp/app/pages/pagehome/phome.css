@@ -8,7 +8,7 @@
     float:right!important;
     width:85%!important;
     display: none;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 100%;
 }
 
@@ -17,7 +17,7 @@
     background-color: whitesmoke!important;
 }
 a{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 #imaginary_container{
     margin-top:5%;
@@ -99,7 +99,7 @@ h2 {
     color:black!important;
     margin-left: 22%!important;
     background-color: whitesmoke;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
 
 }
 
@@ -142,9 +142,10 @@ h2 {
 }
 .audio{
     align-content: center;
-    margin-top: 8%;
+    margin-top: 23%!important;
     width: 100%;
 }
+
 
 .audio:hover{
     cursor: pointer;
@@ -154,7 +155,7 @@ h2 {
     color: black;
     position: relative;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -167,7 +168,7 @@ h2 {
     color:  #228896!important;
     font-weight: bold!important;
     text-align:center!important;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
 }
 .mas:hover{
     color: black!important;
@@ -182,11 +183,19 @@ li:hover{
     cursor: pointer;
 }
 
-.cover:hover .overlayInfo{
-    opacity: 0.9;
+
+
+.tituloSong{
+    color: black;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    font-family: IBM Plex Sans, sans-serif;    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+    margin-left: -48px!important;
 }
-
-
 .overlayInfo {
     position: absolute;
     top: 0;
@@ -198,43 +207,40 @@ li:hover{
     opacity: 0;
     transition: 0.5s ease;
     background-color: #f5f5f5;
-
 }
 .cover img{
     cursor: pointer;
-    width: 65px;
-    height: 65px;
+    width: 40px;
+    height: 40px;
     float: left;
-    margin-left: 32%;
+    margin-left: 77%;
     display: inline-block;
-    margin-top: 15%;
+    margin-top: 1%;
 }
+
 
 .cover:hover .overlayInfo{
     opacity: 0.9;
 }
-
 .botonyoutube{
-    margin-top: 15%;
-    margin-left: 34%;
-    background-color: red;
+    margin-top: 25%;
+    margin-left: 38%;
+    background-color: #228896;
     border-color: white;
     border-radius: 4px;
+    height: 31px;
+    width: 50px;
+    border-radius: 8px;
 }
 .botonyoutube:hover{
     background-color: white;
-    border-color: red;
+    border-color: #228896;
     cursor: pointer;
-    color:red;
-    border-radius: 4px;
+    color:#228896;
+    border-radius: 8px;
 }
 
-button:hover{
-    -webkit-box-shadow: 0 0 51px 4px rgb(255, 61, 112);
-    -moz-box-shadow: 0 0 51px 4px rgb(255, 0, 10);
-    box-shadow: 0 0 30px 4px rgb(255, 0, 10);
-    cursor:pointer;
-}
+
 
 .boton2{
     color:white!important;
@@ -267,12 +273,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -663,7 +669,7 @@ body {
     width: 600px;
     margin: 0 auto;
     background-color: #ffffff;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     color: #555555;
 }
 
@@ -874,7 +880,7 @@ a {
         padding: 10% 0 0;
         font-weight: 900;
         font-size: 30px;
-        font-family: Oswald, sans-serif;
+        font-family: IBM Plex Sans, sans-serif;
         color: #fff;
         opacity: 0;
     }
