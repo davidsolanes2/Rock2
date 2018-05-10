@@ -1,6 +1,4 @@
-<div class="fondo">
-
-    <jhi-alert-error></jhi-alert-error>
+ <jhi-alert-error></jhi-alert-error>
     <div class="fondo">
         <div id="fh5co-main">
             <br><br>
@@ -12,7 +10,7 @@
                             <div>
                                 <img id="{{favourites[0].id}}" (click)="like(favourites[0].id)" alt="completo" src="../../../content/images/heart-2.png">
 
-                                <button class="btn btn-primary botonyoutube" (click)="openModal(favourites[0].name, favourites[0].artistName)"><i class="glyphicon glyphicon-play"></i></button>
+                                <button class="btn btn-primary botonyoutube text-center" (click)="openModal(favourites[0].name, favourites[0].artistName)"><i class="fa fa-play" aria-hidden="true"></i></button>
                                 <audio controls class="audio">
                                     <source src="{{favourites[0].previewURL}}" type="audio/mpeg">
                                 </audio>
@@ -37,4 +35,4 @@
             </div>
         </div>
     </div>
-</div>
+

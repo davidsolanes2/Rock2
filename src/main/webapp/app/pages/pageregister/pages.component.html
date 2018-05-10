@@ -27,9 +27,8 @@
                     <div>
                         <img id="{{search.id}}" (click)="like(search.id)" alt="vacio"
                              src="../../../content/images/heart-1.png">
-                        <button class="btn btn-primary botonyoutube" id="y"
-                                (click)="openModal(search.name, search.artistName)"><span
-                            class="glyphicon glyphicon-play"></span>Youtube
+                        <button class="btn btn-primary botonyoutube text-center"
+                                (click)="openModal(search.name, search.artistName)"><i class="fa fa-play" aria-hidden="true"></i>
                         </button>
                         <audio controls class="audio">
                             <source src="{{search.previewURL}}" type="audio/mpeg">

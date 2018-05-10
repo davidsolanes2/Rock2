@@ -1,3 +1,8 @@
+/*  -- Tiene la misma configuracion que pages.css --  */
+
+.fondo {
+    margin-left: 18%!important;
+}
 .audio{
     align-content: center;
     margin-top: 23%!important;
@@ -23,6 +28,7 @@
     height: 31px;
     width: 50px;
     border-radius: 8px;
+    line-height: 1px;
 }
 .botonyoutube:hover{
     background-color: white;
@@ -30,6 +36,7 @@
     cursor: pointer;
     color:#228896;
     border-radius: 8px;
+    line-height: 1px;
 }
 .cover {
     background-size: cover;
@@ -63,8 +70,8 @@
     cursor: pointer;
 }
 .infoDiv col-lg-3 col-md-4 col-sm-6 image-top {
-    padding-right: 83px!important;
-    padding-left: 15px!important;
+    padding-right: 60px!important;
+    padding-left: 10px!important;
     margin-left: 100px!important;
 }
 .modal-body {
@@ -88,14 +95,13 @@
     background-color: #f5f5f5;
 }
 .tituloSong{
+    color: black!important;
     position: relative;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    font-size: 1.1em;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1.7em;
-    color: #020d1c!important;
-    margin-left: -48px!important;
 }
 span {
     display: inline-block;
