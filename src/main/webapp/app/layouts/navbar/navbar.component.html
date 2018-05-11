@@ -29,7 +29,8 @@
                         <span> Remember me</span>
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <br>
+                <button id="sign" type="submit" class="btn btn-primary">Sign in</button>
             </form>
 
         </div>
@@ -50,7 +51,8 @@
                         <span jhiTranslate="global.menu.account.logout">Sign out</span>
                     </a>
                 </li>
-                <li *ngSwitchCase="false">
+                <br>
+                <li *ngSwitchCase="false" id="reg">
                     <a routerLink="register" routerLinkActive="active"
                        (click)="collapseNavbar()">
                         Register

@@ -1020,6 +1020,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     box-shadow: none;
 }
 
+
 .form-control {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1315,6 +1316,13 @@ display:none!important;
 
 }
 
+#reg{
+    margin-left: 50px!important;
+}
+
+#sign{
+    margin-left: 55px!important;
+}
 .login {
     width: 80%;
     margin-left: 8%;
