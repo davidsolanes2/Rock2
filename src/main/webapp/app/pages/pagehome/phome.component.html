@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="paises img-responsive" [style.background-image]="sanitizeImageCountry('espana')">
+        <div class="paises img-responsive" [style.background-image]="sanitizeImageCountry('barcelona')">
             <div class="overlayInfo" (click)="topSong('ES')">
                 <div class="nombre">
                     <a class="hijo">ESPAÑA</a>
@@ -179,7 +179,7 @@
                         <div>
                             <div>
                                 <div *ngIf="isLiked(data.id); else notLiked">
-                                    <img id="{{data.id}}" (click)="dislike(data.id)" alt="completo"
+                                    <img id="{{data.id}}" (click)="like(data.id)" alt="completo"
                                          src="../../../content/images/heart-2.png">
                                 </div>
                                 <ng-template #notLiked>
@@ -196,8 +196,8 @@
                             </div>
                         </div>
                     </div>
-                    <p class="tituloSong" style="text-align: center; color: black">{{data.name}}</p>
                 </div>
+                <p class="tituloSong" style="text-align: center; color: black">{{data.name}}</p>
             </div>
             <div class="backdrop" [ngStyle]="{'display':display}"></div>
             <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">

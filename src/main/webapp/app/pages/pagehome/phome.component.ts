@@ -118,7 +118,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     }
 
     openModal(nombre: string, artist: string) {
-        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${artist}-${nombre}&type=video&maxResults=1&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
+        this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${artist}-${nombre} Official&type=video&maxResults=1&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.idYoutube = data.items[0].id.videoId;
@@ -223,27 +223,14 @@ export class PhomeComponent implements OnInit, OnDestroy {
 
     like(idNapster: string) {
         this.isSaving = true;
+        this.idNapster = idNapster;
         if (document.images[idNapster].alt === 'vacio') {
-            this.idNapster = idNapster;
             this.subscribeToLikeResponse(
                 this.collectionsService.like(idNapster));
         } else {
-            document.images[idNapster].src = this.likeVacio;
-            document.images[idNapster].alt = 'vacio';
-        }
-    }
-
-    dislike(idNapster: string) {
-        this.isSaving = true;
-        if (document.images[idNapster].alt === 'completo') {
-            this.idNapster = idNapster;
             this.subscribeToDislikeResponse(
                 this.collectionsService.dislike(idNapster));
-        } else {
-            document.images[idNapster].src = this.likeVacio;
-            document.images[idNapster].alt = 'vacio';
         }
-
     }
 
     private subscribeToLikeResponse(result: Observable<Collections>) {
@@ -265,17 +252,19 @@ export class PhomeComponent implements OnInit, OnDestroy {
     private onSaveSuccessLike(result: Collections) {
         this.eventManager.broadcast({name: 'SongAdd', content: 'OK'});
         this.isSaving = false;
+
         document.images[this.idNapster].src = this.likeCompleto;
         document.images[this.idNapster].alt = 'completo';
-        document.images[this.idNapster].setAttribute('(click)', `dislike('${this.idNapster}')`);
     }
+
 
     private onSaveSuccessDislike(result: Response) {
         this.eventManager.broadcast({name: 'SongDelete', content: 'OK'});
         this.isSaving = false;
+
         document.images[this.idNapster].src = this.likeVacio;
         document.images[this.idNapster].alt = 'vacio';
-        document.images[this.idNapster].setAttribute('(click)', `like('${this.idNapster}')`);
+
     }
 
     private onSaveError() {
