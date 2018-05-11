@@ -45,8 +45,11 @@ button{
 }
 
 #buscador{
-    width: 93%!important;
-    margin-left: -35px!important;
+    width: 140%!important;
+    margin-left: -50%!important;
+    height: 30px!important;
+
+
 }
 .boton2{
     color:white!important;
