@@ -1,3 +1,5 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 .audio{
     align-content: center;
     margin-top: 43%!important;
@@ -43,8 +45,8 @@ button{
 }
 
 #buscador{
-    width:90%!important;
-    margin-left: 10px!important;
+    width: 93%!important;
+    margin-left: -4px!important;
 }
 .boton2{
     color:white!important;
@@ -97,6 +99,10 @@ button{
     padding-left: 15px!important;
     margin-left: 100px!important;
 }
+.col-lg-3{
+    flex: 0 0 22%!important;
+    max-width: 20%!important;
+}
 .modal-body {
     position:relative;
     padding:0;
@@ -121,11 +127,11 @@ button{
     position: relative;
     text-align: center;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
+    font-size: 0.9em;
+    font-weight: bold!important;
     line-height: 1.7em;
     color: #020d1c!important;
-    margin-left: -48px!important;
+    margin-left: -40%!important;
 }
 span {
     display: inline-block;

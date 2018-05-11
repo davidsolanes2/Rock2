@@ -1,7 +1,7 @@
 /*
     DEMO STYLE
 */
-
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 .fondo{
     background-size: cover;
     background-color: whitesmoke!important;
@@ -156,10 +156,11 @@ h2 {
     position: relative;
     text-align: center;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
+    font-size: 0.9em;
+    font-weight: bold!important;
     line-height: 1.7em;
     margin-left: -48px!important;
+
 }
 
 
