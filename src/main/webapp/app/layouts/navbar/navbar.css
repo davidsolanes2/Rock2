@@ -150,7 +150,6 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-aside #fh5co-main-menu ul li a {
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
-    /*letter-spacing: .1em;*/
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
@@ -160,8 +159,24 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
-    margin-left: 37px;
 }
+
+#tendenc{
+    margin-left: 52px!important;
+}
+#colec{
+    margin-left: 43px!important;
+}
+
+#busq{
+    margin-left: 60px!important;
+}
+
+#logout{
+    margin-left: 65px!important;
+}
+
+
 #fh5co-aside #fh5co-main-menu ul li a:after {
     content: "";
     position: absolute;
@@ -256,8 +271,18 @@ h1, h2, h3, h4, h5, h6 {
 .fh5co-main-menu {
     text-align: center;
     text-transform: uppercase;
-    margin-left: -10px!important;
+    margin-left: -8px!important;
 
+}
+
+#p:hover{
+    color:black!important;
+}
+#b:hover{
+    background-color:black!important;
+}
+#c:hover{
+    background-color:black!important;
 }
 @media screen and (max-width: 1200px) {
     #fh5co-main {
@@ -1294,7 +1319,7 @@ display:none!important;
 }
 .menu1 {
     width: 80%;
-    margin-left: 5%;
+    margin-left: 14%!important;
    /*loguitud de la caja de Account y de Administration*/
 }
 .content1 {

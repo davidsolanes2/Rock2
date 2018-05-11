@@ -7,7 +7,7 @@
             </a>
         </h1>
         <div class="fh5co-main-menu">
-            <a routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
+            <a id="p" routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
         </div><br>
         <div *ngSwitchCase="false">
             <form class="form" role="form" (ngSubmit)="login()">
@@ -35,13 +35,13 @@
         </div>
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
-                <li *ngSwitchCase="true">
+                <li *ngSwitchCase="true" id="tendenc">
                     <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
                 </li>
-                <li *ngSwitchCase="true">
+                <li *ngSwitchCase="true" id="colec">
                     <a routerLink="pageartist-pages" routerLinkActive="active">Mi Colección</a>
                 </li>
-                <li *ngSwitchCase="true">
+                <li *ngSwitchCase="true" id="busq">
                     <a routerLink="pageregister-pages" routerLinkActive="active">Búsqueda</a>
                 </li>
 
@@ -58,7 +58,7 @@
                 </li>
 
                 <div class="btn-group dropright menu1" *ngSwitchCase="true">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    <button id="b" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         Account
                     </button>
@@ -81,7 +81,7 @@
                 <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer"
                     routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <div class="btn-group dropright menu1">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                        <button id="c" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                             Administration
                         </button>
