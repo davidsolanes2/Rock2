@@ -5,12 +5,13 @@
 
     <span jhiTranslate="logs.filter">Filter</span> <input type="text" [(ngModel)]="filter" class="form-control">
 
-    <table class="table table-sm table-striped table-bordered">
+    <table class="table table-sm table-bordered">
+            <!-- table-striped -->
         <thead>
-        <tr title="click to order">
-            <th (click)="orderProp = 'name'; reverse=!reverse"><span jhiTranslate="logs.table.name">Name</span></th>
-            <th (click)="orderProp = 'level'; reverse=!reverse"><span jhiTranslate="logs.table.level">Level</span></th>
-        </tr>
+            <tr title="click to order">
+                <th (click)="orderProp = 'name'; reverse=!reverse"><span jhiTranslate="logs.table.name">Name</span></th>
+                <th (click)="orderProp = 'level'; reverse=!reverse"><span jhiTranslate="logs.table.level">Level</span></th>
+            </tr>
         </thead>
 
         <tr *ngFor="let logger of (loggers | pureFilter:filter:'name' | orderBy:orderProp:reverse)">

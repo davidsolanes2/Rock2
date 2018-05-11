@@ -1,4 +1,4 @@
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 .fondo{
     background-size: cover;
     background-color: whitesmoke !important;
@@ -52,11 +52,11 @@ h1{
 
 .tituloSong{
     color: black;
-    font-size: 0.9em;
+    font-size: 20px;
     position: relative;
     text-align: center;
     font-family: IBM Plex Sans, sans-serif;    font-size: 1.1em;
-    font-weight: bold!important;
+    font-weight: 300;
     line-height: 1.7em;
     color: #999;
     margin-left: -48px!important;
