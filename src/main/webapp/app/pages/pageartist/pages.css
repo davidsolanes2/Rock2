@@ -1,11 +1,14 @@
-
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 .fondo{
     background-size: cover;
     background-color: whitesmoke !important;
     float:right!important;
     width:90%!important;
 }
-
+.row{
+    width: 93%!important;
+    margin-left: 9%!important;
+}
 h1{
     color:black!important;
     font-size: 2.5em!important;
@@ -52,11 +55,11 @@ h1{
 
 .tituloSong{
     color: black;
-    font-size: 20px;
+    font-size: 0.9em;
     position: relative;
     text-align: center;
-    font-family: IBM Plex Sans, sans-serif;    font-size: 1.1em;
-    font-weight: 300;
+    font-family: IBM Plex Sans, sans-serif;
+    font-weight: bold;
     line-height: 1.7em;
     color: #999;
     margin-left: -48px!important;
