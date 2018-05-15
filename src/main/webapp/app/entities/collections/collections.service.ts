@@ -42,9 +42,9 @@ export class CollectionsService {
     liked(ids: String []): Observable<ResponseWrapper> {
         const options = createRequestOption(ids);
         // let idsParams = new URLSearchParams();
-        let id = "";
+        let id = '';
         for (let i = 0; i < ids.length; i++) {
-            id += ids[i] + ",";
+            id += ids[i] + ',';
         }
         // idsParams.set('ids', id);
         // let request_option = new RequestOptions({search: idsParams});

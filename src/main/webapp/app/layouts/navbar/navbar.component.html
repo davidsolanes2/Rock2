@@ -1,9 +1,12 @@
-<div id="fh5co-page" [ngSwitch]="isAuthenticated()">
-    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"></a>
-    <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <h1 id="fh5co-logo" class="mx-2">
-            <a href="/"><img src="../../../content/images/logo.png" height="200px" width="200px"/></a>
+
+<li id="fh5co-page" [ngSwitch]="isAuthenticated()">
+    <aside id="fh5co-aside">
+        <h1 id="fh5co-logo">
+            <a routerLink="/">
+                <img src="../../../content/images/logo.png" height="100%" width="100%"/>
+            </a>
         </h1>
+
         <div *ngSwitchCase="false">
             <form class="form" role="form" (ngSubmit)="login()">
                 <div class="login">
@@ -21,11 +24,12 @@
                     <label class="form-check-label" for="rememberMe">
                         <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe"
                                [(ngModel)]="rememberMe" checked>
-                        <span>Remember me</span>
+                        <span> Remember me</span>
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
+
         </div>
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
@@ -33,37 +37,42 @@
                     <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
                 </li>
                 <li *ngSwitchCase="true">
-                    <a routerLink="pageartist-pages" routerLinkActive="active">Mi Coleccion</a>
+                    <a routerLink="pageartist-pages" routerLinkActive="active">Mi Colección</a>
                 </li>
-               <li *ngSwitchCase="true">
-                    <a routerLink="pageregister-pages" routerLinkActive="active">Busqueda</a>
                 <li *ngSwitchCase="true">
-                    <a class="dropdown-item" (click)="logout()" id="logout">
+                    <a routerLink="pageregister-pages" routerLinkActive="active">Búsqueda</a>
+                </li>
+                <li *ngSwitchCase="false">
+                    <a routerLink="register" routerLinkActive="active"
+                       (click)="collapseNavbar()">
+                        Register
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
+                </li>
+                <li *ngSwitchCase="true">
+                    <a (click)="logout()" id="logout">
                         <span jhiTranslate="global.menu.account.logout">Sign out</span>
                     </a>
                 </li>
-                <br/>
-                <li *ngSwitchCase="false">
-                    <a class="dropdown-item" routerLink="register" routerLinkActive="active"
-                       (click)="collapseNavbar()">
-                        <span jhiTranslate="global.menu.account.register">Register</span>
-                    </a>
-                </li>
-                <div class="btn-group dropright menu1" *ngSwitchCase="true">
+                <div class="btn-group dropright" *ngSwitchCase="true">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         Account
                     </button>
+                    <br>
                     <div class="dropdown-menu">
-
                         <li *ngSwitchCase="true">
-                            <a class="dropdown-item" routerLink="settings" routerLinkActive="active"
+                            <a routerLink="settings" routerLinkActive="active"
                                (click)="collapseNavbar()">
-                                <span jhiTranslate="global.menu.account.settings">Settings</span>
+                                <a jhiTranslate="global.menu.account.settings">Settings</a>
                             </a>
-                            <a class="dropdown-item" routerLink="password" routerLinkActive="active"
+                        </li>
+                        <li *ngSwitchCase="true">
+                        <a routerLink="password" routerLinkActive="active"
                                (click)="collapseNavbar()">
-                                <span jhiTranslate="global.menu.account.password">Password</span>
+                                <a jhiTranslate="global.menu.account.password">Password</a>
                             </a>
                         </li>
                     </div>
@@ -102,7 +111,6 @@
                                (click)="collapseNavbar()">
                                 <span jhiTranslate="global.menu.admin.logs">Logs</span>
                             </a>
-                            <!--<li *ngIf="swaggerEnabled">-->
                             <a class="dropdown-item" routerLink="docs" routerLinkActive="active"
                                (click)="collapseNavbar()">
                                 <span jhiTranslate="global.menu.admin.apidocs">API</span>

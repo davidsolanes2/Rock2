@@ -1,60 +1,8 @@
-/*
-.w-100 {
-    width: 100% !important;
-    height: 704px !important;
-}
-
-.carousel {
-    position: relative;
-    margin-left: 17%;
-}
-
-h5 {
-    font-family: Oswald, sans-serif;
-    font-size: 25px;
-    color: #d9d9d9;
-}
-
-.fh5co-text {
-    font-family: Oswald, sans-serif;
-    font-size: 20px;
-    color: #020d1c;
-}
-
-#caracteristicas {
-    position: relative;
-    margin-left: 20%;
-}
-
-#login {
-    position: relative;
-    margin-left: 20%;
-}
-
-.icono-artista {
-    font-size: 40px;
-    color: #228896;
-    margin-right: 15px;
-}
-
-.header {
-    overflow: hidden;
-}
-
-.btn-primary {
-    font-size: 25px;
-    color: #f4f4f4 !important;
-    background-color: #228896;
-
-}
-
-
-p {
-
-    margin-bottom: 1.5em;
-}
-*/
 
 iframe {
     width: 100%;
+}
+
+.container{
+    margin-left: 18%!important;
 }

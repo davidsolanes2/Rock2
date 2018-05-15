@@ -1,21 +1,21 @@
 .btn{
     color:white!important;
-    background-color: green!important;
+    background-color: #228896!important;
     margin-left: 45%!important;
     border-color:white!important;
 }
 .btn:hover{
-    color:green!important;
+    color:#228896!important;
     background-color: white!important;
-    border-color:green!important;
+    border-color:#228896!important;
 }
 
 span{
-    color:white!important;
+    color:black!important;
 }
 
 label{
-    color:white!important;
+    color:grey!important;
 }
 
 .text-danger{
@@ -33,7 +33,7 @@ form{
     border-radius: 5px!important;
     height: 35px!important;
     color:black!important;
-    font-family: Oswald, sans-serif;
+    font-family: IBM Plex Sans, sans-serif;
     font-style: italic!important;
     font-size: 14px!important;
     width: 100%!important;

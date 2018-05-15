@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Rx';
 import { Pages } from './pages.model';
 import { PagesService } from './pages.service';
 import { Principal } from '../../shared';
-import {Http, Response} from "@angular/http";
+import {Http, Response} from '@angular/http';
 
 @Component({
     selector: 'jhi-pages',
@@ -45,14 +45,13 @@ export class PagesComponent implements OnInit, OnDestroy {
         private route: ActivatedRoute,
         private http: Http,
 
-
     ) {
     }
 
     loadAll() {
     }
 
-    searchAritst(artistId: number){
+    searchAritst(artistId: number) {
         console.log(artistId);
         this.http.get(`http://api.napster.com/v2.2/artists/${artistId}?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&lang=es`)
             .subscribe((res: Response) => {

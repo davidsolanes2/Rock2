@@ -5,8 +5,8 @@ import {JhiEventManager, JhiLanguageService} from 'ng-jhipster';
 
 import {LoginService} from './login.service';
 import {StateStorageService} from '../auth/state-storage.service';
-import {Register} from "../../account/register/register.service";
-import {EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE} from "../index";
+import {Register} from '../../account/register/register.service';
+import {EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE} from '../index';
 
 @Component({
     selector: 'jhi-login-modal',
@@ -69,7 +69,7 @@ export class JhiLoginModalComponent implements OnInit, AfterViewInit {
             rememberMe: this.rememberMe
         }).then(() => {
             this.authenticationError = false;
-            //this.activeModal.dismiss('login success');
+            // this.activeModal.dismiss('login success');
             if (this.router.url === '/register' || (/^\/activate\//.test(this.router.url)) ||
                 (/^\/reset\//.test(this.router.url))) {
                 this.router.navigate(['pagehome-phome']);
@@ -93,8 +93,6 @@ export class JhiLoginModalComponent implements OnInit, AfterViewInit {
             this.authenticationError = true;
         });
     }
-
-
 
     register() {
         this.activeModal.dismiss('to state register');

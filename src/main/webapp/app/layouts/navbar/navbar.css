@@ -1,34 +1,29 @@
+/*
 
-
-
-/* =======================================================
+!* =======================================================
 *
 * 	Template Style
 *	Edit this section
 *
-* ======================================================= */
+* ======================================================= *!
 body {
-    font-family: Oswald, sans-serif!important;
+    font-family: 'Oswald', sans-serif!important;
     font-weight: 300;
     font-size: 14px;
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.5);
     background: whitesmoke;
 }
-li:visited{
-color: #000000; text-decoration: none;
 
+label{
+    font-size: 15px!important;
 }
+
 a{
-    font-family: Oswald, sans-serif!important;
+    font-family: 'Oswald', sans-serif!important;
 }
-a:visited{
-    color: #000000; text-decoration: none;
 
-}
-hr{
-    color:white!important;
-}
+
 @media screen and (max-width: 992px) {
     body {
         font-size: 16px;
@@ -63,29 +58,12 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     color: #000;
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     font-weight: 400;
     margin: 0 0 30px 0;
 }
 
-figure {
-    margin-bottom: 2.5em;
-    float: left;
-    width: 100%;
-}
-figure figcaption {
-    font-size: 16px;
-    width: 80%;
-    margin: 20px auto 0px auto;
-    color: #b3b3b3;
-    font-style: italic;
-    font-family: Oswald, sans-serif;
-}
-/*@media screen and (max-width: 480px) {
-    figure figcaption {
-        width: 100%;
-    }
-}*/
+
 
 ::-moz-selection {
     color: #fff;
@@ -103,21 +81,23 @@ figure figcaption {
     position: relative;
 }
 #fh5co-aside {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     width: 17%!important;
     position: fixed;
     bottom: 0;
     top: 0;
     left: 0;
-    /*overflow-y: scroll;*/
+    !*visibility: hidden!important;*!
+    overflow-x: hidden;
+    !*overflow-y: hidden;*!
     z-index: 1001;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
-    background-color:whitesmoke!important;
+    background-color:white!important;
 }
-/*@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     #fh5co-aside {
         width: 30%;
     }
@@ -131,20 +111,20 @@ figure figcaption {
         -o-transform: translateX(-270px);
         transform: translateX(-270px);
     }
-}*/
+}
 #fh5co-aside #fh5co-logo {
     text-align: center;
-    font-family: 'Oswald', sans-serif;
-    /*font-weight: 600;*/
+    font-family: 'Oswald', sans-serif!important;
+    !*font-weight: 600;*!
     margin-bottom: 2em;
     text-transform: uppercase;
     font-size: 23px;
 }
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #fh5co-aside #fh5co-logo {
         margin-bottom: 1em;
     }
-}*/
+}
 #fh5co-aside #fh5co-logo a {
     color: #000;
     font-size: 19px!important;
@@ -158,11 +138,11 @@ figure figcaption {
     margin: 0;
     padding: 0;
 }
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #fh5co-aside #fh5co-main-menu ul {
         margin: 0 0 2em 0;
     }
-}*/
+}
 #fh5co-aside #fh5co-main-menu ul li {
     margin: 0 0 20px 0;
     padding: 0;
@@ -171,17 +151,17 @@ figure figcaption {
 #fh5co-aside #fh5co-main-menu ul li a {
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
-    letter-spacing: .1em;
+    !*letter-spacing: .1em;*!
     text-transform: uppercase;
-    font-size: 13px;
     font-weight: 600;
     position: relative;
     padding: 10px 10px;
     letter-spacing: .2em;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    margin-left: 37px;
 }
 #fh5co-aside #fh5co-main-menu ul li a:after {
     content: "";
@@ -236,12 +216,12 @@ figure figcaption {
     color: rgba(0, 0, 0, 0.6);
     padding: 0 20px;
 }
-/*@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #fh5co-aside .fh5co-footer {
         position: relative;
         bottom: 0;
     }
-}*/
+}
 #fh5co-aside .fh5co-footer span {
     display: block;
 }
@@ -260,11 +240,11 @@ figure figcaption {
     color: rgba(0, 0, 0, 0.7);
     padding: 4px;
 }
-#fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
+!*#fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
     text-decoration: none;
     outline: none;
     color: #228896;
-}
+}*!
 
 #fh5co-main {
     width: 20%;
@@ -273,7 +253,14 @@ figure figcaption {
     -o-transition: 0.5s;
     transition: 0.5s;
 }
-/*@media screen and (max-width: 1200px) {
+
+.fh5co-main-menu {
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: -10px!important;
+
+}
+@media screen and (max-width: 1200px) {
     #fh5co-main {
         width: 70%;
     }
@@ -282,7 +269,7 @@ figure figcaption {
     #fh5co-main {
         width: 100%;
     }
-}*/
+}
 #fh5co-main .fh5co-narrow-content {
     position: relative;
     width: 93%;
@@ -290,14 +277,12 @@ figure figcaption {
     padding: 4em 0;
     clear: both;
 }
-/*
 @media screen and (max-width: 768px) {
     #fh5co-main .fh5co-narrow-content {
         width: 100%;
         padding: 4em 1em;
     }
 }
-*/
 
 #fh5co-hero {
     min-height: 500px;
@@ -330,9 +315,8 @@ figure figcaption {
     background: rgba(0, 0, 0, 0.3);
 }
 #fh5co-hero .flexslider .slides li {
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom center;
+    background: no-repeat bottom center;
     min-height: 500px;
     position: relative;
 }
@@ -374,29 +358,31 @@ figure figcaption {
     min-height: 700px;
     padding: 2em;
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner {
         text-align: center;
     }
-}*/
+}*!
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1, #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
     margin: 0;
     padding: 0;
     color: white;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
+
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
     margin-bottom: 20px;
     font-size: 45px;
     line-height: 1.3;
     font-weight: 100;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
+
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
         font-size: 28px;
     }
-}*/
+}*!
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
     font-size: 18px;
     line-height: 1.5;
@@ -410,11 +396,11 @@ figure figcaption {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-section {
     font-size: 50px;
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-section {
         font-size: 30px;
     }
-}*/
+}*!
 #fh5co-hero .flexslider .slider-text > .slider-text-inner s.fh5co-lead {
     font-size: 20px;
     color: #fff;
@@ -560,7 +546,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     display: table;
     overflow: hidden;
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     .work {
         height: 400px;
     }
@@ -569,7 +555,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     .work {
         height: 270px;
     }
-}*/
+}*!
 .work .desc {
     display: table-cell;
     vertical-align: middle;
@@ -596,7 +582,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     -webkit-transform: translate3d(0, 15px, 0);
     transform: translate3d(0, 15px, 0);
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     .work .desc {
         opacity: 1;
         background: transparent !important;
@@ -610,7 +596,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
-}*/
+}*!
 .work:hover .desc {
     opacity: 1;
 }
@@ -865,7 +851,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 .btn {
     margin-right: 4px;
     margin-bottom: 4px;
-    font-family: Oswald, sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
@@ -897,6 +883,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     background: #228896;
     color: #fff;
     border: 2px solid #228896;
+    margin-left: 40px!important;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background: #279bab !important;
@@ -912,7 +899,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     color: #fff;
 }
 .btn-secondary {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     font-size: 14px;
     background: #228896;
     color: #fff;
@@ -1054,7 +1041,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     width: 30px;
     height: 2px;
     color: #000;
-    /*font: bold 14px/.4 Helvetica;*/
+    !*font: bold 14px/.4 Helvetica;*!
     text-transform: uppercase;
     text-indent: -55px;
     background: #000;
@@ -1309,4 +1296,72 @@ display:none!important;
 .menu1 {
     width: 80%;
     margin-left: 5%;
+   !*loguitud de la caja de Account y de Administration*!
+}
+.content1 {
+    width: 75%;
+}
+*/
+
+/*-- --*/
+
+#fh5co-page {
+    list-style-type: none;
+    width: 17%;
+    overflow: hidden;
+}
+#fh5co-aside {
+    position: fixed;
+    width: 18%!important;
+    z-index: 1001;
+}
+.fh5co-main-menu {
+    margin-left: 2%;
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 14px;
+    color: #228896;
+}
+#fh5co-main-menu {
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 16px;
+    color: #228896;
+}
+#fh5co-logo {
+     position: relative;
+     margin-left: 2%;
+     width: 90%!important;
+     height: 90%!important;
+}
+#username {
+    margin-bottom: 7%;
+}
+#password {
+    margin-bottom: 7%;
+}
+.form {
+    margin-left: 5%;
+    width: 60%!important;
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 14px;
+    padding-bottom: 1%;
+}
+
+button {
+    width: 117px;
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 14px;
+    background-color: #228896;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ul {
+    list-style-type: none;
+    margin-left: -4%;
+
+}
+a{
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #000;
 }
