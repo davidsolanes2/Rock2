@@ -1,14 +1,12 @@
 
-<div id="fh5co-page" [ngSwitch]="isAuthenticated()">
+<li id="fh5co-page" [ngSwitch]="isAuthenticated()">
     <aside id="fh5co-aside">
         <h1 id="fh5co-logo">
             <a routerLink="/">
                 <img src="../../../content/images/logo.png" height="100%" width="100%"/>
             </a>
         </h1>
-        <div class="fh5co-main-menu">
-            <a id="p" routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
-        </div><br>
+
         <div *ngSwitchCase="false">
             <form class="form" role="form" (ngSubmit)="login()">
                 <div class="login">
@@ -29,43 +27,43 @@
                         <span> Remember me</span>
                     </label>
                 </div>
-                <br>
-                <button id="sign" type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
 
         </div>
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
-                <li *ngSwitchCase="true" id="tendenc">
+                <li *ngSwitchCase="true">
                     <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
                 </li>
-                <li *ngSwitchCase="true" id="colec">
+                <li *ngSwitchCase="true">
                     <a routerLink="pageartist-pages" routerLinkActive="active">Mi Colección</a>
                 </li>
-                <li *ngSwitchCase="true" id="busq">
+                <li *ngSwitchCase="true">
                     <a routerLink="pageregister-pages" routerLinkActive="active">Búsqueda</a>
                 </li>
-
-                <li *ngSwitchCase="true">
-                    <a (click)="logout()" id="logout">
-                        <span jhiTranslate="global.menu.account.logout">Sign out</span>
-                    </a>
-                </li>
-                <br>
-                <li *ngSwitchCase="false" id="reg">
+                <li *ngSwitchCase="false">
                     <a routerLink="register" routerLinkActive="active"
                        (click)="collapseNavbar()">
                         Register
                     </a>
                 </li>
-
-                <div class="btn-group dropright menu1" *ngSwitchCase="true">
-                    <button id="b" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                <li>
+                    <a routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
+                </li>
+                <li *ngSwitchCase="true">
+                    <a (click)="logout()" id="logout">
+                        <span jhiTranslate="global.menu.account.logout">Sign out</span>
+                    </a>
+                </li>
+                <div class="btn-group dropright" *ngSwitchCase="true">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         Account
                     </button>
+                    <br>
                     <div class="dropdown-menu">
-                        <li *ngSwitchCase="true" class="content1">
+                        <li *ngSwitchCase="true">
                             <a routerLink="settings" routerLinkActive="active"
                                (click)="collapseNavbar()">
                                 <a jhiTranslate="global.menu.account.settings">Settings</a>
@@ -83,7 +81,7 @@
                 <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer"
                     routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <div class="btn-group dropright menu1">
-                        <button id="c" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                             Administration
                         </button>
@@ -113,7 +111,6 @@
                                (click)="collapseNavbar()">
                                 <span jhiTranslate="global.menu.admin.logs">Logs</span>
                             </a>
-                            <!--<li *ngIf="swaggerEnabled">-->
                             <a class="dropdown-item" routerLink="docs" routerLinkActive="active"
                                (click)="collapseNavbar()">
                                 <span jhiTranslate="global.menu.admin.apidocs">API</span>

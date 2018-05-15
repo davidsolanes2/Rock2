@@ -40,7 +40,7 @@
     width:80px;
     height:80px;
     background-color:black!important;
-    margin-top: -86%;
+    margin-top: -85%;
     margin-left: 277px;
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -67,7 +67,7 @@
     width:80px;
     height:80px;
     background-color:#228896;
-    margin-top: -20px;
+    margin-top: -7%;
     margin-left: 218px;
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -83,15 +83,18 @@
     transform: rotate(-45deg);
     color:#ffffff;
 }
-.banner-parallax {
-    height: 320px;
+/*.banner-parallax1 {
+    margin-left: 18%;
+    !*height: 320px;*!
     overflow: hidden;
     line-height:  320px;
     text-align: center;
-    background: url("http://www.brisaradio.es/attachments/Image/d1da86_938a4d0066e54ff4b93f2a67e02c7b8a.jpg?template=generic") no-repeat fixed center top;
+    background: url("../../../content/images/model-1.png") no-repeat fixed center top;
+    width: 100%!important;
+    height: 100%!important;
     position: relative;
-}
-.banner-parallax img{
+}*/
+/*.banner-parallax1 img{
     position: absolute;
     z-index: 9;
     left: 0;
@@ -100,7 +103,30 @@
     bottom: 0;
     margin: auto;
 }
-.banner-parallax .row{
+.banner-parallax1 .row{
+    margin-top: -100px;
+}*/
+.banner-parallax2 {
+    /*margin-left: 18%;*/
+    /*height: 320px;*/
+    overflow: hidden;
+    line-height:  320px;
+    text-align: center;
+    background: url("../../../content/images/model-2.png") no-repeat fixed top;
+    width: 100%!important;
+    height: 100%!important;
+    position: relative;
+}
+.banner-parallax2 img{
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.banner-parallax2 .row{
     margin-top: -100px;
 }
 .fabi-throne{
@@ -108,7 +134,7 @@
 }
 .about-us-wrap {
     text-align: center;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 14px;
     padding-top: 75px;
 }

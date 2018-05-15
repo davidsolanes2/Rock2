@@ -1,14 +1,13 @@
+/*
 
-/* =======================================================
+!* =======================================================
 *
 * 	Template Style
 *	Edit this section
 *
-* ======================================================= */
-
-
+* ======================================================= *!
 body {
-    font-family: 'IBM Plex Sans', sans-serif!important;
+    font-family: 'Oswald', sans-serif!important;
     font-weight: 300;
     font-size: 14px;
     line-height: 1.6;
@@ -21,8 +20,7 @@ label{
 }
 
 a{
-    font-family: 'IBM Plex Sans', sans-serif!important;
-    font-size: 16px!important;
+    font-family: 'Oswald', sans-serif!important;
 }
 
 
@@ -60,7 +58,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     color: #000;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     font-weight: 400;
     margin: 0 0 30px 0;
 }
@@ -90,9 +88,9 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     top: 0;
     left: 0;
-    /*visibility: hidden!important;*/
+    !*visibility: hidden!important;*!
     overflow-x: hidden;
-    /*overflow-y: hidden;*/
+    !*overflow-y: hidden;*!
     z-index: 1001;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
@@ -116,8 +114,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 #fh5co-aside #fh5co-logo {
     text-align: center;
-    font-family: 'IBM Plex Sans', sans-serif;
-    /*font-weight: 600;*/
+    font-family: 'Oswald', sans-serif!important;
+    !*font-weight: 600;*!
     margin-bottom: 2em;
     text-transform: uppercase;
     font-size: 23px;
@@ -153,33 +151,18 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-aside #fh5co-main-menu ul li a {
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
+    !*letter-spacing: .1em;*!
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
     padding: 10px 10px;
     letter-spacing: .2em;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    margin-left: 37px;
 }
-
-#tendenc{
-    margin-left: 52px!important;
-}
-#colec{
-    margin-left: 43px!important;
-}
-
-#busq{
-    margin-left: 60px!important;
-}
-
-#logout{
-    margin-left: 65px!important;
-}
-
-
 #fh5co-aside #fh5co-main-menu ul li a:after {
     content: "";
     position: absolute;
@@ -257,11 +240,11 @@ h1, h2, h3, h4, h5, h6 {
     color: rgba(0, 0, 0, 0.7);
     padding: 4px;
 }
-/*#fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
+!*#fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
     text-decoration: none;
     outline: none;
     color: #228896;
-}*/
+}*!
 
 #fh5co-main {
     width: 20%;
@@ -274,18 +257,8 @@ h1, h2, h3, h4, h5, h6 {
 .fh5co-main-menu {
     text-align: center;
     text-transform: uppercase;
-    margin-left: -8px!important;
+    margin-left: -10px!important;
 
-}
-
-#p:hover{
-    color:black!important;
-}
-#b:hover{
-    background-color:black!important;
-}
-#c:hover{
-    background-color:black!important;
 }
 @media screen and (max-width: 1200px) {
     #fh5co-main {
@@ -385,16 +358,16 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 700px;
     padding: 2em;
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner {
         text-align: center;
     }
-}*/
+}*!
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1, #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
     margin: 0;
     padding: 0;
     color: white;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
 
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
@@ -402,14 +375,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 45px;
     line-height: 1.3;
     font-weight: 100;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
 
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
         font-size: 28px;
     }
-}*/
+}*!
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
     font-size: 18px;
     line-height: 1.5;
@@ -423,11 +396,11 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-section {
     font-size: 50px;
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-section {
         font-size: 30px;
     }
-}*/
+}*!
 #fh5co-hero .flexslider .slider-text > .slider-text-inner s.fh5co-lead {
     font-size: 20px;
     color: #fff;
@@ -573,7 +546,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     display: table;
     overflow: hidden;
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     .work {
         height: 400px;
     }
@@ -582,7 +555,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     .work {
         height: 270px;
     }
-}*/
+}*!
 .work .desc {
     display: table-cell;
     vertical-align: middle;
@@ -609,7 +582,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     -webkit-transform: translate3d(0, 15px, 0);
     transform: translate3d(0, 15px, 0);
 }
-/*@media screen and (max-width: 768px) {
+!*@media screen and (max-width: 768px) {
     .work .desc {
         opacity: 1;
         background: transparent !important;
@@ -623,7 +596,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
-}*/
+}*!
 .work:hover .desc {
     opacity: 1;
 }
@@ -878,7 +851,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 .btn {
     margin-right: 4px;
     margin-bottom: 4px;
-    font-family: IBM Plex Sans, sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
@@ -926,7 +899,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     color: #fff;
 }
 .btn-secondary {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Oswald', sans-serif!important;
     font-size: 14px;
     background: #228896;
     color: #fff;
@@ -1020,7 +993,6 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     box-shadow: none;
 }
 
-
 .form-control {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1069,7 +1041,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
     width: 30px;
     height: 2px;
     color: #000;
-    /*font: bold 14px/.4 Helvetica;*/
+    !*font: bold 14px/.4 Helvetica;*!
     text-transform: uppercase;
     text-indent: -55px;
     background: #000;
@@ -1316,13 +1288,6 @@ display:none!important;
 
 }
 
-#reg{
-    margin-left: 50px!important;
-}
-
-#sign{
-    margin-left: 55px!important;
-}
 .login {
     width: 80%;
     margin-left: 8%;
@@ -1330,9 +1295,73 @@ display:none!important;
 }
 .menu1 {
     width: 80%;
-    margin-left: 14%!important;
-   /*loguitud de la caja de Account y de Administration*/
+    margin-left: 5%;
+   !*loguitud de la caja de Account y de Administration*!
 }
 .content1 {
     width: 75%;
+}
+*/
+
+/*-- --*/
+
+#fh5co-page {
+    list-style-type: none;
+    width: 17%;
+    overflow: hidden;
+}
+#fh5co-aside {
+    position: fixed;
+    width: 18%!important;
+    z-index: 1001;
+}
+.fh5co-main-menu {
+    margin-left: 2%;
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 14px;
+    color: #228896;
+}
+#fh5co-main-menu {
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 16px;
+    color: #228896;
+}
+#fh5co-logo {
+     position: relative;
+     margin-left: 2%;
+     width: 90%!important;
+     height: 90%!important;
+}
+#username {
+    margin-bottom: 7%;
+}
+#password {
+    margin-bottom: 7%;
+}
+.form {
+    margin-left: 5%;
+    width: 60%!important;
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 14px;
+    padding-bottom: 1%;
+}
+
+button {
+    width: 117px;
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 14px;
+    background-color: #228896;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ul {
+    list-style-type: none;
+    margin-left: -4%;
+
+}
+a{
+    font-family: 'Oswald', sans-serif!important;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #000;
 }
