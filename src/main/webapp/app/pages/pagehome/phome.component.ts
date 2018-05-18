@@ -271,4 +271,3 @@ export class PhomeComponent implements OnInit, OnDestroy {
 
 }
 
-//$(document).ready(inici);

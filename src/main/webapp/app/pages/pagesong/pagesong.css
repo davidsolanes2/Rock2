@@ -2,20 +2,77 @@
     margin-left: 18%!important;
     width: 75%;
 }
-.pic:before
+.pic1:before
 {
     content: '';
-    margin-top: -59px;
-    margin-left: -215px;
+    margin-top: 0;
+    margin-left: -120px;
     position: absolute;
-    width: 500px;
-    height: 450px;
-    background: url('../../../content/images/avatar-david.png') center center;
+    width: 100%;
+    height: 100%;
+    background: url('../../../content/images/julio.jpg') center center;
     -ms-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    background-size: cover;
 }
-.pic:hover , .box1:hover , .box2:hover , .social1:hover , .social2:hover , .social3:hover
+.pic2:before
+{
+    content: '';
+    margin-top: 0;
+    margin-left: -120px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../../../content/images/david.png') center center;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-size: cover;
+}
+.pic3:before
+{
+    content: '';
+    margin-top: 0;
+    margin-left: -120px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../../../content/images/borja.png') center center;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-size: cover;
+}
+.pic4:before
+{
+    content: '';
+    margin-top: 0;
+    margin-left: -120px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../../../content/images/bryan.jpg') center center;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-size: cover;
+}
+.pic5:before
+{
+    content: '';
+    margin-top: 0;
+    margin-left: -120px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../../../content/images/javi.png') center center;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-size: cover;
+}
+.pic1:hover , .pic2:hover , .pic3:hover , .pic4:hover , .pic5:hover , .box1:hover , .box2:hover , .social1:hover , .social2:hover , .social3:hover
 {
     box-shadow: 3px 3px 7px #888888;
     cursor:pointer;
@@ -23,8 +80,9 @@
 .pic
 {
     box-shadow: 6px 6px 7px #888888;
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
+    background-color: white;
     position: relative;
     overflow: hidden;
     margin-top: 180px;
@@ -32,6 +90,16 @@
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.pic4
+{
+    background-color: #FE9900;
+}
+
+.pic5
+{
+    background-color: #D2D2D2;
 }
 
 .social1
@@ -83,48 +151,17 @@
     transform: rotate(-45deg);
     color:#ffffff;
 }
-/*.banner-parallax1 {
-    margin-left: 18%;
-    !*height: 320px;*!
-    overflow: hidden;
-    line-height:  320px;
-    text-align: center;
-    background: url("../../../content/images/model-1.png") no-repeat fixed center top;
-    width: 100%!important;
-    height: 100%!important;
-    position: relative;
-}*/
-/*.banner-parallax1 img{
-    position: absolute;
-    z-index: 9;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
-.banner-parallax1 .row{
-    margin-top: -100px;
-}*/
 .banner-parallax2 {
-    /*margin-left: 18%;*/
-    /*height: 320px;*/
-    overflow: hidden;
-    line-height:  320px;
-    text-align: center;
-    background: url("../../../content/images/model-2.png") no-repeat fixed top;
+    margin-left: 18%;
+    background: url("../../../content/images/model-2.png") no-repeat;
+    background-size: cover;
     width: 100%!important;
     height: 100%!important;
-    position: relative;
 }
 .banner-parallax2 img{
     position: absolute;
-    z-index: 9;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    left: 210px;
+    top: 300px;
 }
 .banner-parallax2 .row{
     margin-top: -100px;
