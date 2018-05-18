@@ -1328,9 +1328,9 @@ display:none!important;
 }
 #fh5co-logo {
      position: relative;
-     margin-left: 2%;
-     width: 90%!important;
-     height: 90%!important;
+     margin-left: -2%;
+    /* width: 90%!important;
+     height: 90%!important;*/
 }
 #username {
     margin-bottom: 7%;

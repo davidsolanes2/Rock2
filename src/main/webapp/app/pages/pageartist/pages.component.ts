@@ -42,6 +42,9 @@ export class PagesComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
+    idNapster = '';
+    likeVacio = require('../../../content/images/heart-1.png');
+    likeCompleto = require('../../../content/images/heart-2.png');
 
     constructor(
         private pagesService: PagesService,
@@ -114,16 +117,66 @@ export class PagesComponent implements OnInit, OnDestroy {
     private onError(error) {
         this.jhiAlertService.error(error.message, null, null);
     }
+
+    like(idNapster: string) {
+        this.isSaving = true;
+        this.idNapster = idNapster;
+        if (document.images[idNapster].alt === 'vacio') {
+            this.subscribeToLikeResponse(
+                this.collectionsService.like(idNapster));
+        } else {
+            this.subscribeToDislikeResponse(
+                this.collectionsService.dislike(idNapster));
+        }
+    }
+    private subscribeToLikeResponse(result: Observable<Collections>) {
+        console.log('Antes subscribe');
+        result.subscribe((res: Collections) => {
+                this.onSaveSuccessLike(res), (res: Response) => this.onSaveError()
+            }
+        );
+    }
+    private subscribeToDislikeResponse(result: Observable<Response>) {
+        console.log('Antes subscribe Dislike');
+        result.subscribe((res: Response) => {
+                this.onSaveSuccessDislike(res), (res: Response) => this.onSaveError()
+            }
+        );
+    }
+    private onSaveSuccessLike(result: Collections) {
+        this.eventManager.broadcast({name: 'SongAdd', content: 'OK'});
+        this.isSaving = false;
+
+        document.images[this.idNapster].src = this.likeCompleto;
+        document.images[this.idNapster].alt = 'completo';
+    }
+    private onSaveSuccessDislike(result: Response) {
+        this.eventManager.broadcast({name: 'SongDelete', content: 'OK'});
+        this.isSaving = false;
+
+        document.images[this.idNapster].src = this.likeVacio;
+        document.images[this.idNapster].alt = 'vacio';
+
+    }
+
+
+
+
     private subscribeToListCollectionsResponse(result: Observable<Collections>) {
         result.subscribe((res: Collections) => {
                 this.onSaveSuccess(res), (res: Response) => this.onSaveError()
             }
         );
     }
+
+
+
+
     private onSaveSuccess(result: Collections) {
         this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});
         this.isSaving = false;
     }
+
     private onSaveError() {
         this.isSaving = false;
     }
