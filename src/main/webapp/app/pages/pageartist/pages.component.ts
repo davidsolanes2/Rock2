@@ -4,6 +4,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Rx';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 import { Observable } from 'rxjs/Rx';
+import {Router} from '@angular/router';
 
 import { Pages } from './pages.model';
 import { PagesService } from './pages.service';
@@ -55,6 +56,8 @@ export class PagesComponent implements OnInit, OnDestroy {
         private collectionsService: CollectionsService,
         private http: Http,
         private _sanitizer: DomSanitizer,
+        private router: Router
+
     ) {
     }
     public sanitizeImage(image: string) {
@@ -154,8 +157,9 @@ export class PagesComponent implements OnInit, OnDestroy {
         this.eventManager.broadcast({name: 'SongDelete', content: 'OK'});
         this.isSaving = false;
 
-        document.images[this.idNapster].src = this.likeVacio;
-        document.images[this.idNapster].alt = 'vacio';
+        this.Favoritos = [];
+        this.loadAll();
+
 
     }
 

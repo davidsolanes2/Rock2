@@ -1363,5 +1363,10 @@ a{
     font-family: 'Oswald', sans-serif!important;
     font-size: 15px;
     text-transform: uppercase;
-    color: #000;
+    color: #228896;
+}
+a:hover {
+    color: #228896;
+    outline: none;
+    text-decoration: none !important;
 }

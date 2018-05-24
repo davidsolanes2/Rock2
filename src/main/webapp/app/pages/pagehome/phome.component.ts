@@ -73,7 +73,9 @@ export class PhomeComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
-
+        let sitio = document.getElementById("Tendencias");
+        sitio.style.borderBottom = "solid";
+        sitio.style.width = "100px";
     }
 
     public sanitizeImage(image: string) {

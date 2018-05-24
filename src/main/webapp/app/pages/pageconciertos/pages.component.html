@@ -1,17 +1,21 @@
-<div>
-    <div class="fondo">
-        <div class="row">
-            <div class="col-md-12" style="text-align: center"><h1><i class="fa fa-cog"></i> Mis Ajustes</h1></div>
-        </div>
-    </div>
-    <div id="fh5co-main">
-        <div class="container-fluid">
-            <div class="col-sm-12">
 
-
-                <br>
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container">
+                <br><br>
+                <div class="input-group stylish-input-group">
+                    <input type="text" id="buscador" (keyup.enter)="searchSong()" [(ngModel)]="search"
+                           placeholder="Buscar conciertos">
+                    <span class="input-group-addon">
+                            <a (click)="searchSong()">
+                                <span class="fa fa-search"></span>
+                            </a>
+                        </span>
+                </div>
             </div>
         </div>
+        <div class="col-sm-2"></div>
     </div>
 </div>

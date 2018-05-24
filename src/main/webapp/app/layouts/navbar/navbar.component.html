@@ -1,4 +1,3 @@
-
 <div id="fh5co-page" [ngSwitch]="isAuthenticated()">
     <aside id="fh5co-aside">
         <h1 id="fh5co-logo">
@@ -34,13 +33,18 @@
         <nav id="fh5co-main-menu" role="navigation">
             <ul>
                 <li *ngSwitchCase="true">
-                    <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
+                    <div id="Tendencias">
+                        <a routerLink="pagehome-phome" routerLinkActive="active">Tendencias</a>
+                    </div>
                 </li>
                 <li *ngSwitchCase="true">
                     <a routerLink="pageartist-pages" routerLinkActive="active">Mi Colección</a>
                 </li>
                 <li *ngSwitchCase="true">
-                    <a routerLink="pageregister-pages" routerLinkActive="active">Búsqueda</a>
+                    <a routerLink="pageregister-pages" routerLinkActive="active">Canciones</a>
+                </li>
+                <li *ngSwitchCase="true">
+                    <a routerLink="pageconciertos-pages" routerLinkActive="active">Conciertos</a>
                 </li>
                 <li *ngSwitchCase="false">
                     <a routerLink="register" routerLinkActive="active"
@@ -49,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a routerLink="pagesong-pages" routerLinkActive="active" >About us</a>
+                    <a routerLink="pagesong-pages" routerLinkActive="active">About us</a>
                 </li>
                 <li *ngSwitchCase="true">
                     <a (click)="logout()" id="logout">
@@ -70,7 +74,7 @@
                             </a>
                         </li>
                         <li *ngSwitchCase="true">
-                        <a routerLink="password" routerLinkActive="active"
+                            <a routerLink="password" routerLinkActive="active"
                                (click)="collapseNavbar()">
                                 <a jhiTranslate="global.menu.account.password">Password</a>
                             </a>
