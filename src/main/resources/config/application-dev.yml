@@ -26,9 +26,9 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:8889/rockbible3?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/rockbible3?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password: root
+        password: d4v1d001
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -49,7 +49,7 @@ spring:
         host: smtp.gmail.com
         port: 587
         username: puigthesong@gmail.com
-        password: puigthesong5
+        password: d4v1ds0l4n3s
         protocol: smtp
         tls: true
         properties.mail.smtp:
