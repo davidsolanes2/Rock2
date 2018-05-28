@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
     }
 
-    public sanitizerHome1(home1: string) {
+    /*public sanitizerHome1(home1: string) {
         return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/${home1}.jpg)`);
     }
 
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 
     public sanitizerHome3(home3: string) {
         return this._sanitizer.bypassSecurityTrustStyle(`url(https://s3-eu-west-1.amazonaws.com/imagespgs/${home3}.jpg)`);
-    }
+    }*/
 
     ngOnInit() {
         this.principal.identity().then((account) => {
