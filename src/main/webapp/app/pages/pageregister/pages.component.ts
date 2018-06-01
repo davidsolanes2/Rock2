@@ -36,14 +36,14 @@ export class PagesComponent implements OnInit, OnDestroy {
     // previousPage: any;
     reverse: any;
     display = 'none';
-    displayMain = 'none';
-    displayCountry = 'block';
-    displayTitle = 'block';
+    // displayMain = 'none';
+    // displayCountry = 'block';
+    // displayTitle = 'block';
     displayTitleBuscador = 'none';
     displayMas = 'none';
     DataTopTracks: any = [];
     DataSearch: any = [];
-    DataTopTracksID: any = [];
+    // DataTopTracksID: any = [];
     DataLiked: any = [];
     search = '';
     idYoutube = '';

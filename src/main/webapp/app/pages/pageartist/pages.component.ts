@@ -163,18 +163,12 @@ export class PagesComponent implements OnInit, OnDestroy {
 
     }
 
-
-
-
     private subscribeToListCollectionsResponse(result: Observable<Collections>) {
         result.subscribe((res: Collections) => {
                 this.onSaveSuccess(res), (res: Response) => this.onSaveError()
             }
         );
     }
-
-
-
 
     private onSaveSuccess(result: Collections) {
         this.eventManager.broadcast({ name: 'collectionsListModification', content: 'OK'});

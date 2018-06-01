@@ -93,28 +93,6 @@ export class PhomeComponent implements OnInit, OnDestroy {
         return false;
     }
 
-    public searchSong () {
-        console.log( this.search );
-        this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=10`)
-            .subscribe((res: Response) => {
-                this.displayTitleBuscador = 'block';
-                const data = res.json();
-                this.DataSearch = data.search.data.tracks;
-                this.displayMas = 'block';
-            });
-    }
-
-    public searchSongMas() {
-        console.log(this.search);
-        this.http.get(`http://api.napster.com/v2.2/search?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&query='${this.search}'&type=track&per_type_limit=16`)
-            .subscribe((res: Response) => {
-                this.displayTitleBuscador = 'block';
-                const data = res.json();
-                this.DataSearch = data.search.data.tracks;
-                this.displayMas = 'block';
-            });
-    }
-
     openModal(nombre: string, artist: string) {
         this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${artist}-${nombre} Official&type=video&maxResults=1&order=relevance&key=AIzaSyA9MBYmc8ESwDR5tpB4D-bkNhM4_RpAAvM`)
             .subscribe((res: Response) => {

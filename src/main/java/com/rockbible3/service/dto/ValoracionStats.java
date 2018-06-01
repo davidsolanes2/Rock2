@@ -8,11 +8,11 @@ import lombok.Data;
 
 //Genera constructor con todos los parametros
 @AllArgsConstructor
-
 public class ValoracionStats {
-
-
-    private Double avg;
+    /*private Double avg;
     private Integer max;
-    private Integer min;
+    private Integer min;*/
+
+    public ValoracionStats(Double avg, Integer max, Integer min) {
+    }
 }
