@@ -1,12 +1,9 @@
 package com.rockbible3.service.dto;
 
 import com.rockbible3.domain.Artist;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+
 
 public class ValoracionArtistStats extends ValoracionStats{
 
@@ -19,4 +16,12 @@ public class ValoracionArtistStats extends ValoracionStats{
             super(avg, max, min);
             this.artist = artist;
         }
+
+    public Artist getArtist() {
+        return artist;
     }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
+}

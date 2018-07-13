@@ -1313,22 +1313,24 @@ display:none!important;
 #fh5co-aside {
     position: fixed;
     width: 18%!important;
+    background-color: lightgray; /*color navbar*/
+    height: 100%; /*altura navbar*/
     z-index: 1001;
 }
 .fh5co-main-menu {
     margin-left: 2%;
-    font-family: 'Oswald', sans-serif!important;
+    font-family: 'Kalam', cursive!important;
     font-size: 14px;
     color: #228896;
 }
 #fh5co-main-menu {
-    font-family: 'Oswald', sans-serif!important;
+    font-family: 'Kalam', cursive!important;
     font-size: 16px;
     color: #228896;
 }
 #fh5co-logo {
      position: relative;
-     margin-left: -2%;
+     margin-left: -5px;
     /* width: 90%!important;
      height: 90%!important;*/
 }
@@ -1341,14 +1343,14 @@ display:none!important;
 .form {
     margin-left: 5%;
     width: 60%!important;
-    font-family: 'Oswald', sans-serif!important;
+    font-family: 'Kalam', cursive!important;
     font-size: 14px;
     padding-bottom: 1%;
 }
 
 button {
     width: 117px;
-    font-family: 'Oswald', sans-serif!important;
+    font-family: 'Kalam', cursive!important;
     font-size: 14px;
     background-color: #228896;
     margin-top: 5px;
@@ -1360,7 +1362,7 @@ ul {
 
 }
 a{
-    font-family: 'Oswald', sans-serif!important;
+    font-family: 'Kalam', cursive!important;
     font-size: 15px;
     text-transform: uppercase;
     color: #228896;

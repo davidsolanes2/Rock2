@@ -48,8 +48,8 @@ export class PhomeComponent implements OnInit, OnDestroy {
     displayMain = 'none';
     displayCountry = 'block';
     displayTitle = 'block';
-    displayTitleBuscador = 'none';
-    displayMas = 'none';
+    // displayTitleBuscador = 'none';
+    // displayMas = 'none';
     DataTopTracks: any = [];
     DataSearch: any = [];
     DataTopTracksID: any = [];
@@ -60,6 +60,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     video: SafeUrl;
     likeVacio = require('../../../content/images/heart-1.png');
     likeCompleto = require('../../../content/images/heart-2.png');
+    // pais: string;
 
     constructor( private phomeService: PhomeService,
                  private parseLinks: JhiParseLinks,
@@ -109,7 +110,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
     }
 
     topSong(ISO: string) {
-        this.http.get(`http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=8&catalog=${ISO}&range=day`)
+        this.http.get(`http://api.napster.com/v2.2/tracks/top?apikey=MjM4OWE1MzQtNTUyMy00ODIzLWEyNTMtNDQ1MzFlN2ExYzll&limit=16&catalog=${ISO}&range=day`)
             .subscribe((res: Response) => {
                 const data = res.json();
                 this.DataTopTracks = data.tracks;
@@ -151,6 +152,7 @@ export class PhomeComponent implements OnInit, OnDestroy {
         /**
          * Fin control del usuario logeado
          */
+        // this.pais="ISO";
     }
 
     ngOnDestroy() {

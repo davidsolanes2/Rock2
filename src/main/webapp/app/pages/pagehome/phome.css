@@ -1,14 +1,14 @@
 /*
     DEMO STYLE
 */
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 .fondo{
     background-size: cover;
     background-color: whitesmoke!important;
     float:right!important;
     width:85%!important;
     display: none;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Kalam', cursive!important;
     font-size: 100%;
 }
 
@@ -17,7 +17,7 @@
     background-color: whitesmoke!important;
 }
 a{
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Kalam', cursive!important;;
 }
 #imaginary_container{
     margin-top:5%;
@@ -42,9 +42,9 @@ a{
     background-color: #d6cece!important;
     color: white!important;
 }
-.fa fa-globe{
+/*.fa fa-globe{
     background-color: black!important;
-}
+}*/
 .col-sm-12{
     margin-bottom: 20px!important;
 }
@@ -59,11 +59,9 @@ a{
 }
 
 .less{
-
     color:black!important;
     font-size: 2.5em!important;
     margin-left: -1%!important;
-
 }
 h2 {
     color: black !important;
@@ -90,7 +88,7 @@ h2 {
     font-style: italic;
     font-size: 15px;
 }
-#buscador {
+/*#buscador {
     background-size: 0px;
     width: 54%!important;
     border: transparent;
@@ -99,17 +97,15 @@ h2 {
     color:black!important;
     margin-left: 22%!important;
     background-color: whitesmoke;
-    font-family: IBM Plex Sans, sans-serif;
+    font-family: Oswald, sans-serif;
+}*/
 
-}
-
-#mundo{
+/*#mundo{
     color:black!important;
     background-color: #d6cece!important;
     border-color: #d6cece!important;
     margin-left: 50%!important;
-
-}
+}*/
 
 #b{
     font-size: 19px!important;
@@ -119,7 +115,7 @@ h2 {
 }
 
 #y{
-    color:red!important;
+    color: #47d1ff !important;
 }
 .paises {
     background-size: cover;
@@ -155,12 +151,11 @@ h2 {
     color: black;
     position: relative;
     text-align: center;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.9em;
-    font-weight: bold!important;
+    font-family: 'Kalam', cursive;
+    font-size: 16px;
+    /*font-weight: bold!important;*/
     line-height: 1.7em;
-    margin-left: -48px!important;
-
+    /*margin-left: -48px!important;*/
 }
 
 
@@ -169,13 +164,13 @@ h2 {
     color:  #228896!important;
     font-weight: bold!important;
     text-align:center!important;
-    font-family: IBM Plex Sans, sans-serif;
+    font-family: 'Kalam', cursive;
 }
 .mas:hover{
     color: black!important;
 }
 li:hover{
-    color: #ea4d4d!important;
+    color: #228896 !important;
 }
 
 
@@ -184,18 +179,17 @@ li:hover{
     cursor: pointer;
 }
 
-
-
 .tituloSong{
     color: black;
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
     text-align: center;
-    font-family: IBM Plex Sans, sans-serif;    font-size: 1.1em;
+    font-family: 'Kalam', cursive!important;
+    /*font-size: 1.1em;*/
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
-    margin-left: -48px!important;
+    /*margin-left: -48px!important;*/
 }
 .overlayInfo {
     position: absolute;
@@ -218,17 +212,15 @@ li:hover{
     display: inline-block;
     margin-top: 1%;
 }
-
-
 .cover:hover .overlayInfo{
     opacity: 0.9;
 }
+
 .botonyoutube{
     margin-top: 25%;
     margin-left: 38%;
     background-color: #228896;
     border-color: white;
-    border-radius: 4px;
     height: 31px;
     width: 50px;
     border-radius: 8px;
@@ -240,8 +232,6 @@ li:hover{
     color:#228896;
     border-radius: 8px;
 }
-
-
 
 .boton2{
     color:white!important;
@@ -274,12 +264,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 body {
-    font-family: IBM Plex Sans, sans-serif;
+    font-family: Oswald, sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: IBM Plex Sans, sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -435,7 +425,6 @@ i, span {
     background: rgb(211, 211, 211);
 }
 
-
 a[data-toggle="collapse"] {
     position: relative;
 }
@@ -478,7 +467,6 @@ ul.CTAs a {
     border-radius: 5px;
     margin-bottom: 5px;
 }
-
 
 a.download {
     background: #fff;
@@ -670,7 +658,7 @@ body {
     width: 600px;
     margin: 0 auto;
     background-color: #ffffff;
-    font-family: IBM Plex Sans, sans-serif;
+    font-family: Oswald, sans-serif;
     color: #555555;
 }
 
@@ -881,7 +869,7 @@ a {
         padding: 10% 0 0;
         font-weight: 900;
         font-size: 30px;
-        font-family: IBM Plex Sans, sans-serif;
+        font-family: Oswald, sans-serif;
         color: #fff;
         opacity: 0;
     }

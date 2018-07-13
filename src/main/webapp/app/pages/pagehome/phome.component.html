@@ -138,14 +138,15 @@
         </div>-->
         <br><br>
         <div class="row">
-            <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <nav class="navbar  navbar-expand-sm">
+                <!--<nav class="navbar navbar-expand-sm bg-light navbar-light">-->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" (click)="changeCountry()">Cambiar País</a>
+                        <a class="nav-link" (click)="changeCountry()">Cambiar País </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Canciones</a>
-                    </li>
+                   <!-- <li class="nav-item">
+                        <a class="alert-link" (click)="">{{pais}}</a>
+                    </li>-->
                 </ul>
             </nav>
         </div>
@@ -200,7 +201,7 @@
                 <p class="tituloSong" style="text-align: center; color: black">{{data.name}}</p>
             </div>
             <div class="backdrop" [ngStyle]="{'display':display}"></div>
-            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':560}">
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display,'width':300}">
                 <div class="modal-dialog" role="document">
                     <div class="backdrop"></div>
                     <div class="modal-content">

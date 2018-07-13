@@ -85,8 +85,6 @@ h1{
     display: inline-block;
     margin-top: 1%;
 }
-
-
 .cover:hover .overlayInfo{
     opacity: 0.9;
 }

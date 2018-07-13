@@ -2,9 +2,7 @@ package com.rockbible3.service.dto;
 
 
 import com.rockbible3.domain.Album;
-import lombok.Data;
 
-    @Data
     public class ValoracionAlbumStats extends ValoracionStats{
 
         private Album album;
@@ -14,5 +12,11 @@ import lombok.Data;
             this.album = album;
         }
 
+        public Album getAlbum() {
+            return album;
+        }
 
+        public void setAlbum(Album album) {
+            this.album = album;
+        }
     }
